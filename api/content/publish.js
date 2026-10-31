@@ -30,6 +30,14 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 400, { ok: false, error: "Field data wajib diisi" });
   }
 
+  if (!process.env.GITHUB_TOKEN) {
+    return sendJson(res, 500, {
+      ok: false,
+      error:
+        "GITHUB_TOKEN belum di-set di environment Vercel. Publish tidak bisa menulis ke GitHub.",
+    });
+  }
+
   try {
     const publishedPath = contentPath(lang, page);
     const draftTarget = draftPath(lang, page);

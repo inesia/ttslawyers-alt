@@ -12,18 +12,23 @@ Lightweight Git-based CMS for editing Indonesian and English site content withou
 - `assets/content.js` — hydrates existing pages from JSON
 - `vercel.json` — admin rewrite + cache headers
 
-## Vercel environment variables
+## Vercel environment variables (REQUIRED for production admin)
 
-In the Vercel project → Settings → Environment Variables, add:
+Production site: `https://ttslawyers-alt.vercel.app/`  
+Admin: `https://ttslawyers-alt.vercel.app/admin`
 
-| Name | Notes |
+In Vercel → Project → Settings → Environment Variables, set **all** of these for Production (and Preview if needed), then **Redeploy**:
+
+| Name | Required value / notes |
 |---|---|
-| `CMS_ADMIN_PASSWORD` | Admin login password |
-| `CMS_SESSION_SECRET` | Long random string for signing cookies |
-| `GITHUB_TOKEN` | GitHub token with Contents read/write on this repo |
+| `CMS_ADMIN_PASSWORD` | The admin login password chosen by the firm |
+| `CMS_SESSION_SECRET` | A long random string, different from the password |
+| `GITHUB_TOKEN` | GitHub PAT with Contents read/write on `inesia/ttslawyers-alt` |
 | `GITHUB_OWNER` | `inesia` |
 | `GITHUB_REPO` | `ttslawyers-alt` |
 | `GITHUB_BRANCH` | `main` |
+
+Without these, the public website still works, but `/admin` login / Save Draft / Publish will fail.
 
 Never put these values in frontend JS or public JSON.
 
@@ -62,13 +67,7 @@ Do not assume the live site is updated until the Vercel deployment finishes.
 Do **not** use `python -m http.server` for admin login. That server cannot run `/api/*`.
 
 1. Copy `.env.example` to `.env`
-2. Set at least:
-
-```env
-CMS_ADMIN_PASSWORD=Tt5L4wyers!
-CMS_SESSION_SECRET=any-long-random-string
-```
-
+2. Set at least `CMS_ADMIN_PASSWORD` and `CMS_SESSION_SECRET`
 3. Start the local CMS server:
 
 ```bash

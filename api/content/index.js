@@ -27,28 +27,50 @@ module.exports = async function handler(req, res) {
   if (draft) {
     if (!requireAuth(req, res)) return;
     try {
-      const file = await getFile(draftPath(lang, page));
-      if (file) {
-        return sendJson(res, 200, {
-          ok: true,
-          source: "draft",
-          data: JSON.parse(file.content),
-          sha: file.sha,
-        });
-      }
-      const published = await getFile(contentPath(lang, page));
-      if (published) {
-        return sendJson(res, 200, {
-          ok: true,
-          source: "published-fallback",
-          data: JSON.parse(published.content),
-          sha: null,
-        });
+      if (process.env.GITHUB_TOKEN) {
+        const file = await getFile(draftPath(lang, page));
+        if (file) {
+          return sendJson(res, 200, {
+            ok: true,
+            source: "draft",
+            data: JSON.parse(file.content),
+            sha: file.sha,
+          });
+        }
+        const published = await getFile(contentPath(lang, page));
+        if (published) {
+          return sendJson(res, 200, {
+            ok: true,
+            source: "published-fallback",
+            data: JSON.parse(published.content),
+            sha: null,
+          });
+        }
       }
       const local = readLocal(contentPath(lang, page));
-      if (local) return sendJson(res, 200, { ok: true, source: "local", data: local, sha: null });
+      if (local) {
+        return sendJson(res, 200, {
+          ok: true,
+          source: process.env.GITHUB_TOKEN ? "local" : "local-no-github-token",
+          data: local,
+          sha: null,
+          warning: process.env.GITHUB_TOKEN
+            ? null
+            : "GITHUB_TOKEN belum di-set. Menampilkan konten lokal/published. Simpan Draft/Publish belum bisa ke GitHub.",
+        });
+      }
       return sendJson(res, 404, { ok: false, error: "Konten tidak ditemukan" });
     } catch (err) {
+      const local = readLocal(contentPath(lang, page));
+      if (local) {
+        return sendJson(res, 200, {
+          ok: true,
+          source: "local-after-error",
+          data: local,
+          sha: null,
+          warning: err.message,
+        });
+      }
       return sendJson(res, 500, { ok: false, error: err.message });
     }
   }
