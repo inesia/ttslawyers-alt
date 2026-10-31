@@ -30,7 +30,6 @@
     title: document.getElementById("editor-title"),
     notice: document.getElementById("notice"),
     editor: document.getElementById("editor"),
-    btnSave: document.getElementById("btn-save"),
     btnPublish: document.getElementById("btn-publish"),
     btnPreview: document.getElementById("btn-preview"),
     btnLogout: document.getElementById("btn-logout"),
@@ -356,7 +355,7 @@
         state.dirty = false;
         renderEditor();
         els.statusLine.textContent = "Sumber lokal (API draft belum tersedia)";
-        showNotice("err", "API draft tidak tersedia. Menampilkan konten lokal. Simpan/Publish membutuhkan Vercel + GitHub.");
+        showNotice("err", "API belum tersedia. Menampilkan konten lokal. Publish membutuhkan Vercel + GitHub.");
       } catch (e2) {
         showNotice("err", err.message);
         els.statusLine.textContent = "";
@@ -441,38 +440,37 @@
     await loadCurrent();
   });
 
-  els.btnSave.addEventListener("click", async function () {
-    clearNotice();
-    try {
-      const data = collectData();
-      const result = await api("/api/content/save-draft", {
-        method: "POST",
-        body: JSON.stringify({ lang: state.lang, page: state.page, data: data }),
-      });
-      state.data = data;
-      state.dirty = false;
-      showNotice("ok", result.message || "Draft tersimpan ke GitHub");
-      refreshStatus();
-    } catch (err) {
-      showNotice("err", err.message);
-    }
-  });
-
   els.btnPublish.addEventListener("click", async function () {
     clearNotice();
-    if (!confirm("Publikasikan konten ini ke GitHub? Vercel akan redeploy setelah commit.")) return;
+    if (!confirm("Publikasikan konten ini ke situs?")) return;
+
+    const btn = els.btnPublish;
+    const prevLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Memproses...";
+    showNotice(
+      "ok",
+      "Sedang memproses publish. Mohon tunggu — situs biasanya siap dalam kurang lebih 5 menit."
+    );
+
     try {
       const data = collectData();
-      const result = await api("/api/content/publish", {
+      await api("/api/content/publish", {
         method: "POST",
         body: JSON.stringify({ lang: state.lang, page: state.page, data: data }),
       });
       state.data = data;
       state.dirty = false;
-      showNotice("ok", result.message || "Published to GitHub — Vercel deployment in progress");
+      showNotice(
+        "ok",
+        "Publish berhasil dikirim. Perubahan sedang diproses di server. Mohon tunggu kurang lebih 5 menit, lalu refresh halaman situs untuk melihat hasilnya."
+      );
       refreshStatus();
     } catch (err) {
       showNotice("err", err.message);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = prevLabel;
     }
   });
 
