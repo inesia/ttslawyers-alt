@@ -4,23 +4,23 @@
   "brandSub": "LAW FIRM",
   "nav": [
     {
-      "label": "Home",
+      "label": "Beranda",
       "href": "index.html"
     },
     {
-      "label": "About",
+      "label": "Tentang",
       "href": "firma-hukum.html"
     },
     {
-      "label": "Expertise",
+      "label": "Keahlian",
       "href": "pendiri.html"
     },
     {
-      "label": "Partners",
+      "label": "Mitra",
       "href": "partners.html"
     },
     {
-      "label": "Contact",
+      "label": "Kontak",
       "href": "kontak.html"
     }
   ]

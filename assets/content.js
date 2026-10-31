@@ -193,6 +193,23 @@
     if (desc && data.meta.description) desc.setAttribute("content", data.meta.description);
   }
 
+  async function applyNav(lang, preview) {
+    try {
+      const site = await fetchJson(contentUrl(lang, "site", preview));
+      if (!site || !Array.isArray(site.nav)) return;
+      const nav = document.querySelector("header.topbar nav");
+      if (!nav) return;
+      const links = nav.querySelectorAll("a");
+      site.nav.forEach(function (item, i) {
+        if (!links[i] || !item) return;
+        if (item.label) links[i].textContent = item.label;
+        if (item.href) links[i].setAttribute("href", item.href);
+      });
+    } catch (err) {
+      /* keep hardcoded nav labels */
+    }
+  }
+
   async function boot() {
     const cfg = document.body.dataset;
     const lang = cfg.lang || "id";
@@ -208,6 +225,7 @@
     const preview = params.get("preview") === "1";
 
     try {
+      await applyNav(lang, preview);
       const bag = await loadPages(lang, pages, preview);
       const primary = bag[pages[0]] || {};
       applyMeta(primary);
