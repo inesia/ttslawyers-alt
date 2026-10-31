@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Partners | TTS Law Firm",
+    "description": "TTS Law Firm — Timotius & Partners"
+  },
+  "eyebrow": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+  "pageTitle": "Partners",
+  "members": [
+    {
+      "name": "Partner Prof. Dr. M. S. Tumanggor, SH. M.Si. CTA.",
+      "photo": {
+        "src": "assets/slide-4-image-3.jpg",
+        "alt": "Foto dari slide 4 profil firma hukum"
+      },
+      "paragraphs": [
+        "Sebelum bergabung di Firma Hukum ini, dia menekuni dunia Pasar Modal puluhan tahun sebagai Pejabat Tinggi di Badan Pelaksana Pasar Modal (BAPEPAM) Republik Indonesia, kemudian berubah nama menjadi Badan Pengawas Pasar Modal-Lembaga Keuangan (BAPEPAM-LK) dan namanya berubah lagi menjadi Otoritas Jasa Keuangan (OJK).",
+        "Dia termasuk yang sangat berperan atau “Grand Master” perubahan, pembaharuan dan perumusan berbagai ketentuan mengenai Pasar Modal sampai berbagai perusahaan dapat melantai di Pasar Modal atau Go Public.",
+        "Ia juga menulis beberapa karya ilmiah mengenai Pasar Modal dan pengajar di beberapa universitas di Indonesia. \nKita perlu menulis ulang pemikiran dan argumentasi yang kuat dan fundamental dari dia, yang menyatakan: “Kemajuan dan kemakmuran satu bangsa dan negara dapat juga diukur dari kemajuan Pasar Modal di negara tersebut”."
+      ]
+    },
+    {
+      "name": "Partner Dr. Tjoe K. Sugiharto, SH., MBA. D.TH.",
+      "photo": {
+        "src": "assets/slide-4-image-5.jpg",
+        "alt": "Foto dari slide 4 profil firma hukum"
+      },
+      "paragraphs": [
+        "Darah dagingnya adalah pebisnis dan seorang banker tulen, ia pernah menduduki jabatan tertinggi sebagai Presiden Direktur di PT. Bank Mayapada Internasional, (Tbk)., sekarang sebagai Komisaris di bank tersebut, kemudian bergabung di Firma Hukum ini.",
+        "Perbankan bagi dia seperti air mengalir dan kuda pacu yang larinya tercepat dan presisi, analis akhir dan pengambil keputusan terbaik di puncak manajemen, dan ada bukti yang nyata dimana bank tersebut berkibar-kibar sebagai salah satu bank swasta terbesar di Indonesia.",
+        "Ditangannya PT. Bank Mayapada International, (Tbk)., berkembang dengan diversifikasi usaha."
+      ]
+    },
+    {
+      "name": "A. Rogarani Ari, SH. alias “Roger”",
+      "photo": {
+        "src": "assets/slide-5-image-3.jpg",
+        "alt": "Foto dari slide 5 profil firma hukum"
+      },
+      "paragraphs": [
+        "Advokat dan konsultan hukum korporasi, fokus dan mendalam di bidang Hukum Korporasi Umum, Teknologi Finansial (Fintech) dan Pemenuhan Kewajiban Pelaporan Penyelenggara Jasa Pembayaran serta Hukum Perlindungan Data Pribadi. Pendirian Perusahaan Patungan (JVC), perizinan sistem OSS, penanganan berbagai perjanjian kerja sama.",
+        "Di era digitalisasi  ini, ia aktif melakukan riset hukum terkait pendirian serta perpanjangan Penyelenggara Sistem Elektronik (PSE), Penyelenggara Perdagangan Melalui Sistem Elektronik (PPMSE), Penempatan Pusat Data, dan penyesuaian privasi data.",
+        "Untuk Kepatuhan Hukum, ia bersama klien  bertanggung jawab mengelola dan menyampaikan Laporan Kegiatan Penanaman Modal, menyusun Kebijakan Privasi dan Syarat Ketentuan Penggunaannya untuk perusahaan pengembang perangkat lunak akuntansi, mendampingi tim internal dalam Uji Tuntas (Legal Due Diligence), akuisisi dan aksi korporasi.  Ia kuat dalam manajemen proyek, menyampaikan presentasi teratur, riset internet maupun lapangan, relasi baik para Notaris dan Konsultan Hukum di Indonesia dan luar negeri. Ia sekarang melanjutkan studi hukum di Australia."
+      ]
+    },
+    {
+      "name": "Ir. Jidin Napitupulu, MM.",
+      "photo": {
+        "src": "assets/slide-5-image-4.jpg",
+        "alt": "Foto dari slide 5 profil firma hukum"
+      },
+      "paragraphs": [
+        "Pebisnis, ex staff PT Bank Negara Indonesia (Persero), Tbk., Badan Penyehatan Perbankan Nasional (BPPN) dan short course di Pasar Modal.",
+        "Ia berperan penting sebagai penghubung Firma Hukum ini dengan para klien (Client Relationship).",
+        "Hubungannya sangat luas dengan instansi pemerintah dan di sektor swasta.",
+        "Keberhasilan Firma Hukum ini adalah juga keberhasilannya sebagai Client Relationship."
+      ]
+    }
+  ],
+  "footer": {
+    "brand": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+    "contactLabel": "HUBUNGI KAMI",
+    "contactHref": "kontak.html"
+  }
+}

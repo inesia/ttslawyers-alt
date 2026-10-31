@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/bilingual.css">
 </head>
-<body>
+<body data-lang="id" data-content="home">
 <header class="topbar">
 <a class="brand" href="index.html"><span class="mark">TTS</span><span>TIMOTIUS & PARTNERS<small>LAW FIRM</small></span></a>
 <button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
@@ -23,24 +23,25 @@
 <a href="index.html" class="selected">ID</a><span>/</span><a href="en-index.html" class="">EN</a>
 </div>
 </header>
-<main class="home-main">
+<main class="home-main" data-cms-scope="home">
 <section class="hero">
 <picture>
-<source media="(min-width: 701px)" srcset="assets/hero.png" type="image/png">
-<img src="assets/hero.jpg" alt="Timotius & Partners — TTS Law Firm" width="1281" height="832">
+<source media="(min-width: 701px)" srcset="assets/hero.png" type="image/png" data-cms="hero.desktopImage">
+<img src="assets/hero.jpg" alt="Timotius & Partners — TTS Law Firm" width="1281" height="832" data-cms="hero.mobileImage" data-cms-alt="hero.alt">
 </picture>
 <div class="hero-shade"></div>
 <div class="hero-caption">
-<span>TTS LAW FIRM · TIMOTIUS & PARTNERS</span>
-<h1>Dengan Hukum, Bisnis Anda Terjamin.</h1>
-<a class="hero-cta" href="firma-hukum.html">Jelajahi Profil Firma ↗</a>
+<span data-cms="hero.eyebrow">TTS LAW FIRM · TIMOTIUS & PARTNERS</span>
+<h1 data-cms="hero.title">Dengan Hukum, Bisnis Anda Terjamin.</h1>
+<a class="hero-cta" href="firma-hukum.html" data-cms="hero.ctaLabel" data-cms-href="hero.ctaHref">Jelajahi Profil Firma ↗</a>
 </div>
 </section>
 </main>
 <footer>
-<div>TTS LAW FIRM — TIMOTIUS & PARTNERS</div>
-<a href="kontak.html">HUBUNGI KAMI</a>
+<div data-cms="footer.brand">TTS LAW FIRM — TIMOTIUS & PARTNERS</div>
+<a href="kontak.html" data-cms="footer.contactLabel" data-cms-href="footer.contactHref">HUBUNGI KAMI</a>
 </footer>
 <script src="assets/site.js"></script>
+<script src="assets/content.js"></script>
 </body>
 </html>

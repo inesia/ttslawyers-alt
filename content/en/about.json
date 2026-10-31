@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "About | TTS Law Firm",
+    "description": "TTS Law Firm — Timotius & Partners"
+  },
+  "eyebrow": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+  "pageTitle": "About",
+  "kicker": "OUR FIRM",
+  "lead": "TTS LAW FIRM - TIMOTIUS & PARTNERS (Hereinafter Referred As To \"TTS LAW FIRM\") Was Founded In 1997 By Dr. (Commerce) Timotius Tumbur Simbolon, SH., MH., Advocate, National Curator And Member Of INSOL International.",
+  "paragraphs": [
+    "This document is not merely a Firm Profile. It is a statement of the soul, philosophy, and heritage of the Founder and Partners concerning the essence of legal counsel, agreements, litigation, and our vision for national and international law.",
+    "The Founder and Partners hold Professorial and Doctoral degrees in Law, with comparative studies in advanced jurisdictions. We master both theory and practice of legal services. We are specialists, thought leaders, providers of comprehensive solutions - trusted, accountable, unwavering in upholding supremacy of law, legal certainty, and justice. Supported by qualified and specialized personnel.",
+    "Purpose: To become a leading law firm in Indonesia and an integral partner in structuring national and international business agreements, including resolution of national, foreign, and multinational corporate matters.",
+    "Philosophy - Since inception: \"With Law, Your Business is Secured.\" This has been our enduring guarantee of high success rate in commercial transactions.",
+    "Founder's Experience: When comparing legal fees paid by clients versus results obtained, clients have realized profits hundreds, even thousands of times greater. This success is achieved because the Founder and Partners exercise calm, wise, and experienced control - managing clients' legal interests with a cool hand and sagacious judgment.",
+    "The Firm collaborates with expert Advocates from other law firms in Indonesia and abroad as like-minded satellites sharing the same struggle and spirit.",
+    "Methodology:",
+    "Identification and Classification of legal issues;\nPlanning and Formulation of optimal strategic steps;\nManagement, Handling, and Resolution with best solution; and\nTimely Execution."
+  ],
+  "photo": {
+    "src": "assets/slide-2-image-5.jpg",
+    "alt": "Founder portrait from the firm profile"
+  },
+  "footer": {
+    "brand": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+    "contactLabel": "CONTACT",
+    "contactHref": "en-kontak.html"
+  }
+}

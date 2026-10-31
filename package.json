@@ -1,0 +1,11 @@
+{
+  "name": "ttslawyers-alt",
+  "private": true,
+  "version": "1.0.0",
+  "description": "TTS Law Firm bilingual static site with Git-based CMS",
+  "scripts": {
+    "extract-content": "python tools/extract_content.py",
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin CMS | TTS Law Firm</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div id="login-view" class="login-wrap">
+  <form class="login-card" id="login-form">
+    <div class="eyebrow" style="color:#8d6b34;font-size:12px;letter-spacing:.18em;font-weight:700;margin-bottom:10px">TTS LAW FIRM</div>
+    <h1>Admin CMS</h1>
+    <p>Masuk untuk mengedit konten situs tanpa mengubah desain.</p>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+    <button type="submit">Masuk</button>
+    <div id="login-error" style="color:#9b1c1c;margin-top:12px;min-height:1.2em"></div>
+  </form>
+</div>
+
+<div id="app-view" class="shell hidden">
+  <aside class="sidebar">
+    <div class="brand">TTS CMS</div>
+    <nav id="page-nav"></nav>
+    <div class="spacer"></div>
+    <button type="button" class="btn-danger" id="btn-logout">Logout</button>
+  </aside>
+  <main class="main">
+    <div class="toprow">
+      <div>
+        <h1 id="editor-title">Beranda</h1>
+        <div id="status-line" style="color:#66737c;font-size:13px;margin-top:6px"></div>
+      </div>
+      <div class="controls">
+        <label for="lang-select" style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8d6b34;font-weight:700">Bahasa</label>
+        <select id="lang-select">
+          <option value="id">Indonesia</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="notice" class="notice"></div>
+
+    <div class="actions">
+      <button type="button" class="btn btn-ghost" id="btn-preview">Preview</button>
+      <button type="button" class="btn btn-gold" id="btn-save">Simpan Draft</button>
+      <button type="button" class="btn btn-primary" id="btn-publish">Publish</button>
+    </div>
+
+    <div id="editor" class="editor"></div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

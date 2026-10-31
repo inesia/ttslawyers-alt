@@ -91,3 +91,7 @@ main.page-about,main.page-expertise,main.page-partners,main.page-contact{max-wid
 @media(min-width:701px) and (max-width:1100px){
   .practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+.cms-preview-bar,.cms-load-error{position:sticky;top:0;z-index:40;padding:10px 16px;font-size:13px;letter-spacing:.04em;text-align:center}
+.cms-preview-bar{background:#c4a16a;color:#0b2031;font-weight:700}
+.cms-load-error{background:#7a1f1f;color:#fff}

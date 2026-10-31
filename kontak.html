@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/bilingual.css">
 </head>
-<body>
+<body data-lang="id" data-content="contact">
 <header class="topbar">
 <a class="brand" href="index.html"><span class="mark">TTS</span><span>TIMOTIUS & PARTNERS<small>LAW FIRM</small></span></a>
 <button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
@@ -23,55 +23,32 @@
 <a href="kontak.html" class="selected">ID</a><span>/</span><a href="en-kontak.html" class="">EN</a>
 </div>
 </header>
-<main class="page-contact">
+<main class="page-contact" data-cms-scope="contact">
 <div class="page-shell contact-shell">
   <div class="page-intro">
-    <div class="eyebrow">TTS LAW FIRM — TIMOTIUS &amp; PARTNERS</div>
-    <h1>Contact</h1>
+    <div class="eyebrow" data-cms="eyebrow">TTS LAW FIRM — TIMOTIUS &amp; PARTNERS</div>
+    <h1 data-cms="pageTitle">Contact</h1>
   </div>
 
   <div class="contact-layout">
     <section class="contact-message">
-      <div class="source-block about-kicker">PESAN TTS LAW FIRM - TIMOTIUS &amp; PARTNERS</div>
-      <p class="about-lead">Hal-hal penting yang telah di sampaikan di atas, menjadi dasar yang kuat dan kunci kesuksesan anda memakai jasa dan bantuan hukum TTS Law Firm - Timotius &amp; Partners.</p>
-      <p class="contact-motto">“Dengan Hukum, Bisnis Anda Terjamin.”</p>
+      <div class="source-block about-kicker" data-cms="messageKicker">PESAN TTS LAW FIRM - TIMOTIUS &amp; PARTNERS</div>
+      <p class="about-lead" data-cms="message">Hal-hal penting yang telah di sampaikan di atas, menjadi dasar yang kuat dan kunci kesuksesan anda memakai jasa dan bantuan hukum TTS Law Firm - Timotius &amp; Partners.</p>
+      <p class="contact-motto" data-cms="motto">“Dengan Hukum, Bisnis Anda Terjamin.”</p>
     </section>
 
     <section class="contact-card">
-      <div class="source-block about-kicker">HUBUNGI KAMI</div>
-      <dl class="contact-list">
-        <div>
-          <dt>Situs web</dt>
-          <dd><a href="https://www.ttslawyers.com" target="_blank" rel="noopener">www.ttslawyers.com</a></dd>
-        </div>
-        <div>
-          <dt>Email</dt>
-          <dd>
-            <a href="mailto:timotiuslawyer@gmail.com">timotiuslawyer@gmail.com</a>
-            <a href="mailto:simbolonlaw@ttslawyers.com">simbolonlaw@ttslawyers.com</a>
-          </dd>
-        </div>
-        <div>
-          <dt>Telp</dt>
-          <dd><a href="tel:+62213922219">+62 021-3922219</a></dd>
-        </div>
-        <div>
-          <dt>WA</dt>
-          <dd><a href="https://wa.me/6281380802838" target="_blank" rel="noopener">+62 813-8080-2838</a></dd>
-        </div>
-        <div>
-          <dt>Alamat</dt>
-          <dd>Jalan Pasuruan No. 28, Menteng, Jakarta Pusat 10310, Indonesia.</dd>
-        </div>
-      </dl>
+      <div class="source-block about-kicker" data-cms="cardKicker">HUBUNGI KAMI</div>
+      <dl class="contact-list" data-cms-contact-fields></dl>
     </section>
   </div>
 </div>
 </main>
 <footer>
-<div>TTS LAW FIRM — TIMOTIUS & PARTNERS</div>
-<a href="kontak.html">HUBUNGI KAMI</a>
+<div data-cms="footer.brand">TTS LAW FIRM — TIMOTIUS & PARTNERS</div>
+<a href="kontak.html" data-cms="footer.contactLabel" data-cms-href="footer.contactHref">HUBUNGI KAMI</a>
 </footer>
 <script src="assets/site.js"></script>
+<script src="assets/content.js"></script>
 </body>
 </html>

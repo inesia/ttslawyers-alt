@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Home | TTS Law Firm",
+    "description": "TTS Law Firm — Timotius & Partners"
+  },
+  "hero": {
+    "eyebrow": "TTS LAW FIRM · TIMOTIUS & PARTNERS",
+    "title": "Dengan Hukum, Bisnis Anda Terjamin.",
+    "ctaLabel": "Jelajahi Profil Firma ↗",
+    "ctaHref": "firma-hukum.html",
+    "desktopImage": "assets/hero.png",
+    "mobileImage": "assets/hero.jpg",
+    "alt": "Timotius & Partners — TTS Law Firm"
+  },
+  "footer": {
+    "brand": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+    "contactLabel": "HUBUNGI KAMI",
+    "contactHref": "kontak.html"
+  }
+}
