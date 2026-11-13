@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Kontak | TTS Law Firm",
+    "description": "TTS Law Firm — Timotius & Partners"
+  },
+  "eyebrow": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+  "pageTitle": "Kontak",
+  "messageKicker": "PESAN TTS LAW FIRM - TIMOTIUS & PARTNERS",
+  "message": "Hal-hal penting yang telah di sampaikan di atas, menjadi dasar yang kuat dan kunci kesuksesan anda memakai jasa dan bantuan hukum TTS Law Firm - Timotius & Partners.",
+  "motto": "“Dengan Hukum, Bisnis Anda Terjamin.”",
+  "cardKicker": "HUBUNGI KAMI",
+  "fields": [
+    {
+      "label": "Situs web",
+      "values": [
+        {
+          "text": "www.ttslawyers.com",
+          "href": "https://www.ttslawyers.com"
+        }
+      ]
+    },
+    {
+      "label": "Email Sekretaris",
+      "values": [
+        {
+          "text": "timotiuslawyer@gmail.com",
+          "href": "mailto:timotiuslawyer@gmail.com"
+        },
+        {
+          "text": "simbolonlaw@ttslawyers.com",
+          "href": "mailto:simbolonlaw@ttslawyers.com"
+        }
+      ]
+    },
+    {
+      "label": "Telp",
+      "values": [
+        {
+          "text": "+62 021-3922219",
+          "href": "tel:+62213922219"
+        }
+      ]
+    },
+    {
+      "label": "WA",
+      "values": [
+        {
+          "text": "+62 813-8080-2838",
+          "href": "https://wa.me/6281380802838"
+        }
+      ]
+    },
+    {
+      "label": "Alamat",
+      "values": [
+        {
+          "text": "Jalan Pasuruan No. 28, Menteng, Jakarta Pusat 10310, Indonesia."
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "brand": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+    "contactLabel": "HUBUNGI KAMI",
+    "contactHref": "kontak.html"
+  }
+}
