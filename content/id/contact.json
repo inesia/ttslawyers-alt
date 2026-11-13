@@ -14,21 +14,21 @@
       "label": "Situs web",
       "values": [
         {
-          "href": "https://www.ttslawyers.com",
-          "text": "www.ttslawyers.com"
+          "text": "www.ttslawyers.com",
+          "href": "https://www.ttslawyers.com"
         }
       ]
     },
     {
-      "label": "Email",
+      "label": "Email Sekretaris",
       "values": [
         {
-          "href": "mailto:timotiuslawyer@gmail.com",
-          "text": "timotiuslawyer@gmail.com"
+          "text": "timotiuslawyer@gmail.com",
+          "href": "mailto:timotiuslawyer@gmail.com"
         },
         {
-          "href": "mailto:simbolonlaw@ttslawyers.com",
-          "text": "simbolonlaw@ttslawyers.com"
+          "text": "simbolonlaw@ttslawyers.com",
+          "href": "mailto:simbolonlaw@ttslawyers.com"
         }
       ]
     },
@@ -36,8 +36,8 @@
       "label": "Telp",
       "values": [
         {
-          "href": "tel:+62213922219",
-          "text": "+62 021-3922219"
+          "text": "+62 021-3922219",
+          "href": "tel:+62213922219"
         }
       ]
     },
@@ -45,8 +45,8 @@
       "label": "WA",
       "values": [
         {
-          "href": "https://wa.me/6281380802838",
-          "text": "+62 813-8080-2838"
+          "text": "+62 813-8080-2838",
+          "href": "https://wa.me/6281380802838"
         }
       ]
     },
