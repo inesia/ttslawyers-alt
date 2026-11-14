@@ -10,12 +10,46 @@
       .replace(/'/g, "&#39;");
   }
 
+  function formatParagraph(p) {
+    if (!p) return "";
+    var s = String(p).trim();
+
+    var isWholeBold = false;
+    if (s.startsWith("**") && s.endsWith("**") && s.length > 4) {
+      s = s.slice(2, -2).trim();
+      isWholeBold = true;
+    }
+
+    var escaped = escapeHtml(s).replace(/\n/g, "<br>");
+
+    escaped = escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+    escaped = escaped.replace(
+      /^((?:TUJUAN PENDIRIAN|FILOSOFI|Purpose|Philosophy[^\:\<]*|Founder&#39;s Experience|Methodology)\s*[:\-]\s*)/i,
+      "<strong>$1</strong>"
+    );
+
+    var isKnownTitle = (
+      isWholeBold ||
+      s === "VISI" ||
+      s === "TRACK RECORDS" ||
+      s === "REVOLUSI PEMBAHARUAN HUKUM DUNIA" ||
+      s === "“UNSECURED CREDITOR” - “KREDITOR TIDAK TERJAMIN” DIGANTI MENJADI “KREDITOR UMUM”" ||
+      s.indexOf("PENYELESAIAN DI LUAR DAN DI DALAM") === 0 ||
+      s === "Methodology:"
+    );
+
+    if (isKnownTitle) {
+      return '<strong class="sub-title-block">' + escaped + "</strong>";
+    }
+
+    return escaped;
+  }
+
   function paragraphsToHtml(paragraphs) {
     if (!Array.isArray(paragraphs)) return "";
     return paragraphs
-      .map(function (p) {
-        return escapeHtml(p).replace(/\n/g, "<br>");
-      })
+      .map(formatParagraph)
       .join("<br><br>");
   }
 
