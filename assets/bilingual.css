@@ -16,6 +16,15 @@ main.page-about,main.page-expertise,main.page-partners,main.page-contact{max-wid
 .about-intro,.page-intro{max-width:760px;margin:0 0 48px;padding:0;background:none;color:inherit;box-shadow:none;position:static;display:block}
 .about-intro h1,.page-intro h1{margin:16px 0 0;border-bottom:0;padding-bottom:0;position:relative;color:var(--navy)}
 .about-intro h1::after,.page-intro h1::after{content:"";display:block;width:72px;height:2px;margin-top:26px;background:linear-gradient(90deg,#c4a16a,#c4a16a00)}
+/* Paragraph justification across all pages */
+p,
+.about-body,
+.about-lead,
+.case-card span {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .about-kicker{color:#8d6b34;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
 .about-lead{font:500 clamp(20px,2.15vw,28px)/1.55 'Playfair Display',serif;color:#0b2031;margin:0 0 28px}
 .about-body{color:#334149;font-size:16.5px;line-height:1.9}
@@ -66,7 +75,7 @@ main.page-about,main.page-expertise,main.page-partners,main.page-contact{max-wid
 .contact-shell{padding-bottom:96px}
 .contact-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,420px);gap:36px;align-items:start}
 .contact-message{padding-right:12px}
-.contact-motto{font:500 clamp(24px,2.6vw,36px)/1.35 'Playfair Display',serif;color:#0b2031;margin:8px 0 0;max-width:18ch}
+.contact-motto{font:500 clamp(24px,2.6vw,36px)/1.35 'Playfair Display',serif;color:#0b2031;margin:8px 0 0;max-width:18ch;text-align:left}
 .contact-card{background:#0b2031;color:#e8edf0;padding:34px 32px 36px;box-shadow:0 22px 50px rgba(11,32,49,.18)}
 .contact-card .about-kicker{color:#e4c38a;margin-bottom:26px}
 .contact-list{margin:0;display:flex;flex-direction:column;gap:22px}
