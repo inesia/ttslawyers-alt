@@ -94,38 +94,44 @@ p,
 
 /* Expertise page */
 .exp-founder{margin-bottom:18px}
+.founder-lead-title{font-family:'Times New Roman',Times,Georgia,serif;font-size:clamp(20px,2vw,25px);font-weight:700;line-height:1.5;color:#0b2031;margin:0 0 24px;text-align:left}
 .exp-founder-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 48px}
-.exp-founder-bio{padding:28px 26px;background:#fff;border:1px solid #e6dece;border-left:3px solid #c4a16a}
-.exp-band{background:#f1eee7;border-top:1px solid #e4dccb;border-bottom:1px solid #e4dccb;margin-top:36px}
+.exp-founder-bio{padding:28px 28px;background:#fff;border:1px solid #e4d8c5;border-left:4px solid #c4a16a;box-shadow:0 8px 25px rgba(11,32,49,.04)}
+.exp-bullet-list{margin:12px 0 20px 20px;padding:0;list-style-type:square;color:#334149}
+.exp-bullet-list li{margin-bottom:8px;line-height:1.75;text-align:justify;text-justify:inter-word}
+.exp-band{background:#fbf9f5;border-top:1px solid #e4dccb;border-bottom:1px solid #e4dccb;margin-top:48px}
 .exp-band .page-shell{padding-top:64px;padding-bottom:64px}
-.exp-band h2{margin-top:0}
+.exp-band h2{font-family:'Times New Roman',Times,Georgia,serif;font-size:1.45rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#0b2031;margin-top:0}
 .exp-practice{margin:0}
-.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.practice-item{background:#fff;border:1px solid #e4dccb;padding:16px 18px;font-size:14.5px;line-height:1.5;color:#243039;border-top:2px solid #c4a16a}
+.exp-practice-lead{font-family:'Times New Roman',Times,Georgia,serif;font-size:18px;line-height:1.7;color:#0b2031;margin-bottom:24px;font-weight:700}
+.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.practice-item{background:#fff;border:1px solid #e4dccb;border-top:3px solid #c4a16a;padding:18px 20px;font-family:'Times New Roman',Times,Georgia,serif;font-size:16.5px;font-weight:700;line-height:1.5;color:#0b2031;box-shadow:0 4px 15px rgba(11,32,49,.03)}
 .exp-experience-wrap{padding-top:64px;padding-bottom:96px}
-.exp-experience-wrap h2{margin-top:0}
+.exp-experience-wrap h2{font-family:'Times New Roman',Times,Georgia,serif;font-size:1.45rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#0b2031;margin-top:0;margin-bottom:24px}
 .exp-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px}
-.case-card{background:#fff;border:1px solid #e6dece;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
-.case-card strong{font:600 15px/1.4 'DM Sans',sans-serif;color:#0b2031}
-.case-card span{color:#4a5861;font-size:14.5px;line-height:1.7}
+.case-card{background:#fff;border:1px solid #e4dccb;border-left:3px solid #c4a16a;padding:22px 24px 20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 15px rgba(11,32,49,.03)}
+.case-card strong{font-family:'Times New Roman',Times,Georgia,serif;font-size:17.5px;font-weight:700;line-height:1.45;color:#0b2031}
+.case-card span{font-family:'Times New Roman',Times,Georgia,serif;font-size:16px;line-height:1.75;color:#334149;text-align:justify;text-justify:inter-word}
 
 /* Partners page */
-.partner-list{display:flex;flex-direction:column;gap:28px;padding-bottom:72px}
-.partner-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:start;padding:28px;background:#fff;border:1px solid #e6dece}
-.partner-photo img{width:100%;height:auto;display:block;border:0;background:#102536;box-shadow:0 12px 30px rgba(11,32,49,.12)}
-.partner-name{font:500 clamp(22px,2.2vw,30px)/1.3 'Playfair Display',serif;color:#0b2031;margin:0 0 18px;padding:0;border:0}
-.partner-copy .about-body{margin:0}
+.partner-list{display:flex;flex-direction:column;gap:30px;padding-bottom:72px}
+.partner-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:34px;align-items:start;padding:30px;background:#fff;border:1px solid #e4d8c5;border-left:4px solid #c4a16a;box-shadow:0 8px 25px rgba(11,32,49,.04)}
+.partner-photo img{width:100%;height:auto;display:block;border:0;background:#102536;box-shadow:0 12px 30px rgba(11,32,49,.12);outline:1px solid rgba(196,161,106,.3);outline-offset:6px}
+.partner-name{font:700 clamp(20px,2vw,25px)/1.35 'Times New Roman',Times,Georgia,serif;color:#0b2031;margin:0 0 18px;padding:0;border:0}
+.partner-copy .about-body{margin:0;font-family:'Times New Roman',Times,Georgia,serif;font-size:17.5px;line-height:1.85;text-align:justify;text-justify:inter-word}
+.partner-copy .about-body p{margin-bottom:1.1em}
+.partner-quote{font-style:italic;color:#0b2031;font-weight:700;margin:14px 0 16px;padding-left:18px;border-left:3px solid #c4a16a;line-height:1.7}
 
 /* Contact page */
 .contact-shell{padding-bottom:96px}
 .contact-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,420px);gap:36px;align-items:start}
 .contact-message{padding-right:12px}
-.contact-motto{font:500 clamp(24px,2.6vw,36px)/1.35 'Playfair Display',serif;color:#0b2031;margin:8px 0 0;max-width:18ch;text-align:left}
-.contact-card{background:#0b2031;color:#e8edf0;padding:34px 32px 36px;box-shadow:0 22px 50px rgba(11,32,49,.18)}
+.contact-motto{font:700 clamp(24px,2.6vw,34px)/1.35 'Times New Roman',Times,Georgia,serif;color:#0b2031;margin:16px 0 0;max-width:20ch;text-align:left}
+.contact-card{background:#0b2031;color:#e8edf0;padding:34px 32px 36px;box-shadow:0 22px 50px rgba(11,32,49,.18);border-left:4px solid #c4a16a}
 .contact-card .about-kicker{color:#e4c38a;margin-bottom:26px}
 .contact-list{margin:0;display:flex;flex-direction:column;gap:22px}
 .contact-list dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#e4c38a;margin-bottom:6px;font-weight:700}
-.contact-list dd{margin:0;display:flex;flex-direction:column;gap:6px;color:#d7dee4;font-size:15.5px;line-height:1.6}
+.contact-list dd{margin:0;display:flex;flex-direction:column;gap:6px;color:#d7dee4;font-size:16px;line-height:1.6;font-family:'Times New Roman',Times,Georgia,serif}
 .contact-list a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(228,195,138,.35);width:fit-content}
 .contact-list a:hover{color:#e4c38a;border-bottom-color:#e4c38a}
 
