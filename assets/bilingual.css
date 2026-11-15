@@ -72,6 +72,7 @@ p,
 .about-kesaksian-section{margin-top:44px;margin-bottom:12px}
 .kesaksian-card{background:#ffffff;border:1px solid #e4d8c5;border-left:4px solid #c4a16a;padding:34px 36px 30px;box-shadow:0 10px 30px rgba(11,32,49,.04)}
 .kesaksian-title{font:700 clamp(22px,2.1vw,26px)/1.35 'Times New Roman',Times,Georgia,serif;color:#0b2031;margin:0 0 16px;letter-spacing:.02em;text-transform:uppercase;text-align:left}
+.kesaksian-card .kesaksian-title:not(:first-child){margin-top:28px}
 .kesaksian-trilogy{font-family:'Times New Roman',Times,Georgia,serif;font-size:17.5px;font-weight:700;line-height:1.75;letter-spacing:.02em;color:#0b2031;text-align:left;margin:0 0 20px;text-transform:uppercase}
 .kesaksian-trilogy div{margin-bottom:4px}
 .kesaksian-body{font-family:'Times New Roman',Times,Georgia,serif;font-size:18px;line-height:1.85;color:#334149;text-align:justify;text-justify:inter-word;margin-bottom:0}
