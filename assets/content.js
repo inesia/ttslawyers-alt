@@ -135,13 +135,13 @@
       const path = el.getAttribute("data-cms-html");
       const value = getByPath(data, path);
       if (Array.isArray(value)) el.innerHTML = paragraphsToHtml(value);
-      else if (typeof value === "string") el.innerHTML = escapeHtml(value).replace(/\n/g, "<br>");
+      else if (typeof value === "string") el.innerHTML = formatParagraph(value);
     });
 
     root.querySelectorAll("[data-cms-lines]").forEach(function (el) {
       const path = el.getAttribute("data-cms-lines");
       const value = getByPath(data, path);
-      if (Array.isArray(value)) el.innerHTML = value.map(escapeHtml).join("<br>");
+      if (Array.isArray(value)) el.innerHTML = value.map(formatParagraph).join("<br>");
     });
   }
 
@@ -267,13 +267,20 @@
       pages.forEach(function (page) {
         const data = bag[page];
         if (!data) return;
-        const scope = document.querySelector('[data-cms-scope="' + page + '"]') || document;
-        fillSimple(scope, data);
+        const scopes = document.querySelectorAll('[data-cms-scope="' + page + '"]');
+        if (scopes.length > 0) {
+          scopes.forEach(function (scope) {
+            fillSimple(scope, data);
+          });
+        } else {
+          fillSimple(document, data);
+        }
 
-        if (page === "practice-areas") renderPractice(scope.querySelector("[data-cms-practice]") || document.querySelector("[data-cms-practice]"), data);
-        if (page === "track-record") renderCases(scope.querySelector("[data-cms-cases]") || document.querySelector("[data-cms-cases]"), data);
-        if (page === "team") renderTeam(scope.querySelector("[data-cms-team]") || document.querySelector("[data-cms-team]"), data);
-        if (page === "contact") renderContactFields(scope.querySelector("[data-cms-contact-fields]") || document.querySelector("[data-cms-contact-fields]"), data);
+        const primaryScope = scopes[0] || document;
+        if (page === "practice-areas") renderPractice(primaryScope.querySelector("[data-cms-practice]") || document.querySelector("[data-cms-practice]"), data);
+        if (page === "track-record") renderCases(primaryScope.querySelector("[data-cms-cases]") || document.querySelector("[data-cms-cases]"), data);
+        if (page === "team") renderTeam(primaryScope.querySelector("[data-cms-team]") || document.querySelector("[data-cms-team]"), data);
+        if (page === "contact") renderContactFields(primaryScope.querySelector("[data-cms-contact-fields]") || document.querySelector("[data-cms-contact-fields]"), data);
       });
 
       // Apply footer from the first content pack that defines it.
