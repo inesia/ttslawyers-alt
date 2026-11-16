@@ -31,6 +31,7 @@
     notice: document.getElementById("notice"),
     editor: document.getElementById("editor"),
     btnPublish: document.getElementById("btn-publish"),
+    btnSaveDraft: document.getElementById("btn-save-draft"),
     btnPreview: document.getElementById("btn-preview"),
     btnLogout: document.getElementById("btn-logout"),
     statusLine: document.getElementById("status-line"),
@@ -473,6 +474,32 @@
       btn.textContent = prevLabel;
     }
   });
+
+  if (els.btnSaveDraft) {
+    els.btnSaveDraft.addEventListener("click", async function () {
+      clearNotice();
+      const btn = els.btnSaveDraft;
+      const prevLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Menyimpan...";
+      try {
+        const data = collectData();
+        await api("/api/content/save-draft", {
+          method: "POST",
+          body: JSON.stringify({ lang: state.lang, page: state.page, data: data }),
+        });
+        state.data = data;
+        state.dirty = false;
+        showNotice("ok", "Draft berhasil disimpan.");
+        refreshStatus();
+      } catch (err) {
+        showNotice("err", err.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = prevLabel;
+      }
+    });
+  }
 
   els.btnPreview.addEventListener("click", function () {
     const meta = PAGES.find(function (p) {
