@@ -104,8 +104,8 @@ p,
 .exp-bullet-list li{position:relative;padding-left:22px;margin-bottom:10px;line-height:1.75;text-align:justify;text-justify:inter-word}
 .exp-bullet-list li::before{content:"";position:absolute;left:3px;top:9px;width:7px;height:7px;background-color:#c4a16a;transform:rotate(45deg);border-radius:1px}
 .case-sub-list{list-style:none;margin:6px 0 0 0;padding:0}
-.case-sub-list li{position:relative;padding-left:18px;margin-bottom:6px;line-height:1.6}
-.case-sub-list li::before{content:"";position:absolute;left:2px;top:8px;width:5.5px;height:5.5px;background-color:#c4a16a;transform:rotate(45deg);border-radius:1px}
+.case-sub-list li{position:relative;padding-left:18px;margin-bottom:6px;line-height:1.75;font-family:'Times New Roman',Times,Georgia,serif;font-size:16px;color:#334149;text-align:justify;text-justify:inter-word}
+.case-sub-list li::before{content:"";position:absolute;left:2px;top:9px;width:5.5px;height:5.5px;background-color:#c4a16a;transform:rotate(45deg);border-radius:1px}
 .exp-band{background:#fbf9f5;border-top:1px solid #e4dccb;border-bottom:1px solid #e4dccb;margin-top:48px}
 .exp-band .page-shell{padding-top:64px;padding-bottom:64px}
 .exp-band h2{font-family:'Times New Roman',Times,Georgia,serif;font-size:1.45rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#0b2031;margin-top:0}
