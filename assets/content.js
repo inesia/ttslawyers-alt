@@ -188,7 +188,15 @@
           escapeHtml(m.name || "") +
           "</h2>" +
           '<div class="about-body">' +
-          paragraphsToHtml(m.paragraphs || []) +
+          (m.paragraphs || [])
+            .map(function (p) {
+              var s = String(p).trim();
+              if (s.startsWith("“") || s.startsWith('"')) {
+                return '<div class="partner-quote">' + escapeHtml(s) + '</div>';
+              }
+              return '<p>' + formatParagraph(p) + '</p>';
+            })
+            .join("") +
           "</div></div></article>"
         );
       })

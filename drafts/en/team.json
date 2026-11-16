@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "Partners | TTS Law Firm",
+    "description": "TTS Law Firm — Timotius & Partners"
+  },
+  "eyebrow": "PARTNERS",
+  "pageTitle": "EXECUTIVE FIRM PROFILE",
+  "members": [
+    {
+      "name": "Senior Partner Prof. Dr. M. S. Tumanggor, SH. M.Si. CTA.",
+      "photo": {
+        "src": "assets/slide-4-image-3.jpg",
+        "alt": "Senior Partner Prof. Dr. M. S. Tumanggor, SH. M.Si. CTA."
+      },
+      "paragraphs": [
+        "Prior to joining this Law Firm, he spent decades in Capital Markets as Senior Official at Capital Market Executive Agency (BAPEPAM), later BAPEPAM-LK, now Financial Services Authority (OJK). He is a “Grand Master” of change, reform, and formulation of various Capital Market regulations enabling companies to go public.",
+        "Author of several scientific works on Capital Markets and lecturer at several universities in Indonesia. We need to rewrite his strong fundamental thought:",
+        "“The progress and prosperity of a nation and state can also be measured from the progress of its Capital Market.”"
+      ]
+    },
+    {
+      "name": "Senior Partner Dr. Tjoe K. Sugiharto, SH., MBA. D.TH.",
+      "photo": {
+        "src": "assets/slide-4-image-5.jpg",
+        "alt": "Senior Partner Dr. Tjoe K. Sugiharto, SH., MBA. D.TH."
+      },
+      "paragraphs": [
+        "Business in his blood, a true businessman and banker, he formerly held the highest position as President Director of PT. Bank Mayapada Internasional, Tbk., now Commissioner, then joined to this Law Firm.",
+        "Banking for him is like flowing water and a racehorse running fastest and with precision - the ultimate analyst and decision-maker at the top. Under him, Mayapada flourished as one of Indonesia's largest private banks with diversified businesses."
+      ]
+    },
+    {
+      "name": "Partner A. Rogarani Ari, SH. alias “Roger”",
+      "photo": {
+        "src": "assets/slide-5-image-3.jpg",
+        "alt": "Partner A. Rogarani Ari, SH. alias “Roger”"
+      },
+      "paragraphs": [
+        "Corporate legal counsel specializing in General Corporate Law, Financial Technology (Fintech) and Compliance of Payment System Reporting and Personal Data Protection Law. Establishment of Joint Venture Companies (JVC), OSS licensing, handling various cooperation agreements.",
+        "In this digitalization era, he actively conducts legal research on establishment and extension of Electronic System Operators (PSE), Electronic Trading Operators (PPMSE), Data Center Placement, and privacy compliance.",
+        "For legal compliance, together with clients he manages and submits Investment Activity Reports (LKPM), drafting Privacy Policies and Terms of Use for accounting software development companies, accompanies internal teams in Legal Due Diligence, Acquisitions and Corporate Actions. Strong in project management, regular presentations, internet and field research, good relations with Notaries and Legal Consultants in Indonesia and abroad. Currently pursuing legal studies in Australia."
+      ]
+    },
+    {
+      "name": "Client Relationship Ir. Jidin Napitupulu, MM.",
+      "photo": {
+        "src": "assets/slide-5-image-4.jpg",
+        "alt": "Client Relationship Ir. Jidin Napitupulu, MM."
+      },
+      "paragraphs": [
+        "Businessman, ex-staff of PT. Bank Negara Indonesia (Persero) Tbk., Indonesian Bank Restructuring Agency (IBRA/BPPN) and short course in Capital Markets.",
+        "He plays a vital role as bridge between Firm and clients.",
+        "Extensive network with government agencies and private sector.",
+        "The success of the Firm is also his success."
+      ]
+    }
+  ],
+  "footer": {
+    "brand": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
+    "contactLabel": "CONTACT",
+    "contactHref": "en-kontak.html"
+  }
+}

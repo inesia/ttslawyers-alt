@@ -3,11 +3,11 @@
     "title": "Contact | TTS Law Firm",
     "description": "TTS Law Firm — Timotius & Partners"
   },
-  "eyebrow": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
-  "pageTitle": "Contact",
-  "messageKicker": "TTS LAW FIRM - TIMOTIUS & PARTNERS’ MESSAGE",
-  "message": "The most important points outlined above serve as the strong foundation and key to your success in hiring the legal services of TTS Law Firm - Timotius & Partners.",
-  "motto": "“With Law, Your Business Is Secured.”",
+  "eyebrow": "CONTACT",
+  "pageTitle": "EXECUTIVE FIRM PROFILE",
+  "messageKicker": "MESSAGE FROM TTS LAW FIRM",
+  "message": "The important matters conveyed above become strong foundation and key to your success using legal services of **TTS Law Firm - Timotius & Partners.**",
+  "motto": "“With law, your business is secured.”",
   "cardKicker": "CONTACT US",
   "fields": [
     {
@@ -25,7 +25,12 @@
         {
           "href": "mailto:timotiuslawyer@gmail.com",
           "text": "timotiuslawyer@gmail.com"
-        },
+        }
+      ]
+    },
+    {
+      "label": "Secretary",
+      "values": [
         {
           "href": "mailto:simbolonlaw@ttslawyers.com",
           "text": "simbolonlaw@ttslawyers.com"
@@ -33,7 +38,7 @@
       ]
     },
     {
-      "label": "Tel",
+      "label": "Telp",
       "values": [
         {
           "href": "tel:+62213922219",
@@ -54,7 +59,7 @@
       "label": "Address",
       "values": [
         {
-          "text": "Jalan Pasuruan No.28, Menteng, Jakarta Pusat 10310, Indonesia."
+          "text": "Jalan Pasuruan No. 28, Menteng, Jakarta Pusat 10310, Indonesia."
         }
       ]
     }

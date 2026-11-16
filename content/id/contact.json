@@ -3,11 +3,11 @@
     "title": "Kontak | TTS Law Firm",
     "description": "TTS Law Firm — Timotius & Partners"
   },
-  "eyebrow": "EXECUTIVE FIRM PROFILE",
-  "pageTitle": "Kontak",
+  "eyebrow": "KONTAK",
+  "pageTitle": "EXECUTIVE FIRM PROFILE",
   "messageKicker": "PESAN TTS LAW FIRM - TIMOTIUS & PARTNERS",
-  "message": "Hal-hal penting yang telah di sampaikan di atas, menjadi dasar yang kuat dan kunci kesuksesan anda memakai jasa dan bantuan hukum TTS Law Firm - Timotius & Partners.",
-  "motto": "“Dengan Hukum, Bisnis Anda Terjamin.”",
+  "message": "Hal-hal penting yang telah di sampaikan di atas, menjadi dasar yang kuat dan kunci kesuksesan anda memakai jasa dan bantuan hukum **TTS Law Firm - Timotius & Partners.**",
+  "motto": "“Dengan hukum, bisnis anda terjamin”.",
   "cardKicker": "HUBUNGI KAMI",
   "fields": [
     {
@@ -20,12 +20,17 @@
       ]
     },
     {
-      "label": "Email Sekretaris",
+      "label": "Email",
       "values": [
         {
           "text": "timotiuslawyer@gmail.com",
           "href": "mailto:timotiuslawyer@gmail.com"
-        },
+        }
+      ]
+    },
+    {
+      "label": "Sekretaris",
+      "values": [
         {
           "text": "simbolonlaw@ttslawyers.com",
           "href": "mailto:simbolonlaw@ttslawyers.com"

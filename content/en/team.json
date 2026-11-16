@@ -3,57 +3,55 @@
     "title": "Partners | TTS Law Firm",
     "description": "TTS Law Firm — Timotius & Partners"
   },
-  "eyebrow": "TTS LAW FIRM — TIMOTIUS & PARTNERS",
-  "pageTitle": "Partners",
+  "eyebrow": "PARTNERS",
+  "pageTitle": "EXECUTIVE FIRM PROFILE",
   "members": [
     {
-      "name": "Partner Prof. Dr. M. S. Tumanggor, SH. M.Si. CTA.",
+      "name": "Senior Partner Prof. Dr. M. S. Tumanggor, SH. M.Si. CTA.",
       "photo": {
         "src": "assets/slide-4-image-3.jpg",
-        "alt": "Partner portrait"
+        "alt": "Senior Partner Prof. Dr. M. S. Tumanggor, SH. M.Si. CTA."
       },
       "paragraphs": [
-        "Prior to joining, he dedicated decades to capital markets as high official at BAPEPAM RI, later BAPEPAM-LK, then OJK (Financial Services Authority). He is considered a \"Grand Master\" - pivotal in transformation, renewal and formulation of capital market regulations enabling companies to go public.",
-        "He authors scholarly works on capital markets and lectures at several universities in Indonesia.",
-        "We must rewrite his powerful and fundamental thought and argument: \"Progress and prosperity of a nation and state can also be measured by advancement of its capital market in that country.\""
+        "Prior to joining this Law Firm, he spent decades in Capital Markets as Senior Official at Capital Market Executive Agency (BAPEPAM), later BAPEPAM-LK, now Financial Services Authority (OJK). He is a “Grand Master” of change, reform, and formulation of various Capital Market regulations enabling companies to go public.",
+        "Author of several scientific works on Capital Markets and lecturer at several universities in Indonesia. We need to rewrite his strong fundamental thought:",
+        "“The progress and prosperity of a nation and state can also be measured from the progress of its Capital Market.”"
       ]
     },
     {
-      "name": "Partner Dr. Tjoe K. Sugiharto, SH., MBA. D.TH.",
+      "name": "Senior Partner Dr. Tjoe K. Sugiharto, SH., MBA. D.TH.",
       "photo": {
         "src": "assets/slide-4-image-5.jpg",
-        "alt": "Partner portrait"
+        "alt": "Senior Partner Dr. Tjoe K. Sugiharto, SH., MBA. D.TH."
       },
       "paragraphs": [
-        "Business is in his blood - a true businessman and genuine banker. He once held highest position as President Director of PT Bank Mayapada International, Tbk., now Commissioner, then joined the Firm.",
-        "Banking for him is like flowing water and the fastest, most precise racehorse - the ultimate analyst and best decision-maker at top management. There is tangible proof where the bank flourished as one of largest private banks in Indonesia.",
-        "In his hands, PT Bank Mayapada International, Tbk., grew with business diversification."
+        "Business in his blood, a true businessman and banker, he formerly held the highest position as President Director of PT. Bank Mayapada Internasional, Tbk., now Commissioner, then joined to this Law Firm.",
+        "Banking for him is like flowing water and a racehorse running fastest and with precision - the ultimate analyst and decision-maker at the top. Under him, Mayapada flourished as one of Indonesia's largest private banks with diversified businesses."
       ]
     },
     {
-      "name": "A. Rogarani Ari, SH., alias “Roger”",
+      "name": "Partner A. Rogarani Ari, SH. alias “Roger”",
       "photo": {
         "src": "assets/slide-5-image-3.jpg",
-        "alt": "Partner portrait"
+        "alt": "Partner A. Rogarani Ari, SH. alias “Roger”"
       },
       "paragraphs": [
-        "Advocate and Corporate Legal Consultant.",
-        "Focus and depth in General Corporate Law, Financial Technology (Fintech) and Compliance of Payment Service Provider Reporting Obligations and Personal Data Protection Law. Establishment of Joint Venture Companies (JVC), OSS licensing, handling various cooperation agreements.",
-        "In this era of digitalization, he actively conducts legal research related to establishment and extension of Electronic System Operators (PSE), Electronic Commerce Operators (PPMSE), Data Center Placement and data privacy adjustments.",
-        "For Legal Compliance, together with clients he manages and submits Investment Activity Reports (LKPM), drafts Privacy Policy and Terms of Use for accounting software development companies, assists internal teams in Legal Due Diligence, acquisitions and corporate actions. Strong in project management, delivering regular presentations, internet and field research, excellent relations with Notaries and Legal Consultants in Indonesia and abroad. Currently continuing legal studies in Australia."
+        "Corporate legal counsel specializing in General Corporate Law, Financial Technology (Fintech) and Compliance of Payment System Reporting and Personal Data Protection Law. Establishment of Joint Venture Companies (JVC), OSS licensing, handling various cooperation agreements.",
+        "In this digitalization era, he actively conducts legal research on establishment and extension of Electronic System Operators (PSE), Electronic Trading Operators (PPMSE), Data Center Placement, and privacy compliance.",
+        "For legal compliance, together with clients he manages and submits Investment Activity Reports (LKPM), drafting Privacy Policies and Terms of Use for accounting software development companies, accompanies internal teams in Legal Due Diligence, Acquisitions and Corporate Actions. Strong in project management, regular presentations, internet and field research, good relations with Notaries and Legal Consultants in Indonesia and abroad. Currently pursuing legal studies in Australia."
       ]
     },
     {
-      "name": "Ir. Jidin Napitupulu, MM.",
+      "name": "Client Relationship Ir. Jidin Napitupulu, MM.",
       "photo": {
         "src": "assets/slide-5-image-4.jpg",
-        "alt": "Partner portrait"
+        "alt": "Client Relationship Ir. Jidin Napitupulu, MM."
       },
       "paragraphs": [
-        "Businessman, ex-staff PT Bank Negara Indonesia (Persero) Tbk., Indonesian Bank Restructuring Agency (IBRA/BPPN) and short course in Capital Markets.",
-        "He plays vital role as liaison between Firm and clients (Client Relationship).",
-        "His network is extensive with government institutions and private sector.",
-        "The Firm's success is also his success as Client Relationship."
+        "Businessman, ex-staff of PT. Bank Negara Indonesia (Persero) Tbk., Indonesian Bank Restructuring Agency (IBRA/BPPN) and short course in Capital Markets.",
+        "He plays a vital role as bridge between Firm and clients.",
+        "Extensive network with government agencies and private sector.",
+        "The success of the Firm is also his success."
       ]
     }
   ],
