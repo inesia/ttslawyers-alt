@@ -77,6 +77,8 @@ p,
 .kesaksian-trilogy div{margin-bottom:4px}
 .kesaksian-body{font-family:'Times New Roman',Times,Georgia,serif;font-size:18px;line-height:1.85;color:#334149;text-align:justify;text-justify:inter-word;margin-bottom:0}
 .kesaksian-body strong,.kesaksian-body b{color:#0b2031;font-weight:700}
+.about-pillars{margin-top:38px;margin-bottom:28px}
+.about-pillars .about-body p{margin-bottom:1.3em}
 .about-vision-band{background:
   radial-gradient(ellipse 70% 55% at 12% 0%,rgba(196,161,106,.12),transparent 55%),
   linear-gradient(180deg,#102536 0%,#0b2031 48%,#091826 100%);
