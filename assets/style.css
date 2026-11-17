@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 :root {
-  --navy: #2681ae;
-  --navy-dark: #14445c;
-  --navy-deep: #0d2b39;
-  --blue-accent: #64d3ef;
-  --gold: #f5cb68;
-  --gold-light: #fae4b5;
-  --gold-bright: #ffd875;
-  --paper: #14445c;
-  --text-body: #111111;
+  --navy: #64d3ef;
+  --navy-dark: #4abfe0;
+  --navy-deep: #072838;
+  --blue-accent: #d0f6ff;
+  --gold: #83bd48;
+  --gold-light: #b5db8a;
+  --gold-bright: #9fd15f;
+  --paper: #d0f6ff;
+  --text-body: #072838;
 }
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background-color: #2681ae;
+  background-color: #64d3ef;
   background-image:
-    radial-gradient(ellipse 120% 90% at 100% 0%, #64d3ef 0%, rgba(100, 211, 239, 0.55) 28%, transparent 62%),
-    radial-gradient(ellipse 90% 70% at 0% 100%, #1e6f97 0%, transparent 55%),
-    linear-gradient(160deg, #64d3ef 0%, #3aa0c4 38%, #2681ae 72%, #1e6f97 100%);
+    radial-gradient(ellipse 120% 90% at 100% 0%, #d0f6ff 0%, rgba(208, 246, 255, 0.75) 30%, transparent 62%),
+    radial-gradient(ellipse 90% 70% at 0% 100%, #4abfe0 0%, transparent 55%),
+    linear-gradient(160deg, #d0f6ff 0%, #8adef3 35%, #64d3ef 78%, #4abfe0 100%);
   background-attachment: fixed;
   color: var(--text-body);
   font: 16px/1.85 'DM Sans', sans-serif;
@@ -29,8 +29,8 @@ p {
   text-justify: inter-word;
 }
 header {
-  background: linear-gradient(90deg, #1e6f97 0%, #2681ae 45%, #64d3ef 100%);
-  color: #ffffff;
+  background: linear-gradient(90deg, #64d3ef 0%, #8adef3 45%, #d0f6ff 100%);
+  color: #072838;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@ header {
   display: flex;
   align-items: center;
   gap: 13px;
-  color: #ffffff;
+  color: #072838;
   text-decoration: none;
   font-weight: 700;
   letter-spacing: .1em;
@@ -72,7 +72,7 @@ nav {
   flex-wrap: wrap;
 }
 nav a {
-  color: #e2e8f0;
+  color: #072838;
   text-decoration: none;
   font-size: 12px;
   transition: color .2s ease;
@@ -132,14 +132,14 @@ h1 {
   height: auto;
   object-fit: contain;
   border: 1px solid rgba(100, 211, 239, 0.3);
-  background: #14445c;
+  background: #3ab4d8;
 }
 footer {
-  background: linear-gradient(90deg, #1e6f97 0%, #2681ae 100%);
+  background: linear-gradient(90deg, #64d3ef 0%, #d0f6ff 100%);
   padding: 34px max(24px, calc((100vw - 1180px) / 2));
   display: flex;
   justify-content: space-between;
-  color: #dce2e6;
+  color: #072838;
   font-size: 12px;
   letter-spacing: .08em;
   border-top: 1px solid rgba(100, 211, 239, 0.28);
@@ -166,8 +166,8 @@ footer a:hover {
   .menu {
     display: block;
     background: none;
-    border: 1px solid rgba(100, 211, 239, 0.4);
-    color: #ffffff;
+    border: 1px solid rgba(7, 40, 56, 0.35);
+    color: #072838;
     font-size: 24px;
     padding: 5px 12px;
   }
