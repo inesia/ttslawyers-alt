@@ -907,8 +907,9 @@ body:has(main.page-partners) footer {
 /* Page themes: light (Keahlian / Kontak) */
 body:has(main.page-expertise),
 body:has(main.page-contact) {
-  background: #ffffff;
-  background-image: none;
+  background-color: #E3E3E3;
+  background-image: linear-gradient(180deg, #D0D0D0 0%, #E3E3E3 50%, #F5F5F5 100%);
+  background-attachment: fixed;
   color: #072838;
 }
 body:has(main.page-expertise) main,
@@ -939,7 +940,7 @@ body:has(main.page-contact) .contact-list a {
   color: #072838;
 }
 body:has(main.page-expertise) .exp-band {
-  background: #f7f7f7;
+  background: linear-gradient(180deg, #D0D0D0 0%, #E3E3E3 50%, #F5F5F5 100%);
   border-top-color: rgba(7, 40, 56, 0.12);
   border-bottom-color: rgba(7, 40, 56, 0.12);
 }
@@ -947,13 +948,13 @@ body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card,
 body:has(main.page-contact) .contact-card {
-  background: #ffffff;
+  background: #F5F5F5;
   border-color: rgba(7, 40, 56, 0.14);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 body:has(main.page-expertise) footer,
 body:has(main.page-contact) footer {
-  background: #ffffff;
+  background: linear-gradient(180deg, #E3E3E3 0%, #F5F5F5 100%);
   color: #072838;
   border-top-color: rgba(7, 40, 56, 0.12);
 }
