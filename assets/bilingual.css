@@ -18,10 +18,10 @@ header.topbar nav a {
   transition: color .2s ease;
 }
 header.topbar nav a:hover {
-  color: #83bd48;
+  color: #f5cb68;
 }
 nav a.active {
-  color: #83bd48;
+  color: #f5cb68;
 }
 .lang-switch {
   display: inline-flex;
@@ -53,9 +53,9 @@ nav a.active {
   background: rgba(208, 246, 255, 0.7);
 }
 .lang-switch a.selected {
-  background: #83bd48;
+  background: #f5cb68;
   color: #072838;
-  box-shadow: 0 4px 14px rgba(131, 189, 72, 0.45);
+  box-shadow: 0 4px 14px rgba(245, 203, 104, 0.45);
 }
 
 /* Home / Hero */
@@ -95,7 +95,7 @@ nav a.active {
 .hero-caption span {
   font-size: 12px;
   letter-spacing: .24em;
-  color: #b5db8a;
+  color: #fae4b5;
 }
 .hero-caption h1 {
   color: #ffffff;
@@ -108,7 +108,7 @@ nav a.active {
 }
 .hero-cta {
   display: inline-block;
-  border: 1px solid #9fd15f;
+  border: 1px solid #ffd875;
   color: #ffffff;
   padding: 13px 21px;
   text-decoration: none;
@@ -119,7 +119,7 @@ nav a.active {
   transition: all .2s ease;
 }
 .hero-cta:hover {
-  background: #83bd48;
+  background: #f5cb68;
   color: #072838;
 }
 .home-intro {
@@ -140,7 +140,7 @@ nav a.active {
 }
 .home-main > .eyebrow {
   margin-top: 65px;
-  color: #83bd48;
+  color: #f5cb68;
 }
 .placeholder {
   border: 1px solid rgba(100, 211, 239, 0.32);
@@ -149,11 +149,11 @@ nav a.active {
   margin-top: 30px;
   margin-bottom: 90px;
   min-height: 240px;
-  border-left: 4px solid #83bd48;
+  border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
 }
 .placeholder-tag {
-  color: #83bd48;
+  color: #f5cb68;
   font-size: 12px;
   letter-spacing: .14em;
   font-weight: 700;
@@ -246,7 +246,7 @@ main.page-contact {
   width: 72px;
   height: 2px;
   margin-top: 26px;
-  background: linear-gradient(90deg, #83bd48 0%, #64d3ef 65%, transparent 100%);
+  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
 }
 
 /* Paragraph Justification & Typography */
@@ -258,7 +258,7 @@ p,
   text-justify: inter-word;
 }
 .about-kicker {
-  color: #83bd48;
+  color: #f5cb68;
   font-size: 12px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -295,7 +295,7 @@ p,
   margin-top: 1.6rem;
   margin-bottom: 0.45rem;
   text-align: left;
-  color: #b5db8a;
+  color: #fae4b5;
 }
 .about-body > .sub-title-block:first-child,
 .sub-title-block:first-child {
@@ -320,7 +320,7 @@ p,
   border: 0;
   background: #3ab4d8;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-  outline: 1px solid rgba(131, 189, 72, 0.55);
+  outline: 1px solid rgba(245, 203, 104, 0.55);
   outline-offset: 10px;
 }
 .about-kesaksian-section {
@@ -330,7 +330,7 @@ p,
 .kesaksian-card {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 4px solid #83bd48;
+  border-left: 4px solid #f5cb68;
   padding: 34px 36px 30px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
@@ -352,7 +352,7 @@ p,
   font-weight: 700;
   line-height: 1.75;
   letter-spacing: .02em;
-  color: #83bd48;
+  color: #f5cb68;
   text-align: left;
   margin: 0 0 20px;
   text-transform: uppercase;
@@ -407,7 +407,7 @@ p,
   font-size: 1.45rem;
 }
 .about-vision-band .about-kicker {
-  color: #83bd48;
+  color: #f5cb68;
 }
 .about-vision-band .about-body {
   color: #072838;
@@ -431,12 +431,12 @@ p,
 }
 .about-vision-band .about-body strong em,
 .about-vision-band .about-body em strong {
-  color: #83bd48;
+  color: #f5cb68;
   font-weight: 700;
   font-style: italic;
 }
 .about-vision-band .sub-title-block {
-  color: #b5db8a;
+  color: #fae4b5;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-weight: 700;
   font-size: 1.22rem;
@@ -475,7 +475,7 @@ p,
   padding: 28px 28px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 4px solid #83bd48;
+  border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
@@ -500,7 +500,7 @@ p,
   top: 9px;
   width: 7px;
   height: 7px;
-  background-color: #83bd48;
+  background-color: #f5cb68;
   transform: rotate(45deg);
   border-radius: 1px;
 }
@@ -527,7 +527,7 @@ p,
   top: 9px;
   width: 5.5px;
   height: 5.5px;
-  background-color: #83bd48;
+  background-color: #f5cb68;
   transform: rotate(45deg);
   border-radius: 1px;
 }
@@ -569,7 +569,7 @@ p,
 .practice-item {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(100, 211, 239, 0.45);
-  border-top: 3px solid #83bd48;
+  border-top: 3px solid #f5cb68;
   padding: 18px 20px;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16.5px;
@@ -606,7 +606,7 @@ p,
 .case-card {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 3px solid #83bd48;
+  border-left: 3px solid #f5cb68;
   padding: 22px 24px 20px;
   display: flex;
   flex-direction: column;
@@ -649,7 +649,7 @@ p,
   padding: 30px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 4px solid #83bd48;
+  border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
@@ -660,7 +660,7 @@ p,
   border: 0;
   background: #3ab4d8;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-  outline: 1px solid rgba(131, 189, 72, 0.55);
+  outline: 1px solid rgba(245, 203, 104, 0.55);
   outline-offset: 6px;
 }
 .partner-name {
@@ -684,11 +684,11 @@ p,
 }
 .partner-quote {
   font-style: italic;
-  color: #b5db8a;
+  color: #fae4b5;
   font-weight: 700;
   margin: 14px 0 16px;
   padding-left: 18px;
-  border-left: 3px solid #83bd48;
+  border-left: 3px solid #f5cb68;
   line-height: 1.7;
 }
 
@@ -718,10 +718,10 @@ p,
   padding: 34px 32px 36px;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(100, 211, 239, 0.38);
-  border-left: 4px solid #83bd48;
+  border-left: 4px solid #f5cb68;
 }
 .contact-card .about-kicker {
-  color: #83bd48;
+  color: #f5cb68;
   margin-bottom: 26px;
 }
 .contact-list {
@@ -734,7 +734,7 @@ p,
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #83bd48;
+  color: #f5cb68;
   margin-bottom: 6px;
   font-weight: 700;
 }
@@ -751,13 +751,13 @@ p,
 .contact-list a {
   color: #072838;
   text-decoration: none;
-  border-bottom: 1px solid rgba(131, 189, 72, 0.5);
+  border-bottom: 1px solid rgba(245, 203, 104, 0.5);
   width: fit-content;
   transition: color .2s ease, border-color .2s ease;
 }
 .contact-list a:hover {
-  color: #83bd48;
-  border-bottom-color: #83bd48;
+  color: #f5cb68;
+  border-bottom-color: #f5cb68;
 }
 
 /* Responsive */
@@ -852,4 +852,165 @@ p,
   .contact-card {
     padding: 26px 20px;
   }
+}
+
+/* Page themes: dark (Firma Hukum / Partners) */
+body:has(main.page-about),
+body:has(main.page-partners) {
+  background: #202020;
+  background-image: none;
+  color: #ffffff;
+}
+body:has(main.page-about) main,
+body:has(main.page-partners) main,
+body:has(main.page-about) main h1,
+body:has(main.page-about) main h2,
+body:has(main.page-partners) main h1,
+body:has(main.page-partners) main h2,
+body:has(main.page-about) .about-intro h1,
+body:has(main.page-about) .page-intro h1,
+body:has(main.page-partners) .page-intro h1,
+body:has(main.page-about) .about-lead,
+body:has(main.page-about) .about-body,
+body:has(main.page-about) .about-body strong,
+body:has(main.page-about) .about-body b,
+body:has(main.page-about) .kesaksian-title,
+body:has(main.page-about) .kesaksian-body,
+body:has(main.page-about) .kesaksian-body strong,
+body:has(main.page-about) .kesaksian-body b,
+body:has(main.page-about) .about-vision-band,
+body:has(main.page-about) .about-vision-band h2,
+body:has(main.page-about) .about-vision-band .about-body,
+body:has(main.page-about) .about-vision-band .about-body strong,
+body:has(main.page-about) .about-vision-band .about-body b,
+body:has(main.page-partners) .partner-name,
+body:has(main.page-partners) .partner-copy .about-body {
+  color: #ffffff;
+}
+body:has(main.page-about) .about-vision-band {
+  background: #202020;
+  border-top-color: rgba(245, 203, 104, 0.35);
+  border-bottom-color: rgba(245, 203, 104, 0.35);
+}
+body:has(main.page-about) .kesaksian-card,
+body:has(main.page-partners) .partner-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(245, 203, 104, 0.35);
+}
+body:has(main.page-about) footer,
+body:has(main.page-partners) footer {
+  background: #151515;
+  color: #ffffff;
+  border-top-color: rgba(245, 203, 104, 0.28);
+}
+
+/* Page themes: light (Keahlian / Kontak) */
+body:has(main.page-expertise),
+body:has(main.page-contact) {
+  background: #ffffff;
+  background-image: none;
+  color: #072838;
+}
+body:has(main.page-expertise) main,
+body:has(main.page-contact) main,
+body:has(main.page-expertise) main h1,
+body:has(main.page-expertise) main h2,
+body:has(main.page-contact) main h1,
+body:has(main.page-contact) main h2,
+body:has(main.page-expertise) .page-intro h1,
+body:has(main.page-contact) .page-intro h1,
+body:has(main.page-expertise) .founder-lead-title,
+body:has(main.page-expertise) .about-body,
+body:has(main.page-expertise) .about-body strong,
+body:has(main.page-expertise) .about-body b,
+body:has(main.page-expertise) .exp-bullet-list,
+body:has(main.page-expertise) .case-sub-list li,
+body:has(main.page-expertise) .exp-band h2,
+body:has(main.page-expertise) .exp-practice-lead,
+body:has(main.page-expertise) .practice-item,
+body:has(main.page-expertise) .exp-experience-wrap h2,
+body:has(main.page-expertise) .case-card strong,
+body:has(main.page-expertise) .case-card span,
+body:has(main.page-contact) .about-lead,
+body:has(main.page-contact) .contact-motto,
+body:has(main.page-contact) .contact-card,
+body:has(main.page-contact) .contact-list dd,
+body:has(main.page-contact) .contact-list a {
+  color: #072838;
+}
+body:has(main.page-expertise) .exp-band {
+  background: #f7f7f7;
+  border-top-color: rgba(7, 40, 56, 0.12);
+  border-bottom-color: rgba(7, 40, 56, 0.12);
+}
+body:has(main.page-expertise) .exp-founder-bio,
+body:has(main.page-expertise) .practice-item,
+body:has(main.page-expertise) .case-card,
+body:has(main.page-contact) .contact-card {
+  background: #ffffff;
+  border-color: rgba(7, 40, 56, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+body:has(main.page-expertise) footer,
+body:has(main.page-contact) footer {
+  background: #ffffff;
+  color: #072838;
+  border-top-color: rgba(7, 40, 56, 0.12);
+}
+
+/* Light pages: gold accents -> blue #1e76a4 */
+body:has(main.page-expertise) .mark,
+body:has(main.page-contact) .mark,
+body:has(main.page-expertise) .brand small,
+body:has(main.page-contact) .brand small,
+body:has(main.page-expertise) nav a.active,
+body:has(main.page-contact) nav a.active,
+body:has(main.page-expertise) nav a:hover,
+body:has(main.page-contact) nav a:hover,
+body:has(main.page-expertise) .eyebrow,
+body:has(main.page-contact) .eyebrow,
+body:has(main.page-expertise) .about-kicker,
+body:has(main.page-contact) .about-kicker,
+body:has(main.page-expertise) .sub-title-block,
+body:has(main.page-contact) .sub-title-block,
+body:has(main.page-expertise) .partner-quote,
+body:has(main.page-contact) .contact-card .about-kicker,
+body:has(main.page-contact) .contact-list dt,
+body:has(main.page-contact) .contact-list a:hover,
+body:has(main.page-expertise) footer a,
+body:has(main.page-contact) footer a {
+  color: #1e76a4;
+}
+body:has(main.page-expertise) .lang-switch a.selected,
+body:has(main.page-contact) .lang-switch a.selected {
+  background: #1e76a4;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(30, 118, 164, 0.35);
+}
+body:has(main.page-expertise) .page-intro h1::after,
+body:has(main.page-contact) .page-intro h1::after {
+  background: linear-gradient(90deg, #1e76a4 0%, #64d3ef 65%, transparent 100%);
+}
+body:has(main.page-expertise) .exp-founder-bio,
+body:has(main.page-expertise) .practice-item,
+body:has(main.page-expertise) .case-card,
+body:has(main.page-contact) .contact-card {
+  border-left-color: #1e76a4;
+}
+body:has(main.page-expertise) .practice-item {
+  border-top-color: #1e76a4;
+}
+body:has(main.page-expertise) .exp-bullet-list li::before,
+body:has(main.page-expertise) .case-sub-list li::before {
+  background-color: #1e76a4;
+}
+body:has(main.page-contact) .contact-list a {
+  border-bottom-color: rgba(30, 118, 164, 0.5);
+}
+body:has(main.page-contact) .contact-list a:hover {
+  border-bottom-color: #1e76a4;
+}
+body:has(main.page-expertise) footer a:hover,
+body:has(main.page-contact) footer a:hover {
+  color: #64d3ef;
 }
