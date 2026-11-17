@@ -1,48 +1,56 @@
-/* Header & Navigation */
+/* Header & Navigation — gold + black (all pages) */
 header.topbar {
   padding: 16px 3.3%;
   gap: 18px;
-  background: linear-gradient(90deg, #64d3ef 0%, #8adef3 45%, #d0f6ff 100%);
-  border-bottom: 1px solid rgba(100, 211, 239, 0.55);
+  background: linear-gradient(90deg, #e0b34a 0%, #f5cb68 45%, #ffd875 100%);
+  border-bottom: 1px solid #000000;
+  color: #000000;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 header.topbar nav {
   flex: 1;
   justify-content: center;
   gap: clamp(18px, 2.2vw, 40px);
 }
+header.topbar .brand,
+header.topbar .mark,
+header.topbar .brand small,
+header.topbar nav a,
+header.topbar .menu {
+  color: #000000;
+}
+header.topbar .mark {
+  border-right-color: rgba(0, 0, 0, 0.35);
+}
 header.topbar nav a {
   font-size: clamp(13px, 1vw, 15px);
   letter-spacing: .08em;
   white-space: nowrap;
-  color: #072838;
   transition: color .2s ease;
 }
-header.topbar nav a:hover {
-  color: #0d0d44;
-}
+header.topbar nav a:hover,
+header.topbar nav a.active,
 nav a.active {
-  color: #0d0d44;
-}
-header.topbar .mark,
-header.topbar .brand small {
-  color: #0d0d44;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 .lang-switch {
   display: inline-flex;
   align-items: center;
   gap: 0;
   padding: 3px;
-  border: 1px solid rgba(100, 211, 239, 0.5);
+  border: 1px solid #000000;
   border-radius: 999px;
-  background: rgba(100, 211, 239, 0.45);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   white-space: nowrap;
 }
 .lang-switch span {
   display: none;
 }
 .lang-switch a {
-  color: #072838;
+  color: #000000;
   text-decoration: none;
   font-weight: 700;
   font-size: 11px;
@@ -53,33 +61,44 @@ header.topbar .brand small {
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 .lang-switch a:hover {
-  color: #072838;
-  background: rgba(208, 246, 255, 0.7);
+  color: #000000;
+  background: rgba(0, 0, 0, 0.12);
 }
 .lang-switch a.selected {
-  background: #0d0d44;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(13, 13, 68, 0.45);
+  background: #000000;
+  color: #f5cb68;
+  box-shadow: none;
 }
 
-/* Home / Hero */
+/* Home — gold page + gold footer; CTA black + gold text */
 body:has(main.home-main) {
-  color: #0d0d44;
+  color: #000000;
+  background: #f5cb68;
+  background-image: linear-gradient(160deg, #ffd875 0%, #f5cb68 45%, #e0b34a 100%);
 }
 body:has(main.home-main) footer {
-  color: #0d0d44;
+  background: linear-gradient(90deg, #e0b34a 0%, #f5cb68 100%);
+  color: #000000;
+  border-top: 1px solid #000000;
+}
+body:has(main.home-main) footer a {
+  color: #000000;
+}
+body:has(main.home-main) footer a:hover {
+  color: #000000;
+  text-decoration: underline;
 }
 .home-main {
   max-width: none;
   padding: 0;
   min-height: 80vh;
-  color: #0d0d44;
+  color: #000000;
 }
 .hero {
   position: relative;
   min-height: clamp(570px, 78vh, 900px);
   overflow: hidden;
-  background: #3ab4d8;
+  background: #000000;
 }
 .hero > img {
   position: absolute;
@@ -92,51 +111,52 @@ body:has(main.home-main) footer {
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(100, 211, 239, 0.88), rgba(100, 211, 239, 0.35) 75%),
-              linear-gradient(0deg, rgba(74, 191, 224, 0.8), transparent 60%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.4) 75%),
+              linear-gradient(0deg, rgba(0, 0, 0, 0.72), transparent 60%);
 }
 .hero-caption {
   position: absolute;
   bottom: 12%;
   left: max(5%, calc((100vw - 1180px) / 2));
   max-width: 700px;
-  color: #0d0d44;
+  color: #f5cb68;
   padding-right: 24px;
 }
 .hero-caption span {
   display: inline-block;
   font-size: 12px;
   letter-spacing: .24em;
-  color: #ffffff;
-  background: #0d0d44;
+  color: #000000;
+  background: #f5cb68;
+  border: 1px solid #f5cb68;
   padding: 8px 14px;
   line-height: 1.35;
 }
 .hero-caption h1 {
-  color: #0d0d44;
+  color: #f5cb68;
   border: 0;
   padding: 0;
   margin: 18px 0 30px;
   font-size: clamp(38px, 5vw, 76px);
   line-height: 1.16;
-  text-shadow: none;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 .hero-cta {
   display: inline-block;
-  border: 1px solid #0d0d44;
-  color: #ffffff;
+  border: 1px solid #f5cb68;
+  color: #000000;
   padding: 13px 21px;
   text-decoration: none;
   letter-spacing: .06em;
   font-size: 13px;
-  background: #0d0d44;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: #f5cb68;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   transition: all .2s ease;
 }
 .hero-cta:hover {
-  background: #1a1a66;
-  color: #ffffff;
-  border-color: #1a1a66;
+  background: transparent;
+  color: #f5cb68;
+  border-color: #f5cb68;
 }
 .home-intro {
   max-width: 1180px;
@@ -145,7 +165,7 @@ body:has(main.home-main) footer {
 }
 .home-intro h1 {
   font-size: 35px;
-  color: #0d0d44;
+  color: #000000;
 }
 .home-main > .eyebrow,
 .home-main > h1,
@@ -156,7 +176,7 @@ body:has(main.home-main) footer {
 }
 .home-main > .eyebrow {
   margin-top: 65px;
-  color: #0d0d44;
+  color: #000000;
 }
 .placeholder {
   border: 1px solid #f5cb68;
@@ -184,11 +204,12 @@ main:not(.home-main) {
 /* Client Artwork Hero (if picture used) */
 .hero:has(img) {
   min-height: 0;
-  background: #3ab4d8;
+  background: #000000;
 }
 .hero > picture {
   display: block;
   width: 100%;
+  background: #000000;
 }
 .hero:has(img) img {
   position: relative;
@@ -207,9 +228,15 @@ main:not(.home-main) {
   left: auto;
   right: auto;
   bottom: auto;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 32px 28px 40px;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 32px max(28px, calc((100vw - 1180px) / 2)) 40px;
+  background: #000000;
+  color: #f5cb68;
+}
+.hero:has(img) .hero-caption h1 {
+  color: #f5cb68;
 }
 
 section[id], main h2[id] {
@@ -937,7 +964,7 @@ body:has(main.page-partners) footer {
   border-top-color: #f5cb68;
 }
 
-/* Dark pages: page content keeps gold; nav/menu stay #0d0d44 */
+/* Dark pages: page content keeps gold; nav follows global gold+black */
 body:has(main.page-about) .eyebrow,
 body:has(main.page-partners) .eyebrow,
 body:has(main.page-about) .about-kicker,
@@ -952,22 +979,6 @@ body:has(main.page-partners) .partner-quote,
 body:has(main.page-about) footer a,
 body:has(main.page-partners) footer a {
   color: #f5cb68;
-}
-body:has(main.page-about) .mark,
-body:has(main.page-partners) .mark,
-body:has(main.page-about) .brand small,
-body:has(main.page-partners) .brand small,
-body:has(main.page-about) nav a.active,
-body:has(main.page-partners) nav a.active,
-body:has(main.page-about) nav a:hover,
-body:has(main.page-partners) nav a:hover {
-  color: #0d0d44;
-}
-body:has(main.page-about) .lang-switch a.selected,
-body:has(main.page-partners) .lang-switch a.selected {
-  background: #0d0d44;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(13, 13, 68, 0.45);
 }
 body:has(main.page-about) .about-intro h1::after,
 body:has(main.page-partners) .page-intro h1::after {
@@ -1019,10 +1030,7 @@ body:has(main.page-expertise) .exp-experience-wrap h2,
 body:has(main.page-expertise) .case-card strong,
 body:has(main.page-expertise) .case-card span,
 body:has(main.page-contact) .about-lead,
-body:has(main.page-contact) .contact-motto,
-body:has(main.page-contact) .contact-card,
-body:has(main.page-contact) .contact-list dd,
-body:has(main.page-contact) .contact-list a {
+body:has(main.page-contact) .contact-motto {
   color: #072838;
 }
 body:has(main.page-expertise) .exp-band {
@@ -1032,8 +1040,7 @@ body:has(main.page-expertise) .exp-band {
 }
 body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
-body:has(main.page-expertise) .case-card,
-body:has(main.page-contact) .contact-card {
+body:has(main.page-expertise) .case-card {
   background: rgba(255, 255, 255, 0.18);
   border-color: #f5cb68;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -1045,37 +1052,16 @@ body:has(main.page-contact) footer {
   border-top-color: rgba(7, 40, 56, 0.12);
 }
 
-/* Light pages: page accents gold #f5cb68; nav stays #0d0d44 */
+/* Light pages: page accents gold #f5cb68; nav follows global gold+black */
 body:has(main.page-expertise) .eyebrow,
 body:has(main.page-contact) .eyebrow,
 body:has(main.page-expertise) .about-kicker,
 body:has(main.page-contact) .about-kicker,
 body:has(main.page-expertise) .sub-title-block,
 body:has(main.page-contact) .sub-title-block,
-body:has(main.page-contact) .contact-card .about-kicker,
-body:has(main.page-contact) .contact-list a:hover,
 body:has(main.page-expertise) footer a,
 body:has(main.page-contact) footer a {
   color: #f5cb68;
-}
-body:has(main.page-contact) .contact-list dt {
-  color: #072838;
-}
-body:has(main.page-expertise) .mark,
-body:has(main.page-contact) .mark,
-body:has(main.page-expertise) .brand small,
-body:has(main.page-contact) .brand small,
-body:has(main.page-expertise) nav a.active,
-body:has(main.page-contact) nav a.active,
-body:has(main.page-expertise) nav a:hover,
-body:has(main.page-contact) nav a:hover {
-  color: #0d0d44;
-}
-body:has(main.page-expertise) .lang-switch a.selected,
-body:has(main.page-contact) .lang-switch a.selected {
-  background: #0d0d44;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(13, 13, 68, 0.45);
 }
 body:has(main.page-expertise) .page-intro h1::after,
 body:has(main.page-contact) .page-intro h1::after {
@@ -1083,8 +1069,7 @@ body:has(main.page-contact) .page-intro h1::after {
 }
 body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
-body:has(main.page-expertise) .case-card,
-body:has(main.page-contact) .contact-card {
+body:has(main.page-expertise) .case-card {
   border-left-color: #f5cb68;
 }
 body:has(main.page-expertise) .practice-item {
@@ -1094,13 +1079,31 @@ body:has(main.page-expertise) .exp-bullet-list li::before,
 body:has(main.page-expertise) .case-sub-list li::before {
   background-color: #f5cb68;
 }
-body:has(main.page-contact) .contact-list a {
-  border-bottom-color: #f5cb68;
-}
-body:has(main.page-contact) .contact-list a:hover {
-  border-bottom-color: #f5cb68;
-}
 body:has(main.page-expertise) footer a:hover,
 body:has(main.page-contact) footer a:hover {
   color: #fae4b5;
+}
+
+/* Kontak card only — gold + black text */
+body:has(main.page-contact) .contact-card {
+  background: #f5cb68;
+  background-image: linear-gradient(160deg, #ffd875 0%, #f5cb68 55%, #e0b34a 100%);
+  border-color: #000000;
+  border-left-color: #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  color: #000000;
+}
+body:has(main.page-contact) .contact-card .about-kicker,
+body:has(main.page-contact) .contact-list dt,
+body:has(main.page-contact) .contact-list dd,
+body:has(main.page-contact) .contact-list a {
+  color: #000000;
+}
+body:has(main.page-contact) .contact-list a {
+  border-bottom-color: #000000;
+}
+body:has(main.page-contact) .contact-list a:hover {
+  color: #000000;
+  border-bottom-color: #000000;
+  text-decoration: underline;
 }

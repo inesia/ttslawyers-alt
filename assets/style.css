@@ -30,8 +30,8 @@ p {
   text-justify: inter-word;
 }
 header {
-  background: linear-gradient(90deg, #64d3ef 0%, #8adef3 45%, #d0f6ff 100%);
-  color: #072838;
+  background: linear-gradient(90deg, #e0b34a 0%, #f5cb68 45%, #ffd875 100%);
+  color: #000000;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
   display: flex;
   align-items: center;
@@ -40,14 +40,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-  border-bottom: 1px solid rgba(100, 211, 239, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #000000;
 }
 .brand {
   display: flex;
   align-items: center;
   gap: 13px;
-  color: #072838;
+  color: #000000;
   text-decoration: none;
   font-weight: 700;
   letter-spacing: .1em;
@@ -56,15 +56,15 @@ header {
 }
 .brand small {
   display: block;
-  color: var(--ink);
+  color: #000000;
   font-size: 10px;
   letter-spacing: .28em;
 }
 .mark {
   font-family: Georgia, serif;
   font-size: 30px;
-  color: var(--ink);
-  border-right: 1px solid rgba(100, 211, 239, 0.4);
+  color: #000000;
+  border-right: 1px solid rgba(0, 0, 0, 0.35);
   padding-right: 13px;
 }
 nav {
@@ -73,13 +73,13 @@ nav {
   flex-wrap: wrap;
 }
 nav a {
-  color: #072838;
+  color: #000000;
   text-decoration: none;
   font-size: 12px;
   transition: color .2s ease;
 }
 nav a:hover {
-  color: var(--ink);
+  color: #000000;
 }
 .menu {
   display: none;
