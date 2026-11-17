@@ -14,12 +14,11 @@
 }
 body {
   margin: 0;
-  background-color: #14445c;
+  background-color: #2681ae;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(100, 211, 239, 0.35) 0%, transparent 70%),
-    radial-gradient(circle at 10% 30%, rgba(100, 211, 239, 0.16) 0%, transparent 45%),
-    radial-gradient(circle at 90% 70%, rgba(100, 211, 239, 0.14) 0%, transparent 50%),
-    linear-gradient(180deg, #2681ae 0%, #1b5c7c 45%, #0d2b39 100%);
+    radial-gradient(ellipse 120% 90% at 100% 0%, #64d3ef 0%, rgba(100, 211, 239, 0.55) 28%, transparent 62%),
+    radial-gradient(ellipse 90% 70% at 0% 100%, #1e6f97 0%, transparent 55%),
+    linear-gradient(160deg, #64d3ef 0%, #3aa0c4 38%, #2681ae 72%, #1e6f97 100%);
   background-attachment: fixed;
   color: #f0f4f8;
   font: 16px/1.85 'DM Sans', sans-serif;
@@ -29,7 +28,7 @@ p {
   text-justify: inter-word;
 }
 header {
-  background: linear-gradient(90deg, #14445c 0%, #2681ae 50%, #14445c 100%);
+  background: linear-gradient(90deg, #1e6f97 0%, #2681ae 45%, #64d3ef 100%);
   color: #ffffff;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
   display: flex;
@@ -135,7 +134,7 @@ h1 {
   background: #14445c;
 }
 footer {
-  background: #0d2b39;
+  background: linear-gradient(90deg, #1e6f97 0%, #2681ae 100%);
   padding: 34px max(24px, calc((100vw - 1180px) / 2));
   display: flex;
   justify-content: space-between;

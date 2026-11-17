@@ -2,8 +2,8 @@
 header.topbar {
   padding: 16px 3.3%;
   gap: 18px;
-  background: linear-gradient(90deg, #14445c 0%, #2681ae 50%, #14445c 100%);
-  border-bottom: 1px solid rgba(100, 211, 239, 0.35);
+  background: linear-gradient(90deg, #1e6f97 0%, #2681ae 45%, #64d3ef 100%);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.45);
 }
 header.topbar nav {
   flex: 1;
@@ -383,13 +383,13 @@ p,
 }
 .about-vision-band {
   background:
-    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(100, 211, 239, 0.28), transparent 55%),
-    linear-gradient(180deg, #2681ae 0%, #1b5c7c 50%, #0d2b39 100%);
+    radial-gradient(ellipse 100% 80% at 100% 0%, #64d3ef 0%, rgba(100, 211, 239, 0.45) 35%, transparent 65%),
+    linear-gradient(160deg, #3aa0c4 0%, #2681ae 55%, #1e6f97 100%);
   color: #f0f4f8;
   margin-top: 28px;
   padding: 10px 0 96px;
-  border-top: 1px solid rgba(100, 211, 239, 0.3);
-  border-bottom: 1px solid rgba(100, 211, 239, 0.3);
+  border-top: 1px solid rgba(100, 211, 239, 0.35);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.35);
 }
 .about-vision-band .about-shell {
   padding-top: 72px;
