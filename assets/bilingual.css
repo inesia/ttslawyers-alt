@@ -2,8 +2,8 @@
 header.topbar {
   padding: 16px 3.3%;
   gap: 18px;
-  background: linear-gradient(90deg, #0a3652 0%, #12659b 50%, #0a3652 100%);
-  border-bottom: 1px solid rgba(99, 204, 234, 0.35);
+  background: linear-gradient(90deg, #14445c 0%, #2681ae 50%, #14445c 100%);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.35);
 }
 header.topbar nav {
   flex: 1;
@@ -18,7 +18,7 @@ header.topbar nav a {
   transition: color .2s ease;
 }
 header.topbar nav a:hover {
-  color: #63ccea;
+  color: #64d3ef;
 }
 nav a.active {
   color: #f5cb68;
@@ -28,9 +28,9 @@ nav a.active {
   align-items: center;
   gap: 0;
   padding: 3px;
-  border: 1px solid rgba(99, 204, 234, 0.5);
+  border: 1px solid rgba(100, 211, 239, 0.5);
   border-radius: 999px;
-  background: rgba(18, 101, 155, 0.45);
+  background: rgba(38, 129, 174, 0.45);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
   white-space: nowrap;
 }
@@ -50,11 +50,11 @@ nav a.active {
 }
 .lang-switch a:hover {
   color: #ffffff;
-  background: rgba(99, 204, 234, 0.28);
+  background: rgba(100, 211, 239, 0.28);
 }
 .lang-switch a.selected {
   background: #f5cb68;
-  color: #062133;
+  color: #0d2b39;
   box-shadow: 0 4px 14px rgba(245, 203, 104, 0.45);
 }
 
@@ -68,7 +68,7 @@ nav a.active {
   position: relative;
   min-height: clamp(570px, 78vh, 900px);
   overflow: hidden;
-  background: #0a3652;
+  background: #14445c;
 }
 .hero > img {
   position: absolute;
@@ -81,8 +81,8 @@ nav a.active {
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(18, 101, 155, 0.88), rgba(18, 101, 155, 0.35) 75%),
-              linear-gradient(0deg, rgba(10, 54, 82, 0.8), transparent 60%);
+  background: linear-gradient(90deg, rgba(38, 129, 174, 0.88), rgba(38, 129, 174, 0.35) 75%),
+              linear-gradient(0deg, rgba(20, 68, 92, 0.8), transparent 60%);
 }
 .hero-caption {
   position: absolute;
@@ -114,13 +114,13 @@ nav a.active {
   text-decoration: none;
   letter-spacing: .06em;
   font-size: 13px;
-  background: rgba(18, 101, 155, 0.78);
+  background: rgba(38, 129, 174, 0.78);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   transition: all .2s ease;
 }
 .hero-cta:hover {
   background: #f5cb68;
-  color: #062133;
+  color: #0d2b39;
 }
 .home-intro {
   max-width: 1180px;
@@ -143,8 +143,8 @@ nav a.active {
   color: #f5cb68;
 }
 .placeholder {
-  border: 1px solid rgba(99, 204, 234, 0.32);
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.72) 0%, rgba(10, 54, 82, 0.88) 100%);
+  border: 1px solid rgba(100, 211, 239, 0.32);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
   padding: 40px;
   margin-top: 30px;
   margin-bottom: 90px;
@@ -168,7 +168,7 @@ main:not(.home-main) {
 /* Client Artwork Hero (if picture used) */
 .hero:has(img) {
   min-height: 0;
-  background: #0a3652;
+  background: #14445c;
 }
 .hero > picture {
   display: block;
@@ -246,7 +246,7 @@ main.page-contact {
   width: 72px;
   height: 2px;
   margin-top: 26px;
-  background: linear-gradient(90deg, #f5cb68 0%, #63ccea 65%, transparent 100%);
+  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
 }
 
 /* Paragraph Justification & Typography */
@@ -318,7 +318,7 @@ p,
   height: auto;
   display: block;
   border: 0;
-  background: #0a3652;
+  background: #14445c;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
   outline: 1px solid rgba(245, 203, 104, 0.55);
   outline-offset: 10px;
@@ -328,8 +328,8 @@ p,
   margin-bottom: 12px;
 }
 .kesaksian-card {
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.72) 0%, rgba(10, 54, 82, 0.88) 100%);
-  border: 1px solid rgba(99, 204, 234, 0.32);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
+  border: 1px solid rgba(100, 211, 239, 0.32);
   border-left: 4px solid #f5cb68;
   padding: 34px 36px 30px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
@@ -383,13 +383,13 @@ p,
 }
 .about-vision-band {
   background:
-    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(99, 204, 234, 0.28), transparent 55%),
-    linear-gradient(180deg, #12659b 0%, #0d486e 50%, #062133 100%);
+    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(100, 211, 239, 0.28), transparent 55%),
+    linear-gradient(180deg, #2681ae 0%, #1b5c7c 50%, #0d2b39 100%);
   color: #f0f4f8;
   margin-top: 28px;
   padding: 10px 0 96px;
-  border-top: 1px solid rgba(99, 204, 234, 0.3);
-  border-bottom: 1px solid rgba(99, 204, 234, 0.3);
+  border-top: 1px solid rgba(100, 211, 239, 0.3);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.3);
 }
 .about-vision-band .about-shell {
   padding-top: 72px;
@@ -400,7 +400,7 @@ p,
   color: #ffffff;
   margin: 0 0 34px;
   padding-bottom: 22px;
-  border-bottom: 1px solid rgba(99, 204, 234, 0.3);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.3);
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -473,8 +473,8 @@ p,
 }
 .exp-founder-bio {
   padding: 28px 28px;
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.72) 0%, rgba(10, 54, 82, 0.88) 100%);
-  border: 1px solid rgba(99, 204, 234, 0.32);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
+  border: 1px solid rgba(100, 211, 239, 0.32);
   border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
@@ -532,9 +532,9 @@ p,
   border-radius: 1px;
 }
 .exp-band {
-  background: linear-gradient(180deg, rgba(99, 204, 234, 0.12) 0%, rgba(18, 101, 155, 0.45) 50%, rgba(10, 54, 82, 0.75) 100%);
-  border-top: 1px solid rgba(99, 204, 234, 0.3);
-  border-bottom: 1px solid rgba(99, 204, 234, 0.3);
+  background: linear-gradient(180deg, rgba(100, 211, 239, 0.12) 0%, rgba(38, 129, 174, 0.45) 50%, rgba(20, 68, 92, 0.75) 100%);
+  border-top: 1px solid rgba(100, 211, 239, 0.3);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.3);
   margin-top: 48px;
 }
 .exp-band .page-shell {
@@ -567,8 +567,8 @@ p,
   gap: 14px;
 }
 .practice-item {
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.8) 0%, rgba(13, 72, 110, 0.92) 100%);
-  border: 1px solid rgba(99, 204, 234, 0.32);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.8) 0%, rgba(27, 92, 124, 0.92) 100%);
+  border: 1px solid rgba(100, 211, 239, 0.32);
   border-top: 3px solid #f5cb68;
   padding: 18px 20px;
   font-family: 'Times New Roman', Times, Georgia, serif;
@@ -580,7 +580,7 @@ p,
   transition: transform .2s ease, border-color .2s ease;
 }
 .practice-item:hover {
-  border-color: rgba(99, 204, 234, 0.7);
+  border-color: rgba(100, 211, 239, 0.7);
   transform: translateY(-2px);
 }
 .exp-experience-wrap {
@@ -604,8 +604,8 @@ p,
   margin-top: 8px;
 }
 .case-card {
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.72) 0%, rgba(10, 54, 82, 0.88) 100%);
-  border: 1px solid rgba(99, 204, 234, 0.32);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
+  border: 1px solid rgba(100, 211, 239, 0.32);
   border-left: 3px solid #f5cb68;
   padding: 22px 24px 20px;
   display: flex;
@@ -615,7 +615,7 @@ p,
   transition: transform .2s ease, border-color .2s ease;
 }
 .case-card:hover {
-  border-color: rgba(99, 204, 234, 0.7);
+  border-color: rgba(100, 211, 239, 0.7);
   transform: translateY(-2px);
 }
 .case-card strong {
@@ -647,8 +647,8 @@ p,
   gap: 34px;
   align-items: start;
   padding: 30px;
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.72) 0%, rgba(10, 54, 82, 0.88) 100%);
-  border: 1px solid rgba(99, 204, 234, 0.32);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
+  border: 1px solid rgba(100, 211, 239, 0.32);
   border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
@@ -658,7 +658,7 @@ p,
   height: auto;
   display: block;
   border: 0;
-  background: #0a3652;
+  background: #14445c;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
   outline: 1px solid rgba(245, 203, 104, 0.55);
   outline-offset: 6px;
@@ -713,11 +713,11 @@ p,
   text-align: left;
 }
 .contact-card {
-  background: linear-gradient(135deg, rgba(18, 101, 155, 0.88) 0%, rgba(6, 33, 51, 0.96) 100%);
+  background: linear-gradient(135deg, rgba(38, 129, 174, 0.88) 0%, rgba(13, 43, 57, 0.96) 100%);
   color: #f0f4f8;
   padding: 34px 32px 36px;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(99, 204, 234, 0.38);
+  border: 1px solid rgba(100, 211, 239, 0.38);
   border-left: 4px solid #f5cb68;
 }
 .contact-card .about-kicker {

@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 :root {
-  --navy: #12659b;
-  --navy-dark: #0a3652;
-  --navy-deep: #062133;
-  --blue-accent: #63ccea;
+  --navy: #2681ae;
+  --navy-dark: #14445c;
+  --navy-deep: #0d2b39;
+  --blue-accent: #64d3ef;
   --gold: #f5cb68;
   --gold-light: #fae4b5;
   --gold-bright: #ffd875;
-  --paper: #0a3652;
+  --paper: #14445c;
 }
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background-color: #0a3652;
+  background-color: #14445c;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99, 204, 234, 0.35) 0%, transparent 70%),
-    radial-gradient(circle at 10% 30%, rgba(99, 204, 234, 0.16) 0%, transparent 45%),
-    radial-gradient(circle at 90% 70%, rgba(99, 204, 234, 0.14) 0%, transparent 50%),
-    linear-gradient(180deg, #12659b 0%, #0d486e 45%, #062133 100%);
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(100, 211, 239, 0.35) 0%, transparent 70%),
+    radial-gradient(circle at 10% 30%, rgba(100, 211, 239, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 90% 70%, rgba(100, 211, 239, 0.14) 0%, transparent 50%),
+    linear-gradient(180deg, #2681ae 0%, #1b5c7c 45%, #0d2b39 100%);
   background-attachment: fixed;
   color: #f0f4f8;
   font: 16px/1.85 'DM Sans', sans-serif;
@@ -29,7 +29,7 @@ p {
   text-justify: inter-word;
 }
 header {
-  background: linear-gradient(90deg, #0a3652 0%, #12659b 50%, #0a3652 100%);
+  background: linear-gradient(90deg, #14445c 0%, #2681ae 50%, #14445c 100%);
   color: #ffffff;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
   display: flex;
@@ -40,7 +40,7 @@ header {
   top: 0;
   z-index: 10;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-  border-bottom: 1px solid rgba(99, 204, 234, 0.35);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.35);
 }
 .brand {
   display: flex;
@@ -63,7 +63,7 @@ header {
   font-family: Georgia, serif;
   font-size: 30px;
   color: var(--gold);
-  border-right: 1px solid rgba(99, 204, 234, 0.4);
+  border-right: 1px solid rgba(100, 211, 239, 0.4);
   padding-right: 13px;
 }
 nav {
@@ -100,7 +100,7 @@ h1 {
   color: #ffffff;
   margin: 16px 0 50px;
   padding-bottom: 28px;
-  border-bottom: 1px solid rgba(99, 204, 234, 0.3);
+  border-bottom: 1px solid rgba(100, 211, 239, 0.3);
 }
 .source-section {
   display: grid;
@@ -131,18 +131,18 @@ h1 {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border: 1px solid rgba(99, 204, 234, 0.3);
-  background: #0a3652;
+  border: 1px solid rgba(100, 211, 239, 0.3);
+  background: #14445c;
 }
 footer {
-  background: #062133;
+  background: #0d2b39;
   padding: 34px max(24px, calc((100vw - 1180px) / 2));
   display: flex;
   justify-content: space-between;
   color: #dce2e6;
   font-size: 12px;
   letter-spacing: .08em;
-  border-top: 1px solid rgba(99, 204, 234, 0.28);
+  border-top: 1px solid rgba(100, 211, 239, 0.28);
 }
 footer a {
   color: var(--gold);
@@ -166,7 +166,7 @@ footer a:hover {
   .menu {
     display: block;
     background: none;
-    border: 1px solid rgba(99, 204, 234, 0.4);
+    border: 1px solid rgba(100, 211, 239, 0.4);
     color: #ffffff;
     font-size: 24px;
     padding: 5px 12px;
