@@ -8,6 +8,7 @@
   --gold-light: #fae4b5;
   --gold-bright: #ffd875;
   --paper: #14445c;
+  --text-body: #111111;
 }
 * {
   box-sizing: border-box;
@@ -20,7 +21,7 @@ body {
     radial-gradient(ellipse 90% 70% at 0% 100%, #1e6f97 0%, transparent 55%),
     linear-gradient(160deg, #64d3ef 0%, #3aa0c4 38%, #2681ae 72%, #1e6f97 100%);
   background-attachment: fixed;
-  color: #f0f4f8;
+  color: var(--text-body);
   font: 16px/1.85 'DM Sans', sans-serif;
 }
 p {
@@ -96,7 +97,7 @@ main {
 }
 h1 {
   font: 500 clamp(36px, 5vw, 64px)/1.2 'Playfair Display', serif;
-  color: #ffffff;
+  color: var(--text-body);
   margin: 16px 0 50px;
   padding-bottom: 28px;
   border-bottom: 1px solid rgba(100, 211, 239, 0.3);

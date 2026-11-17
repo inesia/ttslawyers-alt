@@ -201,7 +201,7 @@ section[id], main h2[id] {
 }
 main h2 {
   font: 700 clamp(26px, 3vw, 40px)/1.3 'Playfair Display', serif;
-  color: #ffffff;
+  color: #111111;
   margin: 64px 0 28px;
 }
 
@@ -237,7 +237,7 @@ main.page-contact {
   border-bottom: 0;
   padding-bottom: 0;
   position: relative;
-  color: #ffffff;
+  color: #111111;
 }
 .about-intro h1::after,
 .page-intro h1::after {
@@ -267,12 +267,12 @@ p,
 }
 .about-lead {
   font: 700 clamp(20px, 2.15vw, 27px)/1.55 'Times New Roman', Times, Georgia, serif;
-  color: #ffffff;
+  color: #111111;
   margin: 0 0 28px;
 }
 .about-body {
   font-family: 'Times New Roman', Times, Georgia, serif;
-  color: #f0f4f8;
+  color: #111111;
   font-size: 18px;
   line-height: 1.85;
 }
@@ -284,7 +284,7 @@ p,
 .about-body strong,
 .about-body b {
   font-weight: 700;
-  color: #ffffff;
+  color: #111111;
 }
 .sub-title-block {
   display: block;
@@ -328,16 +328,16 @@ p,
   margin-bottom: 12px;
 }
 .kesaksian-card {
-  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
-  border: 1px solid rgba(100, 211, 239, 0.32);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(100, 211, 239, 0.45);
   border-left: 4px solid #f5cb68;
   padding: 34px 36px 30px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
 .kesaksian-title {
   font: 700 clamp(22px, 2.1vw, 26px)/1.35 'Times New Roman', Times, Georgia, serif;
-  color: #ffffff;
+  color: #111111;
   margin: 0 0 16px;
   letter-spacing: .02em;
   text-transform: uppercase;
@@ -364,14 +364,14 @@ p,
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 18px;
   line-height: 1.85;
-  color: #f0f4f8;
+  color: #111111;
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 0;
 }
 .kesaksian-body strong,
 .kesaksian-body b {
-  color: #ffffff;
+  color: #111111;
   font-weight: 700;
 }
 .about-pillars {
@@ -385,7 +385,7 @@ p,
   background:
     radial-gradient(ellipse 100% 80% at 100% 0%, #64d3ef 0%, rgba(100, 211, 239, 0.45) 35%, transparent 65%),
     linear-gradient(160deg, #3aa0c4 0%, #2681ae 55%, #1e6f97 100%);
-  color: #f0f4f8;
+  color: #111111;
   margin-top: 28px;
   padding: 10px 0 96px;
   border-top: 1px solid rgba(100, 211, 239, 0.35);
@@ -397,7 +397,7 @@ p,
 }
 .about-vision-band h2 {
   font-family: 'Times New Roman', Times, Georgia, serif;
-  color: #ffffff;
+  color: #111111;
   margin: 0 0 34px;
   padding-bottom: 22px;
   border-bottom: 1px solid rgba(100, 211, 239, 0.3);
@@ -410,7 +410,7 @@ p,
   color: #f5cb68;
 }
 .about-vision-band .about-body {
-  color: #f0f4f8;
+  color: #111111;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-weight: 400;
   font-size: 18px;
@@ -422,7 +422,7 @@ p,
 }
 .about-vision-band .about-body strong,
 .about-vision-band .about-body b {
-  color: #ffffff;
+  color: #111111;
   font-weight: 700;
 }
 .about-vision-band .about-body em,
@@ -462,7 +462,7 @@ p,
   font-size: clamp(20px, 2vw, 25px);
   font-weight: 700;
   line-height: 1.5;
-  color: #ffffff;
+  color: #111111;
   margin: 0 0 24px;
   text-align: left;
 }
@@ -473,17 +473,17 @@ p,
 }
 .exp-founder-bio {
   padding: 28px 28px;
-  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
-  border: 1px solid rgba(100, 211, 239, 0.32);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(100, 211, 239, 0.45);
   border-left: 4px solid #f5cb68;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
 .exp-bullet-list {
   list-style: none;
   margin: 14px 0 22px 0;
   padding: 0;
-  color: #f0f4f8;
+  color: #111111;
 }
 .exp-bullet-list li {
   position: relative;
@@ -516,7 +516,7 @@ p,
   line-height: 1.75;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16px;
-  color: #f0f4f8;
+  color: #111111;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -547,7 +547,7 @@ p,
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .03em;
-  color: #ffffff;
+  color: #111111;
   margin-top: 0;
 }
 .exp-practice {
@@ -557,7 +557,7 @@ p,
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 18px;
   line-height: 1.7;
-  color: #ffffff;
+  color: #111111;
   margin-bottom: 24px;
   font-weight: 700;
 }
@@ -567,16 +567,16 @@ p,
   gap: 14px;
 }
 .practice-item {
-  background: linear-gradient(135deg, rgba(38, 129, 174, 0.8) 0%, rgba(27, 92, 124, 0.92) 100%);
-  border: 1px solid rgba(100, 211, 239, 0.32);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(100, 211, 239, 0.45);
   border-top: 3px solid #f5cb68;
   padding: 18px 20px;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16.5px;
   font-weight: 700;
   line-height: 1.5;
-  color: #ffffff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.32);
+  color: #111111;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
   transition: transform .2s ease, border-color .2s ease;
 }
 .practice-item:hover {
@@ -593,7 +593,7 @@ p,
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .03em;
-  color: #ffffff;
+  color: #111111;
   margin-top: 0;
   margin-bottom: 24px;
 }
@@ -604,14 +604,14 @@ p,
   margin-top: 8px;
 }
 .case-card {
-  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
-  border: 1px solid rgba(100, 211, 239, 0.32);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(100, 211, 239, 0.45);
   border-left: 3px solid #f5cb68;
   padding: 22px 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
   transition: transform .2s ease, border-color .2s ease;
 }
 .case-card:hover {
@@ -623,13 +623,13 @@ p,
   font-size: 17.5px;
   font-weight: 700;
   line-height: 1.45;
-  color: #ffffff;
+  color: #111111;
 }
 .case-card span {
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16px;
   line-height: 1.75;
-  color: #f0f4f8;
+  color: #111111;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -647,10 +647,10 @@ p,
   gap: 34px;
   align-items: start;
   padding: 30px;
-  background: linear-gradient(135deg, rgba(38, 129, 174, 0.72) 0%, rgba(20, 68, 92, 0.88) 100%);
-  border: 1px solid rgba(100, 211, 239, 0.32);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(100, 211, 239, 0.45);
   border-left: 4px solid #f5cb68;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
 .partner-photo img {
@@ -665,7 +665,7 @@ p,
 }
 .partner-name {
   font: 700 clamp(20px, 2vw, 25px)/1.35 'Times New Roman', Times, Georgia, serif;
-  color: #ffffff;
+  color: #111111;
   margin: 0 0 18px;
   padding: 0;
   border: 0;
@@ -677,7 +677,7 @@ p,
   line-height: 1.85;
   text-align: justify;
   text-justify: inter-word;
-  color: #f0f4f8;
+  color: #111111;
 }
 .partner-copy .about-body p {
   margin-bottom: 1.1em;
@@ -707,14 +707,14 @@ p,
 }
 .contact-motto {
   font: 700 clamp(24px, 2.6vw, 34px)/1.35 'Times New Roman', Times, Georgia, serif;
-  color: #ffffff;
+  color: #111111;
   margin: 16px 0 0;
   max-width: 20ch;
   text-align: left;
 }
 .contact-card {
-  background: linear-gradient(135deg, rgba(38, 129, 174, 0.88) 0%, rgba(13, 43, 57, 0.96) 100%);
-  color: #f0f4f8;
+  background: rgba(255, 255, 255, 0.72);
+  color: #111111;
   padding: 34px 32px 36px;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(100, 211, 239, 0.38);
@@ -743,13 +743,13 @@ p,
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: #f0f4f8;
+  color: #111111;
   font-size: 16px;
   line-height: 1.6;
   font-family: 'Times New Roman', Times, Georgia, serif;
 }
 .contact-list a {
-  color: #ffffff;
+  color: #111111;
   text-decoration: none;
   border-bottom: 1px solid rgba(245, 203, 104, 0.5);
   width: fit-content;
