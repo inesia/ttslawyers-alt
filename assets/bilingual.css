@@ -750,7 +750,7 @@ p,
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #f5cb68;
+  color: #072838;
   margin-bottom: 6px;
   font-weight: 700;
 }
@@ -1053,11 +1053,13 @@ body:has(main.page-contact) .about-kicker,
 body:has(main.page-expertise) .sub-title-block,
 body:has(main.page-contact) .sub-title-block,
 body:has(main.page-contact) .contact-card .about-kicker,
-body:has(main.page-contact) .contact-list dt,
 body:has(main.page-contact) .contact-list a:hover,
 body:has(main.page-expertise) footer a,
 body:has(main.page-contact) footer a {
   color: #f5cb68;
+}
+body:has(main.page-contact) .contact-list dt {
+  color: #072838;
 }
 body:has(main.page-expertise) .mark,
 body:has(main.page-contact) .mark,
