@@ -23,6 +23,10 @@ header.topbar nav a:hover {
 nav a.active {
   color: #0d0d44;
 }
+header.topbar .mark,
+header.topbar .brand small {
+  color: #0d0d44;
+}
 .lang-switch {
   display: inline-flex;
   align-items: center;
@@ -155,17 +159,17 @@ body:has(main.home-main) footer {
   color: #0d0d44;
 }
 .placeholder {
-  border: 1px solid rgba(100, 211, 239, 0.32);
+  border: 1px solid #f5cb68;
   background: linear-gradient(135deg, rgba(100, 211, 239, 0.72) 0%, rgba(74, 191, 224, 0.88) 100%);
   padding: 40px;
   margin-top: 30px;
   margin-bottom: 90px;
   min-height: 240px;
-  border-left: 4px solid #0d0d44;
+  border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
 }
 .placeholder-tag {
-  color: #0d0d44;
+  color: #f5cb68;
   font-size: 12px;
   letter-spacing: .14em;
   font-weight: 700;
@@ -258,7 +262,7 @@ main.page-contact {
   width: 72px;
   height: 2px;
   margin-top: 26px;
-  background: linear-gradient(90deg, #0d0d44 0%, #64d3ef 65%, transparent 100%);
+  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
 }
 
 /* Paragraph Justification & Typography */
@@ -270,7 +274,7 @@ p,
   text-justify: inter-word;
 }
 .about-kicker {
-  color: #0d0d44;
+  color: #f5cb68;
   font-size: 12px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -307,7 +311,7 @@ p,
   margin-top: 1.6rem;
   margin-bottom: 0.45rem;
   text-align: left;
-  color: #0d0d44;
+  color: #f5cb68;
 }
 .about-body > .sub-title-block:first-child,
 .sub-title-block:first-child {
@@ -332,7 +336,7 @@ p,
   border: 0;
   background: #3ab4d8;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-  outline: 1px solid rgba(13, 13, 68, 0.55);
+  outline: 1px solid #f5cb68;
   outline-offset: 10px;
 }
 .about-kesaksian-section {
@@ -341,8 +345,8 @@ p,
 }
 .kesaksian-card {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 4px solid #0d0d44;
+  border: 1px solid #f5cb68;
+  border-left: 4px solid #f5cb68;
   padding: 34px 36px 30px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
@@ -364,7 +368,7 @@ p,
   font-weight: 700;
   line-height: 1.75;
   letter-spacing: .02em;
-  color: #0d0d44;
+  color: #f5cb68;
   text-align: left;
   margin: 0 0 20px;
   text-transform: uppercase;
@@ -418,8 +422,8 @@ p,
   text-transform: uppercase;
   font-size: 1.45rem;
 }
-.about-vision-band .about-kicker {
-  color: #0d0d44;
+'.about-vision-band .about-kicker {
+  color: #f5cb68;
 }
 .about-vision-band .about-body {
   color: #072838;
@@ -443,12 +447,12 @@ p,
 }
 .about-vision-band .about-body strong em,
 .about-vision-band .about-body em strong {
-  color: #0d0d44;
+  color: #f5cb68;
   font-weight: 700;
   font-style: italic;
 }
 .about-vision-band .sub-title-block {
-  color: #0d0d44;
+  color: #f5cb68;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-weight: 700;
   font-size: 1.22rem;
@@ -486,8 +490,8 @@ p,
 .exp-founder-bio {
   padding: 28px 28px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 4px solid #0d0d44;
+  border: 1px solid #f5cb68;
+  border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
@@ -512,7 +516,7 @@ p,
   top: 9px;
   width: 7px;
   height: 7px;
-  background-color: #0d0d44;
+  background-color: #f5cb68;
   transform: rotate(45deg);
   border-radius: 1px;
 }
@@ -539,7 +543,7 @@ p,
   top: 9px;
   width: 5.5px;
   height: 5.5px;
-  background-color: #0d0d44;
+  background-color: #f5cb68;
   transform: rotate(45deg);
   border-radius: 1px;
 }
@@ -580,8 +584,8 @@ p,
 }
 .practice-item {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(100, 211, 239, 0.45);
-  border-top: 3px solid #0d0d44;
+  border: 1px solid #f5cb68;
+  border-top: 3px solid #f5cb68;
   padding: 18px 20px;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16.5px;
@@ -592,7 +596,7 @@ p,
   transition: transform .2s ease, border-color .2s ease;
 }
 .practice-item:hover {
-  border-color: rgba(100, 211, 239, 0.7);
+  border-color: #f5cb68;
   transform: translateY(-2px);
 }
 .exp-experience-wrap {
@@ -617,8 +621,8 @@ p,
 }
 .case-card {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 3px solid #0d0d44;
+  border: 1px solid #f5cb68;
+  border-left: 3px solid #f5cb68;
   padding: 22px 24px 20px;
   display: flex;
   flex-direction: column;
@@ -627,7 +631,7 @@ p,
   transition: transform .2s ease, border-color .2s ease;
 }
 .case-card:hover {
-  border-color: rgba(100, 211, 239, 0.7);
+  border-color: #f5cb68;
   transform: translateY(-2px);
 }
 .case-card strong {
@@ -660,8 +664,8 @@ p,
   align-items: start;
   padding: 30px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(100, 211, 239, 0.45);
-  border-left: 4px solid #0d0d44;
+  border: 1px solid #f5cb68;
+  border-left: 4px solid #f5cb68;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
@@ -672,7 +676,7 @@ p,
   border: 0;
   background: #3ab4d8;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-  outline: 1px solid rgba(13, 13, 68, 0.55);
+  outline: 1px solid #f5cb68;
   outline-offset: 6px;
 }
 .partner-name {
@@ -696,11 +700,11 @@ p,
 }
 .partner-quote {
   font-style: italic;
-  color: #0d0d44;
+  color: #f5cb68;
   font-weight: 700;
   margin: 14px 0 16px;
   padding-left: 18px;
-  border-left: 3px solid #0d0d44;
+  border-left: 3px solid #f5cb68;
   line-height: 1.7;
 }
 
@@ -729,11 +733,11 @@ p,
   color: #072838;
   padding: 34px 32px 36px;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(100, 211, 239, 0.38);
-  border-left: 4px solid #0d0d44;
+  border: 1px solid #f5cb68;
+  border-left: 4px solid #f5cb68;
 }
 .contact-card .about-kicker {
-  color: #0d0d44;
+  color: #f5cb68;
   margin-bottom: 26px;
 }
 .contact-list {
@@ -746,7 +750,7 @@ p,
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #0d0d44;
+  color: #f5cb68;
   margin-bottom: 6px;
   font-weight: 700;
 }
@@ -763,13 +767,13 @@ p,
 .contact-list a {
   color: #072838;
   text-decoration: none;
-  border-bottom: 1px solid rgba(13, 13, 68, 0.5);
+  border-bottom: 1px solid #f5cb68;
   width: fit-content;
   transition: color .2s ease, border-color .2s ease;
 }
 .contact-list a:hover {
-  color: #0d0d44;
-  border-bottom-color: #0d0d44;
+  color: #f5cb68;
+  border-bottom-color: #f5cb68;
 }
 
 /* Responsive */
@@ -816,19 +820,36 @@ p,
 }
 @media (max-width: 700px) {
   header.topbar {
-    gap: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "brand menu lang"
+      "nav nav nav";
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 12px;
+  }
+  header.topbar .brand {
+    grid-area: brand;
+    min-width: 0;
+  }
+  header.topbar .menu {
+    grid-area: menu;
+    margin: 0;
+  }
+  header.topbar .lang-switch {
+    grid-area: lang;
+    margin: 0;
   }
   header.topbar nav {
     display: none;
-    order: 4;
-    flex-basis: 100%;
+    grid-area: nav;
+    flex-basis: auto;
     flex-direction: column;
+    width: 100%;
   }
   header.topbar nav.open {
     display: flex;
-  }
-  .lang-switch {
-    margin-left: auto;
   }
   .hero {
     min-height: 650px;
@@ -901,19 +922,19 @@ body:has(main.page-partners) .partner-copy .about-body {
 }
 body:has(main.page-about) .about-vision-band {
   background: #202020;
-  border-top-color: rgba(13, 13, 68, 0.35);
-  border-bottom-color: rgba(13, 13, 68, 0.35);
+  border-top-color: #f5cb68;
+  border-bottom-color: #f5cb68;
 }
 body:has(main.page-about) .kesaksian-card,
 body:has(main.page-partners) .partner-card {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(13, 13, 68, 0.35);
+  border-color: #f5cb68;
 }
 body:has(main.page-about) footer,
 body:has(main.page-partners) footer {
   background: #151515;
   color: #ffffff;
-  border-top-color: rgba(245, 203, 104, 0.28);
+  border-top-color: #f5cb68;
 }
 
 /* Dark pages: page content keeps gold; nav/menu stay #0d0d44 */
@@ -955,15 +976,15 @@ body:has(main.page-partners) .page-intro h1::after {
 body:has(main.page-about) .kesaksian-card,
 body:has(main.page-partners) .partner-card {
   border-left-color: #f5cb68;
-  border-color: rgba(245, 203, 104, 0.35);
+  border-color: #f5cb68;
 }
 body:has(main.page-about) .about-vision-band {
-  border-top-color: rgba(245, 203, 104, 0.35);
-  border-bottom-color: rgba(245, 203, 104, 0.35);
+  border-top-color: #f5cb68;
+  border-bottom-color: #f5cb68;
 }
 body:has(main.page-about) .about-photo img,
 body:has(main.page-partners) .partner-photo img {
-  outline-color: rgba(245, 203, 104, 0.55);
+  outline-color: #f5cb68;
 }
 body:has(main.page-about) footer a:hover,
 body:has(main.page-partners) footer a:hover {
@@ -973,9 +994,8 @@ body:has(main.page-partners) footer a:hover {
 /* Page themes: light (Keahlian / Kontak) */
 body:has(main.page-expertise),
 body:has(main.page-contact) {
-  background-color: #E3E3E3;
-  background-image: linear-gradient(180deg, #D0D0D0 0%, #E3E3E3 50%, #F5F5F5 100%);
-  background-attachment: fixed;
+  background: #88807B;
+  background-image: none;
   color: #072838;
 }
 body:has(main.page-expertise) main,
@@ -1006,7 +1026,7 @@ body:has(main.page-contact) .contact-list a {
   color: #072838;
 }
 body:has(main.page-expertise) .exp-band {
-  background: linear-gradient(180deg, #D0D0D0 0%, #E3E3E3 50%, #F5F5F5 100%);
+  background: #88807B;
   border-top-color: rgba(7, 40, 56, 0.12);
   border-bottom-color: rgba(7, 40, 56, 0.12);
 }
@@ -1014,18 +1034,31 @@ body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card,
 body:has(main.page-contact) .contact-card {
-  background: #F5F5F5;
-  border-color: rgba(7, 40, 56, 0.14);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #f5cb68;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 body:has(main.page-expertise) footer,
 body:has(main.page-contact) footer {
-  background: linear-gradient(180deg, #E3E3E3 0%, #F5F5F5 100%);
+  background: #88807B;
   color: #072838;
   border-top-color: rgba(7, 40, 56, 0.12);
 }
 
-/* Light pages: gold accents -> blue #1e76a4 */
+/* Light pages: page accents gold #f5cb68; nav stays #0d0d44 */
+body:has(main.page-expertise) .eyebrow,
+body:has(main.page-contact) .eyebrow,
+body:has(main.page-expertise) .about-kicker,
+body:has(main.page-contact) .about-kicker,
+body:has(main.page-expertise) .sub-title-block,
+body:has(main.page-contact) .sub-title-block,
+body:has(main.page-contact) .contact-card .about-kicker,
+body:has(main.page-contact) .contact-list dt,
+body:has(main.page-contact) .contact-list a:hover,
+body:has(main.page-expertise) footer a,
+body:has(main.page-contact) footer a {
+  color: #f5cb68;
+}
 body:has(main.page-expertise) .mark,
 body:has(main.page-contact) .mark,
 body:has(main.page-expertise) .brand small,
@@ -1033,51 +1066,39 @@ body:has(main.page-contact) .brand small,
 body:has(main.page-expertise) nav a.active,
 body:has(main.page-contact) nav a.active,
 body:has(main.page-expertise) nav a:hover,
-body:has(main.page-contact) nav a:hover,
-body:has(main.page-expertise) .eyebrow,
-body:has(main.page-contact) .eyebrow,
-body:has(main.page-expertise) .about-kicker,
-body:has(main.page-contact) .about-kicker,
-body:has(main.page-expertise) .sub-title-block,
-body:has(main.page-contact) .sub-title-block,
-body:has(main.page-expertise) .partner-quote,
-body:has(main.page-contact) .contact-card .about-kicker,
-body:has(main.page-contact) .contact-list dt,
-body:has(main.page-contact) .contact-list a:hover,
-body:has(main.page-expertise) footer a,
-body:has(main.page-contact) footer a {
-  color: #1e76a4;
+body:has(main.page-contact) nav a:hover {
+  color: #0d0d44;
 }
 body:has(main.page-expertise) .lang-switch a.selected,
 body:has(main.page-contact) .lang-switch a.selected {
-  background: #1e76a4;
+  background: #0d0d44;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(30, 118, 164, 0.35);
+  box-shadow: 0 4px 14px rgba(13, 13, 68, 0.45);
 }
 body:has(main.page-expertise) .page-intro h1::after,
 body:has(main.page-contact) .page-intro h1::after {
-  background: linear-gradient(90deg, #1e76a4 0%, #64d3ef 65%, transparent 100%);
+  background: linear-gradient(90deg, #f5cb68 0%, #f5cb68 65%, transparent 100%);
 }
 body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card,
 body:has(main.page-contact) .contact-card {
-  border-left-color: #1e76a4;
+  border-left-color: #f5cb68;
 }
 body:has(main.page-expertise) .practice-item {
-  border-top-color: #1e76a4;
+  border-top-color: #f5cb68;
 }
 body:has(main.page-expertise) .exp-bullet-list li::before,
 body:has(main.page-expertise) .case-sub-list li::before {
-  background-color: #1e76a4;
+  background-color: #f5cb68;
 }
 body:has(main.page-contact) .contact-list a {
-  border-bottom-color: rgba(30, 118, 164, 0.5);
+  border-bottom-color: #f5cb68;
 }
 body:has(main.page-contact) .contact-list a:hover {
-  border-bottom-color: #1e76a4;
+  border-bottom-color: #f5cb68;
 }
 body:has(main.page-expertise) footer a:hover,
 body:has(main.page-contact) footer a:hover {
-  color: #64d3ef;
+  color: #fae4b5;
 }

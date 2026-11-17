@@ -4,9 +4,9 @@
   --navy-dark: #4abfe0;
   --navy-deep: #072838;
   --blue-accent: #d0f6ff;
-  --gold: #0d0d44;
-  --gold-light: #0d0d44;
-  --gold-bright: #0d0d44;
+  --gold: #f5cb68;
+  --gold-light: #fae4b5;
+  --gold-bright: #ffd875;
   --ink: #0d0d44;
   --paper: #d0f6ff;
   --text-body: #072838;
@@ -56,14 +56,14 @@ header {
 }
 .brand small {
   display: block;
-  color: var(--gold);
+  color: var(--ink);
   font-size: 10px;
   letter-spacing: .28em;
 }
 .mark {
   font-family: Georgia, serif;
   font-size: 30px;
-  color: var(--gold);
+  color: var(--ink);
   border-right: 1px solid rgba(100, 211, 239, 0.4);
   padding-right: 13px;
 }
@@ -79,7 +79,7 @@ nav a {
   transition: color .2s ease;
 }
 nav a:hover {
-  color: var(--gold);
+  color: var(--ink);
 }
 .menu {
   display: none;
