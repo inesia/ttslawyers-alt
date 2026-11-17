@@ -54,7 +54,7 @@ nav a.active {
 }
 .lang-switch a.selected {
   background: #0d0d44;
-  color: #072838;
+  color: #ffffff;
   box-shadow: 0 4px 14px rgba(13, 13, 68, 0.45);
 }
 
@@ -100,9 +100,13 @@ body:has(main.home-main) footer {
   padding-right: 24px;
 }
 .hero-caption span {
+  display: inline-block;
   font-size: 12px;
   letter-spacing: .24em;
-  color: #0d0d44;
+  color: #ffffff;
+  background: #0d0d44;
+  padding: 8px 14px;
+  line-height: 1.35;
 }
 .hero-caption h1 {
   color: #0d0d44;
@@ -116,18 +120,19 @@ body:has(main.home-main) footer {
 .hero-cta {
   display: inline-block;
   border: 1px solid #0d0d44;
-  color: #0d0d44;
+  color: #ffffff;
   padding: 13px 21px;
   text-decoration: none;
   letter-spacing: .06em;
   font-size: 13px;
-  background: rgba(208, 246, 255, 0.75);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: #0d0d44;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   transition: all .2s ease;
 }
 .hero-cta:hover {
-  background: #0d0d44;
+  background: #1a1a66;
   color: #ffffff;
+  border-color: #1a1a66;
 }
 .home-intro {
   max-width: 1180px;
@@ -908,7 +913,61 @@ body:has(main.page-about) footer,
 body:has(main.page-partners) footer {
   background: #151515;
   color: #ffffff;
-  border-top-color: rgba(13, 13, 68, 0.28);
+  border-top-color: rgba(245, 203, 104, 0.28);
+}
+
+/* Dark pages: page content keeps gold; nav/menu stay #0d0d44 */
+body:has(main.page-about) .eyebrow,
+body:has(main.page-partners) .eyebrow,
+body:has(main.page-about) .about-kicker,
+body:has(main.page-partners) .about-kicker,
+body:has(main.page-about) .kesaksian-trilogy,
+body:has(main.page-about) .sub-title-block,
+body:has(main.page-about) .about-vision-band .about-kicker,
+body:has(main.page-about) .about-vision-band .sub-title-block,
+body:has(main.page-about) .about-vision-band .about-body strong em,
+body:has(main.page-about) .about-vision-band .about-body em strong,
+body:has(main.page-partners) .partner-quote,
+body:has(main.page-about) footer a,
+body:has(main.page-partners) footer a {
+  color: #f5cb68;
+}
+body:has(main.page-about) .mark,
+body:has(main.page-partners) .mark,
+body:has(main.page-about) .brand small,
+body:has(main.page-partners) .brand small,
+body:has(main.page-about) nav a.active,
+body:has(main.page-partners) nav a.active,
+body:has(main.page-about) nav a:hover,
+body:has(main.page-partners) nav a:hover {
+  color: #0d0d44;
+}
+body:has(main.page-about) .lang-switch a.selected,
+body:has(main.page-partners) .lang-switch a.selected {
+  background: #0d0d44;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(13, 13, 68, 0.45);
+}
+body:has(main.page-about) .about-intro h1::after,
+body:has(main.page-partners) .page-intro h1::after {
+  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
+}
+body:has(main.page-about) .kesaksian-card,
+body:has(main.page-partners) .partner-card {
+  border-left-color: #f5cb68;
+  border-color: rgba(245, 203, 104, 0.35);
+}
+body:has(main.page-about) .about-vision-band {
+  border-top-color: rgba(245, 203, 104, 0.35);
+  border-bottom-color: rgba(245, 203, 104, 0.35);
+}
+body:has(main.page-about) .about-photo img,
+body:has(main.page-partners) .partner-photo img {
+  outline-color: rgba(245, 203, 104, 0.55);
+}
+body:has(main.page-about) footer a:hover,
+body:has(main.page-partners) footer a:hover {
+  color: #fae4b5;
 }
 
 /* Page themes: light (Keahlian / Kontak) */
