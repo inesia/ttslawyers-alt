@@ -994,6 +994,10 @@ body:has(main.page-about) .about-vision-band .about-body strong,
 body:has(main.page-about) .about-vision-band .about-body b {
   color: #f5cb68;
 }
+body:has(main.page-about) strong.text-white,
+body:has(main.page-about) .text-white {
+  color: #ffffff;
+}
 body:has(main.page-about) .about-vision-band {
   background: #202020;
   border-top-color: #f5cb68;
@@ -1163,11 +1167,11 @@ body:has(main.page-contact) .contact-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-nav.png");
+  background-image: url("gold-contact.png");
   background-size: 220px 220px;
   background-position: 0 0;
   background-repeat: repeat;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }
