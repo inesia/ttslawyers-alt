@@ -1188,10 +1188,15 @@ body:has(main.page-contact) .contact-list a {
 }
 body:has(main.page-contact) .contact-card .about-kicker {
   letter-spacing: .14em;
+  font-size: 13px;
+}
+body:has(main.page-contact) .contact-list dt {
+  font-size: 12px;
 }
 body:has(main.page-contact) .contact-list dd,
 body:has(main.page-contact) .contact-list a {
   font-weight: 700;
+  font-size: 18px;
 }
 body:has(main.page-contact) .contact-list a {
   border-bottom-color: #000000;

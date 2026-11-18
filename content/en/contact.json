@@ -20,16 +20,7 @@
       ]
     },
     {
-      "label": "Email",
-      "values": [
-        {
-          "href": "mailto:timotiuslawyer@gmail.com",
-          "text": "timotiuslawyer@gmail.com"
-        }
-      ]
-    },
-    {
-      "label": "Secretary",
+      "label": "Email and Secretary",
       "values": [
         {
           "href": "mailto:timotiuslawyer@gmail.com",
