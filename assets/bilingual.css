@@ -1,34 +1,35 @@
-/* Header & Navigation — antique metallic gold + soft gold glow */
+/* Header & Navigation — champagne / antique brass from star reference */
 header.topbar {
   position: sticky;
   top: 0;
   padding: 16px 3.3%;
   gap: 18px;
-  background-color: #A87845;
+  background-color: #C5A059;
   background-image:
     linear-gradient(
       112deg,
-      #593A22 0%,
-      #78502C 16%,
-      #A87845 34%,
-      #C69B67 44%,
-      #E4C49B 49%,
-      #F6DEB6 52%,
-      #E4C49B 56%,
-      #C69B67 64%,
-      #A87845 78%,
-      #78502C 90%,
-      #593A22 100%
+      #5C3D1E 0%,
+      #6B4F27 12%,
+      #8B6A3A 24%,
+      #A67C3D 38%,
+      #C5A059 48%,
+      #E8C98B 52%,
+      #F1D38E 54%,
+      #E8C98B 58%,
+      #C5A059 68%,
+      #A67C3D 80%,
+      #6B4F27 92%,
+      #5C3D1E 100%
     );
-  border-bottom: 1px solid #593A22;
+  border-bottom: 1px solid #6B4F27;
   color: #000000;
   box-shadow:
-    0 0 18px rgba(228, 196, 155, 0.35),
-    0 0 36px rgba(198, 155, 103, 0.22),
-    0 1px 0 rgba(246, 222, 182, 0.65),
+    0 0 18px rgba(197, 160, 89, 0.35),
+    0 0 36px rgba(166, 124, 61, 0.22),
+    0 1px 0 rgba(241, 211, 142, 0.6),
     0 4px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(246, 222, 182, 0.55),
-    inset 0 -1px 0 rgba(89, 58, 34, 0.4);
+    inset 0 1px 0 rgba(241, 211, 142, 0.5),
+    inset 0 -1px 0 rgba(92, 61, 30, 0.4);
   overflow: hidden;
 }
 header.topbar::before {
@@ -38,22 +39,22 @@ header.topbar::before {
   background-image:
     repeating-linear-gradient(
       -16deg,
-      rgba(89, 58, 34, 0.07) 0 1px,
+      rgba(92, 61, 30, 0.07) 0 1px,
       transparent 1px 3px
     ),
     linear-gradient(
       100deg,
       transparent 0%,
       transparent 22%,
-      rgba(246, 222, 182, 0.42) 38%,
-      rgba(255, 248, 230, 0.55) 48%,
-      rgba(246, 222, 182, 0.32) 56%,
-      transparent 70%,
+      rgba(232, 201, 139, 0.4) 38%,
+      rgba(241, 211, 142, 0.55) 48%,
+      rgba(232, 201, 139, 0.3) 58%,
+      transparent 72%,
       transparent 100%
     ),
     radial-gradient(
       120% 80% at 42% 40%,
-      rgba(246, 222, 182, 0.28) 0%,
+      rgba(241, 211, 142, 0.28) 0%,
       transparent 55%
     );
   background-repeat: repeat, no-repeat, no-repeat;
@@ -128,15 +129,15 @@ nav a.active {
 }
 .lang-switch a.selected {
   background: #000000;
-  color: #f5cb68;
+  color: #C5A059;
   box-shadow: none;
 }
 
 /* Home — gold page + gold footer; CTA black + gold text */
 body:has(main.home-main) {
   color: #000000;
-  background: #f5cb68;
-  background-image: linear-gradient(160deg, #ffd875 0%, #f5cb68 45%, #e0b34a 100%);
+  background: #C5A059;
+  background-image: linear-gradient(160deg, #ffd875 0%, #C5A059 45%, #e0b34a 100%);
 }
 body:has(main.home-main) footer {
   position: relative;
@@ -199,7 +200,7 @@ body:has(main.home-main) footer a:hover {
   bottom: 12%;
   left: max(5%, calc((100vw - 1180px) / 2));
   max-width: 700px;
-  color: #f5cb68;
+  color: #C5A059;
   padding-right: 24px;
 }
 .hero-caption span {
@@ -207,13 +208,13 @@ body:has(main.home-main) footer a:hover {
   font-size: 12px;
   letter-spacing: .24em;
   color: #000000;
-  background: #f5cb68;
-  border: 1px solid #f5cb68;
+  background: #C5A059;
+  border: 1px solid #C5A059;
   padding: 8px 14px;
   line-height: 1.35;
 }
 .hero-caption h1 {
-  color: #f5cb68;
+  color: #C5A059;
   border: 0;
   padding: 0;
   margin: 18px 0 30px;
@@ -223,20 +224,20 @@ body:has(main.home-main) footer a:hover {
 }
 .hero-cta {
   display: inline-block;
-  border: 1px solid #f5cb68;
+  border: 1px solid #C5A059;
   color: #000000;
   padding: 13px 21px;
   text-decoration: none;
   letter-spacing: .06em;
   font-size: 13px;
-  background: #f5cb68;
+  background: #C5A059;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   transition: all .2s ease;
 }
 .hero-cta:hover {
   background: transparent;
-  color: #f5cb68;
-  border-color: #f5cb68;
+  color: #C5A059;
+  border-color: #C5A059;
 }
 .home-intro {
   max-width: 1180px;
@@ -259,17 +260,17 @@ body:has(main.home-main) footer a:hover {
   color: #000000;
 }
 .placeholder {
-  border: 1px solid #f5cb68;
+  border: 1px solid #C5A059;
   background: linear-gradient(135deg, rgba(100, 211, 239, 0.72) 0%, rgba(74, 191, 224, 0.88) 100%);
   padding: 40px;
   margin-top: 30px;
   margin-bottom: 90px;
   min-height: 240px;
-  border-left: 4px solid #f5cb68;
+  border-left: 4px solid #C5A059;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
 }
 .placeholder-tag {
-  color: #f5cb68;
+  color: #C5A059;
   font-size: 12px;
   letter-spacing: .14em;
   font-weight: 700;
@@ -313,10 +314,10 @@ main:not(.home-main) {
   margin: 0;
   padding: 32px max(28px, calc((100vw - 1180px) / 2)) 40px;
   background: #000000;
-  color: #f5cb68;
+  color: #C5A059;
 }
 .hero:has(img) .hero-caption h1 {
-  color: #f5cb68;
+  color: #C5A059;
 }
 
 section[id], main h2[id] {
@@ -369,7 +370,7 @@ main.page-contact {
   width: 72px;
   height: 2px;
   margin-top: 26px;
-  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
+  background: linear-gradient(90deg, #C5A059 0%, #64d3ef 65%, transparent 100%);
 }
 
 /* Paragraph Justification & Typography */
@@ -381,7 +382,7 @@ p,
   text-justify: inter-word;
 }
 .about-kicker {
-  color: #f5cb68;
+  color: #C5A059;
   font-size: 12px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -418,7 +419,7 @@ p,
   margin-top: 1.6rem;
   margin-bottom: 0.45rem;
   text-align: left;
-  color: #f5cb68;
+  color: #C5A059;
 }
 .about-body > .sub-title-block:first-child,
 .sub-title-block:first-child {
@@ -443,7 +444,7 @@ p,
   border: 0;
   background: #3ab4d8;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-  outline: 1px solid #f5cb68;
+  outline: 1px solid #C5A059;
   outline-offset: 10px;
 }
 .about-kesaksian-section {
@@ -452,8 +453,8 @@ p,
 }
 .kesaksian-card {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid #f5cb68;
-  border-left: 4px solid #f5cb68;
+  border: 1px solid #C5A059;
+  border-left: 4px solid #C5A059;
   padding: 34px 36px 30px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
@@ -475,7 +476,7 @@ p,
   font-weight: 700;
   line-height: 1.75;
   letter-spacing: .02em;
-  color: #f5cb68;
+  color: #C5A059;
   text-align: left;
   margin: 0 0 20px;
   text-transform: uppercase;
@@ -530,7 +531,7 @@ p,
   font-size: 1.45rem;
 }
 '.about-vision-band .about-kicker {
-  color: #f5cb68;
+  color: #C5A059;
 }
 .about-vision-band .about-body {
   color: #072838;
@@ -554,12 +555,12 @@ p,
 }
 .about-vision-band .about-body strong em,
 .about-vision-band .about-body em strong {
-  color: #f5cb68;
+  color: #C5A059;
   font-weight: 700;
   font-style: italic;
 }
 .about-vision-band .sub-title-block {
-  color: #f5cb68;
+  color: #C5A059;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-weight: 700;
   font-size: 1.22rem;
@@ -597,8 +598,8 @@ p,
 .exp-founder-bio {
   padding: 28px 28px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid #f5cb68;
-  border-left: 4px solid #f5cb68;
+  border: 1px solid #C5A059;
+  border-left: 4px solid #C5A059;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
@@ -623,7 +624,7 @@ p,
   top: 9px;
   width: 7px;
   height: 7px;
-  background-color: #f5cb68;
+  background-color: #C5A059;
   transform: rotate(45deg);
   border-radius: 1px;
 }
@@ -650,7 +651,7 @@ p,
   top: 9px;
   width: 5.5px;
   height: 5.5px;
-  background-color: #f5cb68;
+  background-color: #C5A059;
   transform: rotate(45deg);
   border-radius: 1px;
 }
@@ -691,8 +692,8 @@ p,
 }
 .practice-item {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid #f5cb68;
-  border-top: 3px solid #f5cb68;
+  border: 1px solid #C5A059;
+  border-top: 3px solid #C5A059;
   padding: 18px 20px;
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16.5px;
@@ -703,7 +704,7 @@ p,
   transition: transform .2s ease, border-color .2s ease;
 }
 .practice-item:hover {
-  border-color: #f5cb68;
+  border-color: #C5A059;
   transform: translateY(-2px);
 }
 .exp-experience-wrap {
@@ -728,8 +729,8 @@ p,
 }
 .case-card {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid #f5cb68;
-  border-left: 3px solid #f5cb68;
+  border: 1px solid #C5A059;
+  border-left: 3px solid #C5A059;
   padding: 22px 24px 20px;
   display: flex;
   flex-direction: column;
@@ -738,7 +739,7 @@ p,
   transition: transform .2s ease, border-color .2s ease;
 }
 .case-card:hover {
-  border-color: #f5cb68;
+  border-color: #C5A059;
   transform: translateY(-2px);
 }
 .case-card strong {
@@ -771,8 +772,8 @@ p,
   align-items: start;
   padding: 30px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid #f5cb68;
-  border-left: 4px solid #f5cb68;
+  border: 1px solid #C5A059;
+  border-left: 4px solid #C5A059;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(8px);
 }
@@ -783,7 +784,7 @@ p,
   border: 0;
   background: #3ab4d8;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-  outline: 1px solid #f5cb68;
+  outline: 1px solid #C5A059;
   outline-offset: 6px;
 }
 .partner-name {
@@ -807,11 +808,11 @@ p,
 }
 .partner-quote {
   font-style: italic;
-  color: #f5cb68;
+  color: #C5A059;
   font-weight: 700;
   margin: 14px 0 16px;
   padding-left: 18px;
-  border-left: 3px solid #f5cb68;
+  border-left: 3px solid #C5A059;
   line-height: 1.7;
 }
 
@@ -840,11 +841,11 @@ p,
   color: #072838;
   padding: 34px 32px 36px;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
-  border: 1px solid #f5cb68;
-  border-left: 4px solid #f5cb68;
+  border: 1px solid #C5A059;
+  border-left: 4px solid #C5A059;
 }
 .contact-card .about-kicker {
-  color: #f5cb68;
+  color: #C5A059;
   margin-bottom: 26px;
 }
 .contact-list {
@@ -874,13 +875,13 @@ p,
 .contact-list a {
   color: #072838;
   text-decoration: none;
-  border-bottom: 1px solid #f5cb68;
+  border-bottom: 1px solid #C5A059;
   width: fit-content;
   transition: color .2s ease, border-color .2s ease;
 }
 .contact-list a:hover {
-  color: #f5cb68;
-  border-bottom-color: #f5cb68;
+  color: #C5A059;
+  border-bottom-color: #C5A059;
 }
 
 /* Responsive */
@@ -1035,7 +1036,7 @@ body:has(main.page-about) .kesaksian-body strong,
 body:has(main.page-about) .kesaksian-body b,
 body:has(main.page-about) .about-vision-band .about-body strong,
 body:has(main.page-about) .about-vision-band .about-body b {
-  color: #f5cb68;
+  color: #C5A059;
 }
 body:has(main.page-about) strong.text-white,
 body:has(main.page-about) .text-white {
@@ -1043,19 +1044,19 @@ body:has(main.page-about) .text-white {
 }
 body:has(main.page-about) .about-vision-band {
   background: #202020;
-  border-top-color: #f5cb68;
-  border-bottom-color: #f5cb68;
+  border-top-color: #C5A059;
+  border-bottom-color: #C5A059;
 }
 body:has(main.page-about) .kesaksian-card,
 body:has(main.page-partners) .partner-card {
   background: rgba(255, 255, 255, 0.06);
-  border-color: #f5cb68;
+  border-color: #C5A059;
 }
 body:has(main.page-about) footer,
 body:has(main.page-partners) footer {
   background: #151515;
   color: #ffffff;
-  border-top-color: #f5cb68;
+  border-top-color: #C5A059;
 }
 
 /* Dark pages: page content keeps gold; nav follows global gold+black */
@@ -1073,28 +1074,28 @@ body:has(main.page-about) .about-vision-band .about-body em strong,
 body:has(main.page-partners) .partner-quote,
 body:has(main.page-about) footer a,
 body:has(main.page-partners) footer a {
-  color: #f5cb68;
+  color: #C5A059;
 }
 body:has(main.page-about) .about-intro h1::after,
 body:has(main.page-partners) .page-intro h1::after {
-  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
+  background: linear-gradient(90deg, #C5A059 0%, #64d3ef 65%, transparent 100%);
 }
 body:has(main.page-about) .kesaksian-card,
 body:has(main.page-partners) .partner-card {
-  border-left-color: #f5cb68;
-  border-color: #f5cb68;
+  border-left-color: #C5A059;
+  border-color: #C5A059;
 }
 body:has(main.page-about) .about-vision-band {
-  border-top-color: #f5cb68;
-  border-bottom-color: #f5cb68;
+  border-top-color: #C5A059;
+  border-bottom-color: #C5A059;
 }
 body:has(main.page-about) .about-photo img,
 body:has(main.page-partners) .partner-photo img {
-  outline-color: #f5cb68;
+  outline-color: #C5A059;
 }
 body:has(main.page-about) footer a:hover,
 body:has(main.page-partners) footer a:hover {
-  color: #fae4b5;
+  color: #E8C98B;
 }
 
 /* Keahlian / Kontak — same dark theme as Tentang; cards keep own styles */
@@ -1130,7 +1131,7 @@ body:has(main.page-expertise) .exp-practice-lead strong,
 body:has(main.page-contact) main strong,
 body:has(main.page-contact) main b,
 body:has(main.page-contact) .about-lead strong {
-  color: #f5cb68;
+  color: #C5A059;
 }
 body:has(main.page-expertise) .eyebrow,
 body:has(main.page-contact) .eyebrow,
@@ -1140,39 +1141,39 @@ body:has(main.page-expertise) .sub-title-block,
 body:has(main.page-contact) .sub-title-block,
 body:has(main.page-expertise) footer a,
 body:has(main.page-contact) footer a {
-  color: #f5cb68;
+  color: #C5A059;
 }
 body:has(main.page-expertise) .page-intro h1::after,
 body:has(main.page-contact) .page-intro h1::after {
-  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
+  background: linear-gradient(90deg, #C5A059 0%, #64d3ef 65%, transparent 100%);
 }
 body:has(main.page-expertise) .exp-band {
   background: #202020;
-  border-top-color: #f5cb68;
-  border-bottom-color: #f5cb68;
+  border-top-color: #C5A059;
+  border-bottom-color: #C5A059;
 }
 body:has(main.page-expertise) footer,
 body:has(main.page-contact) footer {
   background: #151515;
   color: #ffffff;
-  border-top-color: #f5cb68;
+  border-top-color: #C5A059;
 }
 body:has(main.page-expertise) footer a:hover,
 body:has(main.page-contact) footer a:hover {
-  color: #fae4b5;
+  color: #E8C98B;
 }
 
 /* Keahlian cards — green like perkara card #354A21 */
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
   background: #354A21;
-  border-color: #f5cb68;
-  border-left-color: #f5cb68;
+  border-color: #C5A059;
+  border-left-color: #C5A059;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   color: #ffffff;
 }
 body:has(main.page-expertise) .practice-item {
-  border-top-color: #f5cb68;
+  border-top-color: #C5A059;
 }
 body:has(main.page-expertise) .case-card strong,
 body:has(main.page-expertise) .case-card span,
@@ -1180,17 +1181,17 @@ body:has(main.page-expertise) .case-sub-list li {
   color: #ffffff;
 }
 body:has(main.page-expertise) .case-card strong {
-  color: #f5cb68;
+  color: #C5A059;
 }
 body:has(main.page-expertise) .exp-bullet-list li::before,
 body:has(main.page-expertise) .case-sub-list li::before {
-  background-color: #f5cb68;
+  background-color: #C5A059;
 }
 /* Keahlian: perkara-besar card — olive #354A21, white text, gold border */
 body:has(main.page-expertise) .exp-founder-bio {
   background: #354A21;
-  border-color: #f5cb68;
-  border-left-color: #f5cb68;
+  border-color: #C5A059;
+  border-left-color: #C5A059;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   color: #ffffff;
 }
@@ -1202,39 +1203,40 @@ body:has(main.page-expertise) .exp-founder-bio .exp-bullet-list li {
 }
 body:has(main.page-expertise) .exp-founder-bio strong,
 body:has(main.page-expertise) .exp-founder-bio b {
-  color: #f5cb68;
+  color: #C5A059;
 }
 
-/* Kontak card — antique bronze-gold plaque + soft gold glow */
+/* Kontak card — champagne / antique brass from star reference */
 body:has(main.page-contact) .contact-card {
   position: relative;
   overflow: hidden;
-  background-color: #A87845;
+  background-color: #C5A059;
   background-image:
     linear-gradient(
       135deg,
-      #593A22 0%,
-      #78502C 14%,
-      #A87845 32%,
-      #C69B67 46%,
-      #E4C49B 54%,
-      #F6DEB6 58%,
-      #E4C49B 64%,
-      #C69B67 74%,
-      #A87845 88%,
-      #78502C 100%
+      #5C3D1E 0%,
+      #6B4F27 12%,
+      #8B6A3A 24%,
+      #A67C3D 40%,
+      #C5A059 52%,
+      #E8C98B 58%,
+      #F1D38E 62%,
+      #E8C98B 68%,
+      #C5A059 78%,
+      #A67C3D 90%,
+      #6B4F27 100%
     );
-  border-color: #593A22;
-  border-left-color: #78502C;
+  border-color: #6B4F27;
+  border-left-color: #A67C3D;
   box-shadow:
-    0 0 22px rgba(228, 196, 155, 0.4),
-    0 0 48px rgba(198, 155, 103, 0.28),
+    0 0 20px rgba(197, 160, 89, 0.38),
+    0 0 44px rgba(166, 124, 61, 0.24),
     0 8px 24px rgba(0, 0, 0, 0.28),
-    0 1px 0 rgba(246, 222, 182, 0.55),
-    inset 0 1px 0 rgba(255, 248, 230, 0.65),
-    inset 0 -1px 0 rgba(89, 58, 34, 0.5),
-    inset 1px 0 0 rgba(228, 196, 155, 0.35),
-    inset -1px 0 0 rgba(89, 58, 34, 0.38);
+    0 1px 0 rgba(241, 211, 142, 0.55),
+    inset 0 1px 0 rgba(241, 211, 142, 0.55),
+    inset 0 -1px 0 rgba(92, 61, 30, 0.45),
+    inset 1px 0 0 rgba(232, 201, 139, 0.35),
+    inset -1px 0 0 rgba(92, 61, 30, 0.35);
   color: #000000;
 }
 body:has(main.page-contact) .contact-card::before {
@@ -1244,22 +1246,22 @@ body:has(main.page-contact) .contact-card::before {
   background-image:
     repeating-linear-gradient(
       -18deg,
-      rgba(89, 58, 34, 0.08) 0 1px,
+      rgba(92, 61, 30, 0.07) 0 1px,
       transparent 1px 3px
     ),
     linear-gradient(
       120deg,
       transparent 0%,
       transparent 16%,
-      rgba(246, 222, 182, 0.4) 34%,
-      rgba(255, 248, 230, 0.55) 46%,
-      rgba(246, 222, 182, 0.28) 58%,
-      transparent 74%,
+      rgba(232, 201, 139, 0.4) 34%,
+      rgba(241, 211, 142, 0.5) 46%,
+      rgba(232, 201, 139, 0.28) 60%,
+      transparent 76%,
       transparent 100%
     ),
     radial-gradient(
       90% 70% at 38% 28%,
-      rgba(246, 222, 182, 0.35) 0%,
+      rgba(241, 211, 142, 0.3) 0%,
       transparent 60%
     );
   background-repeat: repeat, no-repeat, no-repeat;

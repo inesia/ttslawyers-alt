@@ -4,9 +4,9 @@
   --navy-dark: #4abfe0;
   --navy-deep: #072838;
   --blue-accent: #d0f6ff;
-  --gold: #f5cb68;
-  --gold-light: #fae4b5;
-  --gold-bright: #ffd875;
+  --gold: #C5A059;
+  --gold-light: #E8C98B;
+  --gold-bright: #F1D38E;
   --ink: #0d0d44;
   --paper: #d0f6ff;
   --text-body: #072838;
@@ -30,21 +30,21 @@ p {
   text-justify: inter-word;
 }
 header {
-  background-color: #A87845;
+  background-color: #C5A059;
   background-image:
     linear-gradient(
       112deg,
-      #593A22 0%,
-      #78502C 16%,
-      #A87845 34%,
-      #C69B67 44%,
-      #E4C49B 49%,
-      #F6DEB6 52%,
-      #E4C49B 56%,
-      #C69B67 64%,
-      #A87845 78%,
-      #78502C 90%,
-      #593A22 100%
+      #5C3D1E 0%,
+      #6B4F27 14%,
+      #A67C3D 30%,
+      #C5A059 44%,
+      #E8C98B 50%,
+      #F1D38E 53%,
+      #E8C98B 58%,
+      #C5A059 70%,
+      #A67C3D 84%,
+      #6B4F27 94%,
+      #5C3D1E 100%
     );
   color: #000000;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
@@ -56,13 +56,13 @@ header {
   top: 0;
   z-index: 10;
   box-shadow:
-    0 0 18px rgba(228, 196, 155, 0.35),
-    0 0 36px rgba(198, 155, 103, 0.22),
-    0 1px 0 rgba(246, 222, 182, 0.65),
+    0 0 18px rgba(197, 160, 89, 0.35),
+    0 0 36px rgba(166, 124, 61, 0.22),
+    0 1px 0 rgba(241, 211, 142, 0.65),
     0 4px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(246, 222, 182, 0.55),
-    inset 0 -1px 0 rgba(89, 58, 34, 0.4);
-  border-bottom: 1px solid #593A22;
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 rgba(92, 61, 30, 0.4);
+  border-bottom: 1px solid #6B4F27;
   overflow: hidden;
 }
 header::before {
@@ -72,22 +72,22 @@ header::before {
   background-image:
     repeating-linear-gradient(
       -16deg,
-      rgba(89, 58, 34, 0.07) 0 1px,
+      rgba(92, 61, 30, 0.06) 0 1px,
       transparent 1px 3px
     ),
     linear-gradient(
       100deg,
       transparent 0%,
       transparent 22%,
-      rgba(246, 222, 182, 0.42) 38%,
-      rgba(255, 248, 230, 0.55) 48%,
-      rgba(246, 222, 182, 0.32) 56%,
-      transparent 70%,
+      rgba(232, 201, 139, 0.42) 38%,
+      rgba(255, 255, 255, 0.5) 48%,
+      rgba(232, 201, 139, 0.32) 58%,
+      transparent 72%,
       transparent 100%
     ),
     radial-gradient(
       120% 80% at 42% 40%,
-      rgba(246, 222, 182, 0.28) 0%,
+      rgba(232, 201, 139, 0.28) 0%,
       transparent 55%
     );
   background-repeat: repeat, no-repeat, no-repeat;
