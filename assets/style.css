@@ -30,7 +30,7 @@ p {
   text-justify: inter-word;
 }
 header {
-  background: linear-gradient(90deg, #e0b34a 0%, #f5cb68 45%, #ffd875 100%);
+  background-color: #e8c56a;
   color: #000000;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
   display: flex;
@@ -42,6 +42,23 @@ header {
   z-index: 10;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
   border-bottom: 1px solid #000000;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("gold-nav.png");
+  background-size: 220px 220px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+header > * {
+  position: relative;
+  z-index: 1;
 }
 .brand {
   display: flex;

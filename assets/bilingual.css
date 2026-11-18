@@ -1,11 +1,30 @@
-/* Header & Navigation — gold + black (all pages) */
+/* Header & Navigation — gold texture tiled @ 50% opacity + black (all pages) */
 header.topbar {
+  position: sticky;
+  top: 0;
   padding: 16px 3.3%;
   gap: 18px;
-  background: linear-gradient(90deg, #e0b34a 0%, #f5cb68 45%, #ffd875 100%);
+  background-color: #e8c56a;
   border-bottom: 1px solid #000000;
   color: #000000;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+header.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("gold-nav.png");
+  background-size: 220px 220px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+header.topbar > * {
+  position: relative;
+  z-index: 1;
 }
 header.topbar nav {
   flex: 1;
@@ -77,9 +96,27 @@ body:has(main.home-main) {
   background-image: linear-gradient(160deg, #ffd875 0%, #f5cb68 45%, #e0b34a 100%);
 }
 body:has(main.home-main) footer {
-  background: linear-gradient(90deg, #e0b34a 0%, #f5cb68 100%);
+  position: relative;
+  overflow: hidden;
+  background: #e8c56a;
   color: #000000;
   border-top: 1px solid #000000;
+}
+body:has(main.home-main) footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("gold-nav.png");
+  background-size: 220px 220px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+body:has(main.home-main) footer > * {
+  position: relative;
+  z-index: 1;
 }
 body:has(main.home-main) footer a {
   color: #000000;
@@ -822,8 +859,14 @@ p,
   }
   .about-photo {
     position: static;
-    max-width: 320px;
+    width: 100%;
+    max-width: none;
     order: -1;
+  }
+  .about-photo img {
+    width: 100%;
+    max-width: none;
+    outline-offset: 6px;
   }
   .about-shell,
   .page-shell {
@@ -932,20 +975,24 @@ body:has(main.page-about) .page-intro h1,
 body:has(main.page-partners) .page-intro h1,
 body:has(main.page-about) .about-lead,
 body:has(main.page-about) .about-body,
-body:has(main.page-about) .about-body strong,
-body:has(main.page-about) .about-body b,
-body:has(main.page-about) .kesaksian-title,
 body:has(main.page-about) .kesaksian-body,
-body:has(main.page-about) .kesaksian-body strong,
-body:has(main.page-about) .kesaksian-body b,
 body:has(main.page-about) .about-vision-band,
 body:has(main.page-about) .about-vision-band h2,
 body:has(main.page-about) .about-vision-band .about-body,
-body:has(main.page-about) .about-vision-band .about-body strong,
-body:has(main.page-about) .about-vision-band .about-body b,
 body:has(main.page-partners) .partner-name,
 body:has(main.page-partners) .partner-copy .about-body {
   color: #ffffff;
+}
+/* Firma: bold text gold; keep EXECUTIVE FIRM PROFILE (h1) white */
+body:has(main.page-about) main strong,
+body:has(main.page-about) main b,
+body:has(main.page-about) .about-body strong,
+body:has(main.page-about) .about-body b,
+body:has(main.page-about) .kesaksian-body strong,
+body:has(main.page-about) .kesaksian-body b,
+body:has(main.page-about) .about-vision-band .about-body strong,
+body:has(main.page-about) .about-vision-band .about-body b {
+  color: #f5cb68;
 }
 body:has(main.page-about) .about-vision-band {
   background: #202020;
@@ -969,6 +1016,7 @@ body:has(main.page-about) .eyebrow,
 body:has(main.page-partners) .eyebrow,
 body:has(main.page-about) .about-kicker,
 body:has(main.page-partners) .about-kicker,
+body:has(main.page-about) .kesaksian-title,
 body:has(main.page-about) .kesaksian-trilogy,
 body:has(main.page-about) .sub-title-block,
 body:has(main.page-about) .about-vision-band .about-kicker,
@@ -1038,12 +1086,29 @@ body:has(main.page-expertise) .exp-band {
   border-top-color: rgba(7, 40, 56, 0.12);
   border-bottom-color: rgba(7, 40, 56, 0.12);
 }
-body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
   background: rgba(255, 255, 255, 0.18);
   border-color: #f5cb68;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+/* Keahlian: perkara-besar card — olive #354A21, white text, gold border */
+body:has(main.page-expertise) .exp-founder-bio {
+  background: #354A21;
+  border-color: #f5cb68;
+  border-left-color: #f5cb68;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+}
+body:has(main.page-expertise) .exp-founder-bio,
+body:has(main.page-expertise) .exp-founder-bio p,
+body:has(main.page-expertise) .exp-founder-bio .exp-bullet-list,
+body:has(main.page-expertise) .exp-founder-bio .exp-bullet-list li {
+  color: #ffffff;
+}
+body:has(main.page-expertise) .exp-founder-bio strong,
+body:has(main.page-expertise) .exp-founder-bio b {
+  color: #f5cb68;
 }
 body:has(main.page-expertise) footer,
 body:has(main.page-contact) footer {
@@ -1067,7 +1132,6 @@ body:has(main.page-expertise) .page-intro h1::after,
 body:has(main.page-contact) .page-intro h1::after {
   background: linear-gradient(90deg, #f5cb68 0%, #f5cb68 65%, transparent 100%);
 }
-body:has(main.page-expertise) .exp-founder-bio,
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
   border-left-color: #f5cb68;
@@ -1084,23 +1148,50 @@ body:has(main.page-contact) footer a:hover {
   color: #fae4b5;
 }
 
-/* Kontak card only — gold + black text */
+/* Kontak card — seamless gold tile @ 50% opacity + bold black text */
 body:has(main.page-contact) .contact-card {
-  background: #f5cb68;
-  background-image: linear-gradient(160deg, #ffd875 0%, #f5cb68 55%, #e0b34a 100%);
+  position: relative;
+  overflow: hidden;
+  background-color: #e8c56a;
+  background-image: none;
   border-color: #000000;
   border-left-color: #000000;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
   color: #000000;
+}
+body:has(main.page-contact) .contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("gold-nav.png");
+  background-size: 220px 220px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+body:has(main.page-contact) .contact-card > * {
+  position: relative;
+  z-index: 1;
 }
 body:has(main.page-contact) .contact-card .about-kicker,
 body:has(main.page-contact) .contact-list dt,
 body:has(main.page-contact) .contact-list dd,
 body:has(main.page-contact) .contact-list a {
   color: #000000;
+  font-weight: 800;
+}
+body:has(main.page-contact) .contact-card .about-kicker {
+  letter-spacing: .14em;
+}
+body:has(main.page-contact) .contact-list dd,
+body:has(main.page-contact) .contact-list a {
+  font-weight: 700;
 }
 body:has(main.page-contact) .contact-list a {
   border-bottom-color: #000000;
+  border-bottom-width: 2px;
 }
 body:has(main.page-contact) .contact-list a:hover {
   color: #000000;
