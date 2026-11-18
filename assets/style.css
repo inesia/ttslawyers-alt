@@ -58,11 +58,10 @@ header {
   box-shadow:
     0 0 18px rgba(197, 160, 89, 0.35),
     0 0 36px rgba(166, 124, 61, 0.22),
-    0 1px 0 rgba(241, 211, 142, 0.65),
     0 4px 18px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.45),
     inset 0 -1px 0 rgba(92, 61, 30, 0.4);
-  border-bottom: 1px solid #6B4F27;
+  border-bottom: none;
   overflow: hidden;
 }
 header::before {
@@ -93,6 +92,31 @@ header::before {
   background-repeat: repeat, no-repeat, no-repeat;
   pointer-events: none;
   z-index: 0;
+}
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #3D2B1F 0%,
+    #6B4E23 12%,
+    #7a5d2a 22%,
+    #b38728 38%,
+    #C5A059 46%,
+    #FEF1B5 50%,
+    #C5A059 54%,
+    #b38728 62%,
+    #7a5d2a 78%,
+    #6B4E23 88%,
+    #3D2B1F 100%
+  );
+  box-shadow: 0 0 8px rgba(254, 241, 181, 0.45);
+  pointer-events: none;
+  z-index: 2;
 }
 header > * {
   position: relative;

@@ -21,12 +21,11 @@ header.topbar {
       #6B4F27 92%,
       #5C3D1E 100%
     );
-  border-bottom: 1px solid #6B4F27;
+  border-bottom: none;
   color: #000000;
   box-shadow:
     0 0 18px rgba(197, 160, 89, 0.35),
     0 0 36px rgba(166, 124, 61, 0.22),
-    0 1px 0 rgba(241, 211, 142, 0.6),
     0 4px 18px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(241, 211, 142, 0.5),
     inset 0 -1px 0 rgba(92, 61, 30, 0.4);
@@ -60,6 +59,32 @@ header.topbar::before {
   background-repeat: repeat, no-repeat, no-repeat;
   pointer-events: none;
   z-index: 0;
+}
+/* Nav bottom edge — ornate metallic gold gradient */
+header.topbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #3D2B1F 0%,
+    #6B4E23 12%,
+    #7a5d2a 22%,
+    #b38728 38%,
+    #C5A059 46%,
+    #FEF1B5 50%,
+    #C5A059 54%,
+    #b38728 62%,
+    #7a5d2a 78%,
+    #6B4E23 88%,
+    #3D2B1F 100%
+  );
+  box-shadow: 0 0 8px rgba(254, 241, 181, 0.45);
+  pointer-events: none;
+  z-index: 2;
 }
 header.topbar > * {
   position: relative;
@@ -1206,11 +1231,13 @@ body:has(main.page-expertise) .exp-founder-bio b {
   color: #C5A059;
 }
 
-/* Kontak card — champagne / antique brass from star reference */
+/* Kontak card — champagne brass fill + ornate metallic gradient border */
 body:has(main.page-contact) .contact-card {
   position: relative;
   overflow: hidden;
   background-color: #C5A059;
+  border: 3px solid transparent;
+  border-left-width: 3px;
   background-image:
     linear-gradient(
       135deg,
@@ -1225,18 +1252,30 @@ body:has(main.page-contact) .contact-card {
       #C5A059 78%,
       #A67C3D 90%,
       #6B4F27 100%
+    ),
+    linear-gradient(
+      135deg,
+      #3D2B1F 0%,
+      #6B4E23 14%,
+      #7a5d2a 26%,
+      #b38728 40%,
+      #C5A059 46%,
+      #FEF1B5 50%,
+      #C5A059 54%,
+      #b38728 62%,
+      #7a5d2a 76%,
+      #6B4E23 88%,
+      #3D2B1F 100%
     );
-  border-color: #6B4F27;
-  border-left-color: #A67C3D;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   box-shadow:
     0 0 20px rgba(197, 160, 89, 0.38),
     0 0 44px rgba(166, 124, 61, 0.24),
     0 8px 24px rgba(0, 0, 0, 0.28),
-    0 1px 0 rgba(241, 211, 142, 0.55),
-    inset 0 1px 0 rgba(241, 211, 142, 0.55),
-    inset 0 -1px 0 rgba(92, 61, 30, 0.45),
-    inset 1px 0 0 rgba(232, 201, 139, 0.35),
-    inset -1px 0 0 rgba(92, 61, 30, 0.35);
+    0 0 10px rgba(254, 241, 181, 0.25),
+    inset 0 1px 0 rgba(241, 211, 142, 0.45),
+    inset 0 -1px 0 rgba(92, 61, 30, 0.35);
   color: #000000;
 }
 body:has(main.page-contact) .contact-card::before {
