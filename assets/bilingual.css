@@ -1,24 +1,62 @@
-/* Header & Navigation — gold texture tiled @ 50% opacity + black (all pages) */
+/* Header & Navigation — antique metallic gold + soft gold glow */
 header.topbar {
   position: sticky;
   top: 0;
   padding: 16px 3.3%;
   gap: 18px;
-  background-color: #e8c56a;
-  border-bottom: 1px solid #000000;
+  background-color: #A87845;
+  background-image:
+    linear-gradient(
+      112deg,
+      #593A22 0%,
+      #78502C 16%,
+      #A87845 34%,
+      #C69B67 44%,
+      #E4C49B 49%,
+      #F6DEB6 52%,
+      #E4C49B 56%,
+      #C69B67 64%,
+      #A87845 78%,
+      #78502C 90%,
+      #593A22 100%
+    );
+  border-bottom: 1px solid #593A22;
   color: #000000;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 0 18px rgba(228, 196, 155, 0.35),
+    0 0 36px rgba(198, 155, 103, 0.22),
+    0 1px 0 rgba(246, 222, 182, 0.65),
+    0 4px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(246, 222, 182, 0.55),
+    inset 0 -1px 0 rgba(89, 58, 34, 0.4);
   overflow: hidden;
 }
 header.topbar::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-contact.png");
-  background-size: 220px 220px;
-  background-position: 0 0;
-  background-repeat: repeat;
-  opacity: 1;
+  background-image:
+    repeating-linear-gradient(
+      -16deg,
+      rgba(89, 58, 34, 0.07) 0 1px,
+      transparent 1px 3px
+    ),
+    linear-gradient(
+      100deg,
+      transparent 0%,
+      transparent 22%,
+      rgba(246, 222, 182, 0.42) 38%,
+      rgba(255, 248, 230, 0.55) 48%,
+      rgba(246, 222, 182, 0.32) 56%,
+      transparent 70%,
+      transparent 100%
+    ),
+    radial-gradient(
+      120% 80% at 42% 40%,
+      rgba(246, 222, 182, 0.28) 0%,
+      transparent 55%
+    );
+  background-repeat: repeat, no-repeat, no-repeat;
   pointer-events: none;
   z-index: 0;
 }
@@ -1124,14 +1162,14 @@ body:has(main.page-contact) footer a:hover {
   color: #fae4b5;
 }
 
-/* Keahlian cards — keep existing card look */
+/* Keahlian cards — green like perkara card #354A21 */
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
-  background: rgba(255, 255, 255, 0.18);
+  background: #354A21;
   border-color: #f5cb68;
   border-left-color: #f5cb68;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  color: #072838;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
 }
 body:has(main.page-expertise) .practice-item {
   border-top-color: #f5cb68;
@@ -1139,7 +1177,10 @@ body:has(main.page-expertise) .practice-item {
 body:has(main.page-expertise) .case-card strong,
 body:has(main.page-expertise) .case-card span,
 body:has(main.page-expertise) .case-sub-list li {
-  color: #072838;
+  color: #ffffff;
+}
+body:has(main.page-expertise) .case-card strong {
+  color: #f5cb68;
 }
 body:has(main.page-expertise) .exp-bullet-list li::before,
 body:has(main.page-expertise) .case-sub-list li::before {
@@ -1164,26 +1205,64 @@ body:has(main.page-expertise) .exp-founder-bio b {
   color: #f5cb68;
 }
 
-/* Kontak card — seamless gold tile @ 50% opacity + bold black text */
+/* Kontak card — antique bronze-gold plaque + soft gold glow */
 body:has(main.page-contact) .contact-card {
   position: relative;
   overflow: hidden;
-  background-color: #e8c56a;
-  background-image: none;
-  border-color: #000000;
-  border-left-color: #000000;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  background-color: #A87845;
+  background-image:
+    linear-gradient(
+      135deg,
+      #593A22 0%,
+      #78502C 14%,
+      #A87845 32%,
+      #C69B67 46%,
+      #E4C49B 54%,
+      #F6DEB6 58%,
+      #E4C49B 64%,
+      #C69B67 74%,
+      #A87845 88%,
+      #78502C 100%
+    );
+  border-color: #593A22;
+  border-left-color: #78502C;
+  box-shadow:
+    0 0 22px rgba(228, 196, 155, 0.4),
+    0 0 48px rgba(198, 155, 103, 0.28),
+    0 8px 24px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(246, 222, 182, 0.55),
+    inset 0 1px 0 rgba(255, 248, 230, 0.65),
+    inset 0 -1px 0 rgba(89, 58, 34, 0.5),
+    inset 1px 0 0 rgba(228, 196, 155, 0.35),
+    inset -1px 0 0 rgba(89, 58, 34, 0.38);
   color: #000000;
 }
 body:has(main.page-contact) .contact-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-contact.png");
-  background-size: 220px 220px;
-  background-position: 0 0;
-  background-repeat: repeat;
-  opacity: 1;
+  background-image:
+    repeating-linear-gradient(
+      -18deg,
+      rgba(89, 58, 34, 0.08) 0 1px,
+      transparent 1px 3px
+    ),
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 16%,
+      rgba(246, 222, 182, 0.4) 34%,
+      rgba(255, 248, 230, 0.55) 46%,
+      rgba(246, 222, 182, 0.28) 58%,
+      transparent 74%,
+      transparent 100%
+    ),
+    radial-gradient(
+      90% 70% at 38% 28%,
+      rgba(246, 222, 182, 0.35) 0%,
+      transparent 60%
+    );
+  background-repeat: repeat, no-repeat, no-repeat;
   pointer-events: none;
   z-index: 0;
 }

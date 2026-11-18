@@ -30,7 +30,22 @@ p {
   text-justify: inter-word;
 }
 header {
-  background-color: #e8c56a;
+  background-color: #A87845;
+  background-image:
+    linear-gradient(
+      112deg,
+      #593A22 0%,
+      #78502C 16%,
+      #A87845 34%,
+      #C69B67 44%,
+      #E4C49B 49%,
+      #F6DEB6 52%,
+      #E4C49B 56%,
+      #C69B67 64%,
+      #A87845 78%,
+      #78502C 90%,
+      #593A22 100%
+    );
   color: #000000;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
   display: flex;
@@ -40,19 +55,42 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
-  border-bottom: 1px solid #000000;
+  box-shadow:
+    0 0 18px rgba(228, 196, 155, 0.35),
+    0 0 36px rgba(198, 155, 103, 0.22),
+    0 1px 0 rgba(246, 222, 182, 0.65),
+    0 4px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(246, 222, 182, 0.55),
+    inset 0 -1px 0 rgba(89, 58, 34, 0.4);
+  border-bottom: 1px solid #593A22;
   overflow: hidden;
 }
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-contact.png");
-  background-size: 220px 220px;
-  background-position: 0 0;
-  background-repeat: repeat;
-  opacity: 1;
+  background-image:
+    repeating-linear-gradient(
+      -16deg,
+      rgba(89, 58, 34, 0.07) 0 1px,
+      transparent 1px 3px
+    ),
+    linear-gradient(
+      100deg,
+      transparent 0%,
+      transparent 22%,
+      rgba(246, 222, 182, 0.42) 38%,
+      rgba(255, 248, 230, 0.55) 48%,
+      rgba(246, 222, 182, 0.32) 56%,
+      transparent 70%,
+      transparent 100%
+    ),
+    radial-gradient(
+      120% 80% at 42% 40%,
+      rgba(246, 222, 182, 0.28) 0%,
+      transparent 55%
+    );
+  background-repeat: repeat, no-repeat, no-repeat;
   pointer-events: none;
   z-index: 0;
 }
