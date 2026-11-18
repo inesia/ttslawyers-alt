@@ -48,11 +48,11 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-nav.png");
+  background-image: url("gold-contact.png");
   background-size: 220px 220px;
   background-position: 0 0;
   background-repeat: repeat;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }

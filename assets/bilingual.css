@@ -14,11 +14,11 @@ header.topbar::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-nav.png");
+  background-image: url("gold-contact.png");
   background-size: 220px 220px;
   background-position: 0 0;
   background-repeat: repeat;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }
@@ -37,15 +37,20 @@ header.topbar .brand small,
 header.topbar nav a,
 header.topbar .menu {
   color: #000000;
+  font-weight: 800;
 }
 header.topbar .mark {
   border-right-color: rgba(0, 0, 0, 0.35);
 }
 header.topbar nav a {
   font-size: clamp(13px, 1vw, 15px);
+  font-weight: 800;
   letter-spacing: .08em;
   white-space: nowrap;
   transition: color .2s ease;
+}
+header.topbar .lang-switch a {
+  font-weight: 800;
 }
 header.topbar nav a:hover,
 header.topbar nav a.active,
@@ -1054,12 +1059,12 @@ body:has(main.page-partners) footer a:hover {
   color: #fae4b5;
 }
 
-/* Page themes: light (Keahlian / Kontak) */
+/* Keahlian / Kontak — same dark theme as Tentang; cards keep own styles */
 body:has(main.page-expertise),
 body:has(main.page-contact) {
-  background: #88807B;
+  background: #202020;
   background-image: none;
-  color: #072838;
+  color: #ffffff;
 }
 body:has(main.page-expertise) main,
 body:has(main.page-contact) main,
@@ -1071,30 +1076,74 @@ body:has(main.page-expertise) .page-intro h1,
 body:has(main.page-contact) .page-intro h1,
 body:has(main.page-expertise) .founder-lead-title,
 body:has(main.page-expertise) .about-body,
-body:has(main.page-expertise) .about-body strong,
-body:has(main.page-expertise) .about-body b,
-body:has(main.page-expertise) .exp-bullet-list,
-body:has(main.page-expertise) .case-sub-list li,
 body:has(main.page-expertise) .exp-band h2,
 body:has(main.page-expertise) .exp-practice-lead,
-body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .exp-experience-wrap h2,
-body:has(main.page-expertise) .case-card strong,
-body:has(main.page-expertise) .case-card span,
 body:has(main.page-contact) .about-lead,
 body:has(main.page-contact) .contact-motto {
-  color: #072838;
+  color: #ffffff;
+}
+body:has(main.page-expertise) main strong,
+body:has(main.page-expertise) main b,
+body:has(main.page-expertise) .about-body strong,
+body:has(main.page-expertise) .about-body b,
+body:has(main.page-expertise) .founder-lead-title strong,
+body:has(main.page-expertise) .exp-practice-lead strong,
+body:has(main.page-contact) main strong,
+body:has(main.page-contact) main b,
+body:has(main.page-contact) .about-lead strong {
+  color: #f5cb68;
+}
+body:has(main.page-expertise) .eyebrow,
+body:has(main.page-contact) .eyebrow,
+body:has(main.page-expertise) .about-kicker,
+body:has(main.page-contact) .about-kicker,
+body:has(main.page-expertise) .sub-title-block,
+body:has(main.page-contact) .sub-title-block,
+body:has(main.page-expertise) footer a,
+body:has(main.page-contact) footer a {
+  color: #f5cb68;
+}
+body:has(main.page-expertise) .page-intro h1::after,
+body:has(main.page-contact) .page-intro h1::after {
+  background: linear-gradient(90deg, #f5cb68 0%, #64d3ef 65%, transparent 100%);
 }
 body:has(main.page-expertise) .exp-band {
-  background: #88807B;
-  border-top-color: rgba(7, 40, 56, 0.12);
-  border-bottom-color: rgba(7, 40, 56, 0.12);
+  background: #202020;
+  border-top-color: #f5cb68;
+  border-bottom-color: #f5cb68;
 }
+body:has(main.page-expertise) footer,
+body:has(main.page-contact) footer {
+  background: #151515;
+  color: #ffffff;
+  border-top-color: #f5cb68;
+}
+body:has(main.page-expertise) footer a:hover,
+body:has(main.page-contact) footer a:hover {
+  color: #fae4b5;
+}
+
+/* Keahlian cards — keep existing card look */
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
   background: rgba(255, 255, 255, 0.18);
   border-color: #f5cb68;
+  border-left-color: #f5cb68;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: #072838;
+}
+body:has(main.page-expertise) .practice-item {
+  border-top-color: #f5cb68;
+}
+body:has(main.page-expertise) .case-card strong,
+body:has(main.page-expertise) .case-card span,
+body:has(main.page-expertise) .case-sub-list li {
+  color: #072838;
+}
+body:has(main.page-expertise) .exp-bullet-list li::before,
+body:has(main.page-expertise) .case-sub-list li::before {
+  background-color: #f5cb68;
 }
 /* Keahlian: perkara-besar card — olive #354A21, white text, gold border */
 body:has(main.page-expertise) .exp-founder-bio {
@@ -1113,43 +1162,6 @@ body:has(main.page-expertise) .exp-founder-bio .exp-bullet-list li {
 body:has(main.page-expertise) .exp-founder-bio strong,
 body:has(main.page-expertise) .exp-founder-bio b {
   color: #f5cb68;
-}
-body:has(main.page-expertise) footer,
-body:has(main.page-contact) footer {
-  background: #88807B;
-  color: #072838;
-  border-top-color: rgba(7, 40, 56, 0.12);
-}
-
-/* Light pages: page accents gold #f5cb68; nav follows global gold+black */
-body:has(main.page-expertise) .eyebrow,
-body:has(main.page-contact) .eyebrow,
-body:has(main.page-expertise) .about-kicker,
-body:has(main.page-contact) .about-kicker,
-body:has(main.page-expertise) .sub-title-block,
-body:has(main.page-contact) .sub-title-block,
-body:has(main.page-expertise) footer a,
-body:has(main.page-contact) footer a {
-  color: #f5cb68;
-}
-body:has(main.page-expertise) .page-intro h1::after,
-body:has(main.page-contact) .page-intro h1::after {
-  background: linear-gradient(90deg, #f5cb68 0%, #f5cb68 65%, transparent 100%);
-}
-body:has(main.page-expertise) .practice-item,
-body:has(main.page-expertise) .case-card {
-  border-left-color: #f5cb68;
-}
-body:has(main.page-expertise) .practice-item {
-  border-top-color: #f5cb68;
-}
-body:has(main.page-expertise) .exp-bullet-list li::before,
-body:has(main.page-expertise) .case-sub-list li::before {
-  background-color: #f5cb68;
-}
-body:has(main.page-expertise) footer a:hover,
-body:has(main.page-contact) footer a:hover {
-  color: #fae4b5;
 }
 
 /* Kontak card — seamless gold tile @ 50% opacity + bold black text */
