@@ -5,11 +5,11 @@
   },
   "hero": {
     "eyebrow": "TTS LAW FIRM · TIMOTIUS & PARTNERS",
-    "title": "Dengan Hukum, Bisnis Anda Terjamin.",
+    "title": "Dengan Hukum, Bisnis Anda Terjamin. test CMS",
     "ctaLabel": "Jelajahi Profil Firma ↗",
     "ctaHref": "firma-hukum.html",
-    "desktopImage": "assets/hero-new.jpeg",
-    "mobileImage": "assets/hero-new.jpeg",
+    "desktopImage": "assets/hero.jpg",
+    "mobileImage": "assets/hero.jpg",
     "alt": "Timotius & Partners — TTS Law Firm"
   },
   "footer": {
