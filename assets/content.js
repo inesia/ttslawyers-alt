@@ -10,9 +10,94 @@
       .replace(/'/g, "&#39;");
   }
 
+  function looksLikeRichHtml(s) {
+    return /<\/?(?:strong|b|em|span|br|p)\b/i.test(String(s || ""));
+  }
+
+  function sanitizeRichHtml(html) {
+    var root = document.createElement("div");
+    root.innerHTML = String(html || "");
+
+    function colorClassFromStyle(style) {
+      var m = String(style || "").match(/color\s*:\s*([^;]+)/i);
+      if (!m) return "";
+      var c = m[1].replace(/\s+/g, "").toLowerCase();
+      if (c === "#fff" || c === "#ffffff" || c === "white" || c === "rgb(255,255,255)") return "cms-color-white";
+      if (c === "#000" || c === "#000000" || c === "#111" || c === "#111111" || c === "black" || c === "rgb(0,0,0)" || c === "rgb(17,17,17)") return "cms-color-black";
+      if (c === "#c5a059" || c === "#f5cb68" || c.indexOf("197,160,89") !== -1) return "cms-color-gold";
+      return "";
+    }
+
+    function walk(node) {
+      if (node.nodeType === 3) return document.createTextNode(node.nodeValue);
+      if (node.nodeType !== 1) return null;
+      var tag = node.tagName.toLowerCase();
+      var out = null;
+      if (tag === "br") return document.createElement("br");
+      if (tag === "strong" || tag === "b") {
+        out = document.createElement("strong");
+      } else if (tag === "em" || tag === "i") {
+        out = document.createElement("em");
+      } else if (tag === "span" || tag === "font") {
+        var cls = "";
+        var className = String(node.getAttribute("class") || "");
+        if (/\bcms-color-white\b|\btext-white\b/.test(className)) cls = "cms-color-white";
+        else if (/\bcms-color-black\b|\btext-black\b/.test(className)) cls = "cms-color-black";
+        else if (/\bcms-color-gold\b|\btext-gold\b/.test(className)) cls = "cms-color-gold";
+        else cls = colorClassFromStyle(node.getAttribute("style"));
+        if (!cls && tag === "font") {
+          var faceColor = String(node.getAttribute("color") || "").replace(/\s+/g, "").toLowerCase();
+          if (faceColor === "#fff" || faceColor === "#ffffff" || faceColor === "white") cls = "cms-color-white";
+          else if (faceColor === "#000" || faceColor === "#000000" || faceColor === "#111111" || faceColor === "black") cls = "cms-color-black";
+          else if (faceColor === "#c5a059" || faceColor === "#f5cb68") cls = "cms-color-gold";
+        }
+        if (!cls) {
+          var frag = document.createDocumentFragment();
+          Array.prototype.forEach.call(node.childNodes, function (child) {
+            var w = walk(child);
+            if (w) frag.appendChild(w);
+          });
+          return frag;
+        }
+        out = document.createElement("span");
+        out.className = cls;
+      } else if (tag === "p" || tag === "div") {
+        out = document.createElement("span");
+      } else {
+        var passthrough = document.createDocumentFragment();
+        Array.prototype.forEach.call(node.childNodes, function (child) {
+          var w = walk(child);
+          if (w) passthrough.appendChild(w);
+        });
+        return passthrough;
+      }
+      Array.prototype.forEach.call(node.childNodes, function (child) {
+        var w = walk(child);
+        if (w) out.appendChild(w);
+      });
+      return out;
+    }
+
+    var clean = document.createElement("div");
+    Array.prototype.forEach.call(root.childNodes, function (child) {
+      var w = walk(child);
+      if (w) clean.appendChild(w);
+    });
+    return clean.innerHTML;
+  }
+
   function formatParagraph(p) {
     if (!p) return "";
     var s = String(p).trim();
+
+    if (looksLikeRichHtml(s)) {
+      var rich = sanitizeRichHtml(s);
+      rich = rich.replace(
+        /<(strong|span)([^>]*)>(TESTIMONI EMAS MURNI|PURE GOLD TESTIMONI)<\/\1>/gi,
+        '<strong class="text-white">$3</strong>'
+      );
+      return rich;
+    }
 
     var isWholeBold = false;
     if (s.startsWith("**") && s.endsWith("**") && s.length > 4) {
@@ -23,6 +108,10 @@
     var escaped = escapeHtml(s).replace(/\n/g, "<br>");
 
     escaped = escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    escaped = escaped.replace(
+      /<strong>(TESTIMONI EMAS MURNI|PURE GOLD TESTIMONI)<\/strong>/g,
+      '<strong class="text-white">$1</strong>'
+    );
 
     escaped = escaped.replace(
       /^((?:TUJUAN PENDIRIAN|FILOSOFI|Purpose|Philosophy[^\:\<]*|Founder&#39;s Experience|Methodology)\s*[:\-]\s*)/i,
@@ -52,8 +141,16 @@
   function paragraphsToHtml(paragraphs) {
     if (!Array.isArray(paragraphs)) return "";
     return paragraphs
-      .map(formatParagraph)
-      .join("<br><br>");
+      .map(function (p) {
+        var formatted = formatParagraph(p);
+        if (formatted.indexOf('class="sub-title-block"') !== -1) {
+          return formatted
+            .replace(/^<strong class="sub-title-block">/, '<div class="sub-title-block">')
+            .replace(/<\/strong>$/, "</div>");
+        }
+        return "<p>" + formatted + "</p>";
+      })
+      .join("");
   }
 
   function getByPath(obj, path) {
@@ -137,14 +234,28 @@
     root.querySelectorAll("[data-cms-html]").forEach(function (el) {
       const path = el.getAttribute("data-cms-html");
       const value = getByPath(data, path);
-      if (Array.isArray(value)) el.innerHTML = paragraphsToHtml(value);
-      else if (typeof value === "string") el.innerHTML = formatParagraph(value);
+      if (Array.isArray(value)) {
+        el.innerHTML = paragraphsToHtml(value);
+      } else if (typeof value === "string") {
+        var html = formatParagraph(value);
+        if (el.tagName === "P" || el.tagName === "SPAN" || el.tagName === "A" || el.tagName === "STRONG") {
+          el.innerHTML = html;
+        } else {
+          el.innerHTML = "<p>" + html + "</p>";
+        }
+      }
     });
 
     root.querySelectorAll("[data-cms-lines]").forEach(function (el) {
       const path = el.getAttribute("data-cms-lines");
       const value = getByPath(data, path);
-      if (Array.isArray(value)) el.innerHTML = value.map(formatParagraph).join("<br>");
+      if (Array.isArray(value)) {
+        el.innerHTML = value
+          .map(function (line) {
+            return "<div>" + formatParagraph(line) + "</div>";
+          })
+          .join("");
+      }
     });
   }
 
@@ -157,6 +268,40 @@
       .join("");
   }
 
+  function renderCaseBody(body) {
+    if (looksLikeRichHtml(body)) {
+      return "<span>" + formatParagraph(body) + "</span>";
+    }
+    var lines = String(body || "").split(/\n/);
+    var bullets = [];
+    var plain = [];
+    lines.forEach(function (line) {
+      var s = line.trim();
+      if (!s) return;
+      if (/^[•\-\u2022]\s*/.test(s)) {
+        bullets.push(s.replace(/^[•\-\u2022]\s*/, ""));
+      } else {
+        plain.push(s);
+      }
+    });
+    if (bullets.length && !plain.length) {
+      return (
+        '<ul class="case-sub-list">' +
+        bullets
+          .map(function (b) {
+            return "<li>" + escapeHtml(b) + "</li>";
+          })
+          .join("") +
+        "</ul>"
+      );
+    }
+    return (
+      "<span>" +
+      escapeHtml(body || "").replace(/\n/g, "<br>") +
+      "</span>"
+    );
+  }
+
   function renderCases(container, data) {
     if (!container || !data || !Array.isArray(data.cases)) return;
     container.innerHTML = data.cases
@@ -164,12 +309,62 @@
         return (
           '<div class="case-card"><strong>' +
           escapeHtml(item.title) +
-          "</strong><span>" +
-          escapeHtml(item.body) +
-          "</span></div>"
+          "</strong>" +
+          renderCaseBody(item.body) +
+          "</div>"
         );
       })
       .join("");
+  }
+
+  function renderFounder(scope, data) {
+    if (!scope || !data) return;
+    var lead = scope.querySelector("[data-cms-founder-lead]");
+    if (lead && data.lead) {
+      lead.innerHTML = "<strong>" + escapeHtml(data.lead) + "</strong>";
+    }
+    var cases = scope.querySelector("[data-cms-founder-cases]");
+    if (cases && Array.isArray(data.casesParagraphs)) {
+      cases.innerHTML = data.casesParagraphs
+        .map(function (p) {
+          return "<p>" + formatParagraph(p) + "</p>";
+        })
+        .join("");
+    }
+    var bio = scope.querySelector("[data-cms-founder-bio]");
+    if (bio && Array.isArray(data.bioParagraphs)) {
+      var title = "";
+      var bullets = [];
+      var after = [];
+      var inBullets = false;
+      data.bioParagraphs.forEach(function (p) {
+        var s = String(p || "").trim();
+        if (/^[•\-\u2022]\s*/.test(s)) {
+          inBullets = true;
+          bullets.push(s.replace(/^[•\-\u2022]\s*/, ""));
+        } else if (!inBullets) {
+          title = s;
+        } else {
+          after.push(s);
+        }
+      });
+      bio.innerHTML =
+        (title ? "<p>" + formatParagraph(title) + "</p>" : "") +
+        (bullets.length
+          ? '<ul class="exp-bullet-list">' +
+            bullets
+              .map(function (b) {
+                return "<li>" + escapeHtml(b) + "</li>";
+              })
+              .join("") +
+            "</ul>"
+          : "") +
+        after
+          .map(function (p) {
+            return "<p>" + formatParagraph(p) + "</p>";
+          })
+          .join("");
+    }
   }
 
   function renderTeam(container, data) {
@@ -288,10 +483,24 @@
         }
 
         const primaryScope = scopes[0] || document;
-        if (page === "practice-areas") renderPractice(primaryScope.querySelector("[data-cms-practice]") || document.querySelector("[data-cms-practice]"), data);
-        if (page === "track-record") renderCases(primaryScope.querySelector("[data-cms-cases]") || document.querySelector("[data-cms-cases]"), data);
+        if (page === "founder") renderFounder(primaryScope, data);
+        if (page === "practice-areas") {
+          renderPractice(primaryScope.querySelector("[data-cms-practice]") || document.querySelector("[data-cms-practice]"), data);
+        }
+        if (page === "track-record") {
+          renderCases(primaryScope.querySelector("[data-cms-cases]") || document.querySelector("[data-cms-cases]"), data);
+        }
         if (page === "team") renderTeam(primaryScope.querySelector("[data-cms-team]") || document.querySelector("[data-cms-team]"), data);
         if (page === "contact") renderContactFields(primaryScope.querySelector("[data-cms-contact-fields]") || document.querySelector("[data-cms-contact-fields]"), data);
+        if (page === "vision") {
+          var visionBody = primaryScope.querySelector("[data-cms-vision-body]");
+          if (visionBody) {
+            var parts = []
+              .concat(Array.isArray(data.paragraphs) ? data.paragraphs : [])
+              .concat(Array.isArray(data.legacyParagraphs) ? data.legacyParagraphs : []);
+            visionBody.innerHTML = paragraphsToHtml(parts);
+          }
+        }
       });
 
       // Apply footer from the first content pack that defines it.

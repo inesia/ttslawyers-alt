@@ -436,6 +436,15 @@ p,
   font-weight: 700;
   color: #072838;
 }
+
+/* CMS rich-text colors from admin WYSIWYG */
+.cms-color-white,
+.text-white { color: #ffffff !important; }
+.cms-color-black,
+.text-black { color: #111111 !important; }
+.cms-color-gold,
+.text-gold { color: #C5A059 !important; }
+
 .sub-title-block {
   display: block;
   font-family: 'Times New Roman', Times, Georgia, serif;
@@ -1065,8 +1074,17 @@ body:has(main.page-about) .about-vision-band .about-body b {
   color: #C5A059;
 }
 body:has(main.page-about) strong.text-white,
-body:has(main.page-about) .text-white {
-  color: #ffffff;
+body:has(main.page-about) .text-white,
+body:has(main.page-about) .cms-color-white {
+  color: #ffffff !important;
+}
+body:has(main.page-about) .cms-color-black,
+body:has(main.page-about) .text-black {
+  color: #111111 !important;
+}
+body:has(main.page-about) .cms-color-gold,
+body:has(main.page-about) .text-gold {
+  color: #C5A059 !important;
 }
 body:has(main.page-about) .about-vision-band {
   background: #202020;

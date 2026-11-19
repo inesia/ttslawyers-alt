@@ -81,6 +81,122 @@
     els.notice.textContent = "";
   }
 
+  const RICH_COLORS = {
+    white: { className: "cms-color-white", hex: "#ffffff", label: "Putih" },
+    black: { className: "cms-color-black", hex: "#111111", label: "Hitam" },
+    gold: { className: "cms-color-gold", hex: "#C5A059", label: "Emas" },
+  };
+
+  function escapeHtml(value) {
+    return String(value == null ? "" : value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function markdownToEditorHtml(text) {
+    var s = String(text == null ? "" : text);
+    if (/<\/?(?:strong|b|em|span|br|p)\b/i.test(s)) return s;
+    return escapeHtml(s)
+      .replace(/\n/g, "<br>")
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  }
+
+  function colorClassFromStyle(style) {
+    var m = String(style || "").match(/color\s*:\s*([^;]+)/i);
+    if (!m) return "";
+    var c = m[1].replace(/\s+/g, "").toLowerCase();
+    if (c === "#fff" || c === "#ffffff" || c === "white" || c === "rgb(255,255,255)") return "cms-color-white";
+    if (c === "#000" || c === "#000000" || c === "#111" || c === "#111111" || c === "black" || c === "rgb(0,0,0)" || c === "rgb(17,17,17)") return "cms-color-black";
+    if (c === "#c5a059" || c === "#f5cb68" || c.indexOf("197,160,89") !== -1) return "cms-color-gold";
+    return "";
+  }
+
+  function normalizeRichNode(node) {
+    if (node.nodeType === 3) return document.createTextNode(node.nodeValue);
+    if (node.nodeType !== 1) return null;
+    var tag = node.tagName.toLowerCase();
+    var out = null;
+    if (tag === "br") return document.createElement("br");
+    if (tag === "strong" || tag === "b") out = document.createElement("strong");
+    else if (tag === "em" || tag === "i") out = document.createElement("em");
+    else if (tag === "span" || tag === "font") {
+      var cls = "";
+      var className = String(node.getAttribute("class") || "");
+      if (/\bcms-color-white\b|\btext-white\b/.test(className)) cls = "cms-color-white";
+      else if (/\bcms-color-black\b|\btext-black\b/.test(className)) cls = "cms-color-black";
+      else if (/\bcms-color-gold\b|\btext-gold\b/.test(className)) cls = "cms-color-gold";
+      else cls = colorClassFromStyle(node.getAttribute("style"));
+      if (!cls && tag === "font") {
+        var faceColor = String(node.getAttribute("color") || "").replace(/\s+/g, "").toLowerCase();
+        if (faceColor === "#fff" || faceColor === "#ffffff" || faceColor === "white") cls = "cms-color-white";
+        else if (faceColor === "#000" || faceColor === "#000000" || faceColor === "#111111" || faceColor === "black") cls = "cms-color-black";
+        else if (faceColor === "#c5a059" || faceColor === "#f5cb68") cls = "cms-color-gold";
+      }
+      if (!cls) {
+        var frag = document.createDocumentFragment();
+        Array.prototype.forEach.call(node.childNodes, function (child) {
+          var w = normalizeRichNode(child);
+          if (w) frag.appendChild(w);
+        });
+        return frag;
+      }
+      out = document.createElement("span");
+      out.className = cls;
+    } else if (tag === "p" || tag === "div") {
+      out = document.createElement("p");
+    } else {
+      var passthrough = document.createDocumentFragment();
+      Array.prototype.forEach.call(node.childNodes, function (child) {
+        var w = normalizeRichNode(child);
+        if (w) passthrough.appendChild(w);
+      });
+      return passthrough;
+    }
+    Array.prototype.forEach.call(node.childNodes, function (child) {
+      var w = normalizeRichNode(child);
+      if (w) out.appendChild(w);
+    });
+    return out;
+  }
+
+  function normalizeRichHtml(html, asParagraphs) {
+    var root = document.createElement("div");
+    root.innerHTML = String(html || "");
+    var clean = document.createElement("div");
+    Array.prototype.forEach.call(root.childNodes, function (child) {
+      var w = normalizeRichNode(child);
+      if (w) clean.appendChild(w);
+    });
+    if (!asParagraphs) {
+      return clean.innerHTML
+        .replace(/<\/?p>/gi, function (m) {
+          return m.toLowerCase() === "<p>" ? "" : "<br><br>";
+        })
+        .replace(/(?:<br\s*\/?>\s*){3,}/gi, "<br><br>")
+        .replace(/^(?:<br\s*\/?>)+|(?:<br\s*\/?>)+$/gi, "")
+        .trim();
+    }
+    var parts = [];
+    var blocks = clean.querySelectorAll("p");
+    if (blocks.length) {
+      Array.prototype.forEach.call(blocks, function (p) {
+        var inner = p.innerHTML.trim();
+        if (inner) parts.push(inner);
+      });
+    } else {
+      var raw = clean.innerHTML.trim();
+      if (raw) {
+        raw.split(/(?:<br\s*\/?>\s*){2,}/i).forEach(function (chunk) {
+          var t = chunk.replace(/^(?:<br\s*\/?>)+|(?:<br\s*\/?>)+$/gi, "").trim();
+          if (t) parts.push(t);
+        });
+      }
+    }
+    return parts;
+  }
+
   function field(label, key, value, multiline, tall) {
     const wrap = document.createElement("div");
     wrap.className = "field" + (tall ? " tall" : "");
@@ -104,15 +220,121 @@
     return wrap;
   }
 
+  function richField(label, key, value, options) {
+    options = options || {};
+    const asParagraphs = !!options.paragraphs;
+    const tall = !!options.tall;
+    const wrap = document.createElement("div");
+    wrap.className = "field" + (tall ? " tall" : "");
+    const lab = document.createElement("label");
+    lab.textContent = label;
+    wrap.appendChild(lab);
+
+    const box = document.createElement("div");
+    box.className = "wysiwyg";
+
+    const toolbar = document.createElement("div");
+    toolbar.className = "wysiwyg-toolbar";
+
+    function toolButton(html, title, onClick) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.title = title;
+      btn.innerHTML = html;
+      btn.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+      });
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        editor.focus();
+        onClick();
+        state.dirty = true;
+      });
+      toolbar.appendChild(btn);
+      return btn;
+    }
+
+    toolButton("<strong>B</strong>", "Bold", function () {
+      document.execCommand("bold", false, null);
+    });
+
+    const sep = document.createElement("span");
+    sep.className = "wysiwyg-sep";
+    toolbar.appendChild(sep);
+
+    Object.keys(RICH_COLORS).forEach(function (name) {
+      const meta = RICH_COLORS[name];
+      toolButton(
+        '<span class="wysiwyg-swatch ' + name + '"></span>' + meta.label,
+        "Warna " + meta.label,
+        function () {
+          document.execCommand("styleWithCSS", false, true);
+          document.execCommand("foreColor", false, meta.hex);
+        }
+      );
+    });
+
+    const editor = document.createElement("div");
+    editor.className = "wysiwyg-editor";
+    editor.contentEditable = "true";
+    editor.dataset.key = key;
+    editor.dataset.rich = "1";
+    if (asParagraphs) editor.dataset.paragraphs = "1";
+
+    if (asParagraphs) {
+      const list = Array.isArray(value)
+        ? value
+        : String(value || "")
+            .split(/\n\s*\n/)
+            .map(function (p) {
+              return p.trim();
+            })
+            .filter(Boolean);
+      editor.innerHTML = list.length
+        ? list.map(function (p) {
+            return "<p>" + markdownToEditorHtml(p) + "</p>";
+          }).join("")
+        : "<p><br></p>";
+    } else {
+      const html = markdownToEditorHtml(value);
+      editor.innerHTML = html || "<br>";
+    }
+
+    editor.addEventListener("input", function () {
+      state.dirty = true;
+    });
+
+    box.appendChild(toolbar);
+    box.appendChild(editor);
+    wrap.appendChild(box);
+
+    const hint = document.createElement("div");
+    hint.className = "wysiwyg-hint";
+    hint.textContent = "Blok teks: Bold + warna Putih / Hitam / Emas. Blok seleksi dulu, lalu klik tombol.";
+    wrap.appendChild(hint);
+    return wrap;
+  }
+
   function readFields(root) {
     const out = {};
     root.querySelectorAll("[data-key]").forEach(function (el) {
-      out[el.dataset.key] = el.value;
+      if (el.dataset.rich === "1") {
+        out[el.dataset.key] = normalizeRichHtml(el.innerHTML, el.dataset.paragraphs === "1");
+      } else {
+        out[el.dataset.key] = el.value;
+      }
     });
     return out;
   }
 
   function paragraphsFromTextarea(text) {
+    if (Array.isArray(text)) {
+      return text
+        .map(function (p) {
+          return String(p || "").trim();
+        })
+        .filter(Boolean);
+    }
     return String(text || "")
       .split(/\n\s*\n/)
       .map(function (p) {
@@ -161,24 +383,70 @@
       card.appendChild(field("Eyebrow", "eyebrow", data.eyebrow));
       card.appendChild(field("Judul halaman", "pageTitle", data.pageTitle));
       card.appendChild(field("Kicker", "kicker", data.kicker));
-      card.appendChild(field("Lead", "lead", data.lead, true));
-      card.appendChild(field("Paragraf (pisahkan dengan baris kosong)", "paragraphs", (data.paragraphs || []).join("\n\n"), true, true));
+      card.appendChild(richField("Lead", "lead", data.lead, { tall: true }));
+      card.appendChild(
+        richField(
+          "Paragraf firma",
+          "firmParagraphs",
+          data.firmParagraphs || (data.paragraphs || []).slice(0, 2),
+          { paragraphs: true, tall: true }
+        )
+      );
+      card.appendChild(field("Officium — judul", "officiumNobile.title", data.officiumNobile?.title));
+      card.appendChild(richField("Officium — isi", "officiumNobile.body", data.officiumNobile?.body, { tall: true }));
+      card.appendChild(field("Kesaksian — judul", "kesaksian.title", data.kesaksian?.title));
+      card.appendChild(
+        field(
+          "Kesaksian — trilogi (satu baris per item)",
+          "kesaksian.trilogy",
+          (data.kesaksian?.trilogy || []).join("\n"),
+          true
+        )
+      );
+      card.appendChild(richField("Kesaksian — isi", "kesaksian.body", data.kesaksian?.body, { tall: true }));
+      card.appendChild(
+        richField(
+          "Paragraf pilar / filosofi",
+          "pillarsParagraphs",
+          data.pillarsParagraphs || (data.paragraphs || []).slice(2),
+          { paragraphs: true, tall: true }
+        )
+      );
       card.appendChild(field("Path foto", "photo.src", data.photo?.src));
       card.appendChild(field("Alt foto", "photo.alt", data.photo?.alt));
+      card.appendChild(field("Footer brand", "footer.brand", data.footer?.brand));
+      card.appendChild(field("Footer label kontak", "footer.contactLabel", data.footer?.contactLabel));
+      card.appendChild(field("Footer tautan kontak", "footer.contactHref", data.footer?.contactHref));
     } else if (page === "vision") {
       card.appendChild(field("Judul", "heading", data.heading));
       card.appendChild(field("Kicker (satu baris per baris)", "kickerLines", (data.kickerLines || []).join("\n"), true));
-      card.appendChild(field("Paragraf", "paragraphs", (data.paragraphs || []).join("\n\n"), true, true));
-      card.appendChild(field("Pernyataan warisan", "legacyParagraphs", (data.legacyParagraphs || []).join("\n\n"), true, true));
+      card.appendChild(richField("Paragraf", "paragraphs", data.paragraphs || [], { paragraphs: true, tall: true }));
+      card.appendChild(
+        richField("Pernyataan warisan", "legacyParagraphs", data.legacyParagraphs || [], {
+          paragraphs: true,
+          tall: true,
+        })
+      );
     } else if (page === "founder") {
       card.appendChild(field("Eyebrow", "eyebrow", data.eyebrow));
       card.appendChild(field("Judul halaman", "pageTitle", data.pageTitle));
       card.appendChild(field("Kicker", "kicker", data.kicker));
-      card.appendChild(field("Perkara / catatan", "casesParagraphs", (data.casesParagraphs || []).join("\n\n"), true, true));
-      card.appendChild(field("Biografi", "bioParagraphs", (data.bioParagraphs || []).join("\n\n"), true, true));
+      card.appendChild(richField("Lead / nama pendiri", "lead", data.lead, { tall: true }));
+      card.appendChild(
+        richField("Perkara / catatan", "casesParagraphs", data.casesParagraphs || [], {
+          paragraphs: true,
+          tall: true,
+        })
+      );
+      card.appendChild(
+        richField("Biografi", "bioParagraphs", data.bioParagraphs || [], { paragraphs: true, tall: true })
+      );
+      card.appendChild(field("Footer brand", "footer.brand", data.footer?.brand));
+      card.appendChild(field("Footer label kontak", "footer.contactLabel", data.footer?.contactLabel));
+      card.appendChild(field("Footer tautan kontak", "footer.contactHref", data.footer?.contactHref));
     } else if (page === "practice-areas") {
       card.appendChild(field("Judul", "heading", data.heading));
-      card.appendChild(field("Lead", "lead", data.lead, true));
+      card.appendChild(richField("Lead", "lead", data.lead));
       card.appendChild(field("Item praktik (satu per baris)", "items", (data.items || []).join("\n"), true, true));
     } else if (page === "track-record") {
       card.appendChild(field("Judul", "heading", data.heading));
@@ -187,7 +455,7 @@
         const block = document.createElement("div");
         block.className = "case-block";
         block.appendChild(field("Kasus " + (i + 1) + " — judul", "case." + i + ".title", c.title));
-        block.appendChild(field("Kasus " + (i + 1) + " — isi", "case." + i + ".body", c.body, true));
+        block.appendChild(richField("Kasus " + (i + 1) + " — isi", "case." + i + ".body", c.body));
         card.appendChild(block);
       });
     } else if (page === "team") {
@@ -200,13 +468,10 @@
         block.appendChild(field("Anggota " + (i + 1) + " — foto", "member." + i + ".photo.src", m.photo?.src));
         block.appendChild(field("Anggota " + (i + 1) + " — alt", "member." + i + ".photo.alt", m.photo?.alt));
         block.appendChild(
-          field(
-            "Anggota " + (i + 1) + " — paragraf",
-            "member." + i + ".paragraphs",
-            (m.paragraphs || []).join("\n\n"),
-            true,
-            true
-          )
+          richField("Anggota " + (i + 1) + " — paragraf", "member." + i + ".paragraphs", m.paragraphs || [], {
+            paragraphs: true,
+            tall: true,
+          })
         );
         card.appendChild(block);
       });
@@ -214,7 +479,7 @@
       card.appendChild(field("Eyebrow", "eyebrow", data.eyebrow));
       card.appendChild(field("Judul halaman", "pageTitle", data.pageTitle));
       card.appendChild(field("Kicker pesan", "messageKicker", data.messageKicker));
-      card.appendChild(field("Pesan", "message", data.message, true));
+      card.appendChild(richField("Pesan", "message", data.message, { tall: true }));
       card.appendChild(field("Motto", "motto", data.motto));
       card.appendChild(field("Kicker kartu", "cardKicker", data.cardKicker));
       (data.fields || []).forEach(function (f, i) {
@@ -269,10 +534,23 @@
       data.pageTitle = raw.pageTitle;
       data.kicker = raw.kicker;
       data.lead = raw.lead;
-      data.paragraphs = paragraphsFromTextarea(raw.paragraphs);
+      data.firmParagraphs = paragraphsFromTextarea(raw.firmParagraphs);
+      data.pillarsParagraphs = paragraphsFromTextarea(raw.pillarsParagraphs);
+      data.paragraphs = [].concat(data.firmParagraphs || [], data.pillarsParagraphs || []);
+      data.officiumNobile = data.officiumNobile || {};
+      data.officiumNobile.title = raw["officiumNobile.title"];
+      data.officiumNobile.body = raw["officiumNobile.body"];
+      data.kesaksian = data.kesaksian || {};
+      data.kesaksian.title = raw["kesaksian.title"];
+      data.kesaksian.trilogy = linesFromTextarea(raw["kesaksian.trilogy"]);
+      data.kesaksian.body = raw["kesaksian.body"];
       data.photo = data.photo || {};
       data.photo.src = raw["photo.src"];
       data.photo.alt = raw["photo.alt"];
+      data.footer = data.footer || {};
+      data.footer.brand = raw["footer.brand"];
+      data.footer.contactLabel = raw["footer.contactLabel"];
+      data.footer.contactHref = raw["footer.contactHref"];
     } else if (page === "vision") {
       data.heading = raw.heading;
       data.kickerLines = linesFromTextarea(raw.kickerLines);
@@ -282,8 +560,13 @@
       data.eyebrow = raw.eyebrow;
       data.pageTitle = raw.pageTitle;
       data.kicker = raw.kicker;
+      data.lead = raw.lead;
       data.casesParagraphs = paragraphsFromTextarea(raw.casesParagraphs);
       data.bioParagraphs = paragraphsFromTextarea(raw.bioParagraphs);
+      data.footer = data.footer || {};
+      data.footer.brand = raw["footer.brand"];
+      data.footer.contactLabel = raw["footer.contactLabel"];
+      data.footer.contactHref = raw["footer.contactHref"];
     } else if (page === "practice-areas") {
       data.heading = raw.heading;
       data.lead = raw.lead;

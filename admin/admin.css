@@ -295,6 +295,86 @@ a { color: inherit; }
 .field textarea { min-height: 120px; resize: vertical; }
 .field.tall textarea { min-height: 220px; }
 
+/* WYSIWYG */
+.wysiwyg {
+  border: 1px solid rgba(100, 211, 239, 0.35);
+  background: rgba(7, 40, 56, 0.65);
+  overflow: hidden;
+}
+.wysiwyg:focus-within {
+  border-color: var(--blue-accent);
+  background: rgba(7, 40, 56, 0.9);
+}
+.wysiwyg-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid rgba(100, 211, 239, 0.25);
+  background: rgba(7, 40, 56, 0.45);
+}
+.wysiwyg-toolbar button {
+  appearance: none;
+  border: 1px solid rgba(100, 211, 239, 0.35);
+  background: rgba(100, 211, 239, 0.12);
+  color: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+.wysiwyg-toolbar button:hover {
+  background: rgba(100, 211, 239, 0.22);
+}
+.wysiwyg-toolbar button.is-active {
+  border-color: #f5cb68;
+  background: rgba(245, 203, 104, 0.2);
+  color: #f5cb68;
+}
+.wysiwyg-toolbar .wysiwyg-sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(100, 211, 239, 0.35);
+  margin: 0 2px;
+}
+.wysiwyg-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid rgba(255,255,255,.35);
+  margin-right: 6px;
+}
+.wysiwyg-swatch.white { background: #fff; }
+.wysiwyg-swatch.black { background: #111; }
+.wysiwyg-swatch.gold { background: #C5A059; }
+.wysiwyg-editor {
+  min-height: 120px;
+  padding: 12px;
+  color: #f0f4f8;
+  outline: none;
+  line-height: 1.65;
+  font-size: 14px;
+}
+.field.tall .wysiwyg-editor { min-height: 220px; }
+.wysiwyg-editor p { margin: 0 0 0.85em; }
+.wysiwyg-editor p:last-child { margin-bottom: 0; }
+.wysiwyg-editor .cms-color-white,
+.wysiwyg-editor .text-white { color: #ffffff !important; }
+.wysiwyg-editor .cms-color-black,
+.wysiwyg-editor .text-black { color: #111111 !important; }
+.wysiwyg-editor .cms-color-gold,
+.wysiwyg-editor .text-gold { color: #C5A059 !important; }
+.wysiwyg-hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(240, 244, 248, 0.7);
+}
+
 .member-block,
 .case-block {
   border-top: 1px solid rgba(100, 211, 239, 0.25);

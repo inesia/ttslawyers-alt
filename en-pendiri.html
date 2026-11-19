@@ -6,9 +6,9 @@
 <meta name="description" content="TTS Law Firm — Timotius & Partners">
 <title>Expertise | TTS Law Firm</title>
 <link rel="stylesheet" href="assets/style.css?v=65">
-<link rel="stylesheet" href="assets/bilingual.css?v=65">
+<link rel="stylesheet" href="assets/bilingual.css?v=66">
 </head>
-<body data-lang="en">
+<body data-lang="en" data-content="founder,practice-areas,track-record">
 <header class="topbar">
 <a class="brand" href="en-index.html"><span class="mark">TTS</span><span>TIMOTIUS &amp; PARTNERS<small>LAW FIRM</small></span></a>
 <button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
@@ -24,24 +24,24 @@
 </div>
 </header>
 <main class="page-expertise">
-<div class="page-shell">
+<div class="page-shell" data-cms-scope="founder">
   <div class="page-intro">
-    <div class="eyebrow">EXPERTISE</div>
-    <h1>EXECUTIVE FIRM PROFILE</h1>
+    <div class="eyebrow" data-cms="eyebrow">EXPERTISE</div>
+    <h1 data-cms="pageTitle">EXECUTIVE FIRM PROFILE</h1>
   </div>
 
   <section class="exp-founder">
-    <div class="founder-lead-title">
+    <div class="founder-lead-title" data-cms-founder-lead>
       <strong>Dr. (Commerce) Timotius Tumbur Simbolon, SH., MH. – “Timoti Sim” - Founder &amp; Managing Partner</strong>
     </div>
     <div class="exp-founder-grid">
-      <div class="source-block about-body">
+      <div class="source-block about-body" data-cms-founder-cases>
         <p>Prior to founding this Law Firm, he was Head of Legal of a Multinational Corporation – World Class whose majority shareholder is a Swiss corporation. For 5 years, entrusted as Head of Legal of the Indonesia - China Business Council (ICBC), an association of Indonesian entrepreneurs conducting business and investing reciprocally with Chinese entrepreneurs and the Government of China. Within the Advocates Organization, the Indonesian Advocates Association (AAI), the Founder previously served as Head of Department of Foreign Affairs.</p>
         <p>The Founder possesses extensive expertise in Banking, National and International Arbitration, and specifically in National and International Bankruptcy (Cross-Border Insolvency - Model Law), Receiver and member of INSOL - a rare qualification in Indonesia. This aligns with his Doctoral Thesis: “The Balance Of Creditors' Rights In Bankruptcy” with comparative studies in advanced jurisdictions, whose discussion continues to resonate in the world.</p>
         <p>As Legal Counsel, Founder provides legal advice that is “accurate and robust” to protect clients' legal interests, business continuity, and future success.</p>
         <p>When disputes arise from agreements, this Law Firm, with its extensive experience and “Fair Trial”, we fight the most difficult legal battles on legal merit based on high-quality legal knowledge with substantial financial benefit value for client.</p>
       </div>
-      <div class="source-block about-body exp-founder-bio">
+      <div class="source-block about-body exp-founder-bio" data-cms-founder-bio>
         <p><strong>SEVERAL MAJOR CASES WON BY THIS LAW FIRM:</strong></p>
         <ul class="exp-bullet-list">
           <li>Representing State-Owned Bank (BUMN) vs Debtors - all successfully handled.</li>
@@ -57,12 +57,12 @@
   </section>
 </div>
 
-<div class="exp-band">
+<div class="exp-band" data-cms-scope="practice-areas">
   <div class="page-shell">
-    <h2 id="jasa">CORE PRACTICE AREAS</h2>
+    <h2 id="jasa" data-cms="heading">CORE PRACTICE AREAS</h2>
     <section class="exp-practice">
-      <div class="source-block exp-practice-lead"><strong>CORE PRACTICE AREAS PROVIDED BY THIS LAW FIRM:</strong></div>
-      <div class="practice-grid">
+      <div class="source-block exp-practice-lead"><strong data-cms="lead">CORE PRACTICE AREAS PROVIDED BY THIS LAW FIRM:</strong></div>
+      <div class="practice-grid" data-cms-practice>
         <div class="practice-item">National and International Business Agreements;</div>
         <div class="practice-item">Banking and Finance;</div>
         <div class="practice-item">Stock Exchange/Capital Market;</div>
@@ -79,9 +79,9 @@
   </div>
 </div>
 
-<div class="page-shell exp-experience-wrap">
-  <h2 id="pengalaman">NON LITIGATION AND LITIGATION HANDLED</h2>
-  <section class="exp-cases">
+<div class="page-shell exp-experience-wrap" data-cms-scope="track-record">
+  <h2 id="pengalaman" data-cms="kicker">NON LITIGATION AND LITIGATION HANDLED</h2>
+  <section class="exp-cases" data-cms-cases>
     <div class="case-card">
       <strong>1. National and International Business Agreements</strong>
       <span>Agreements of Indonesian companies with Japanese giants, British, and Chinese companies.</span>
@@ -134,10 +134,10 @@
 </div>
 </main>
 <footer>
-<div data-cms="footer.brand">TTS LAW FIRM — TIMOTIUS & PARTNERS</div>
+<div data-cms="footer.brand">TTS LAW FIRM — TIMOTIUS &amp; PARTNERS</div>
 <a href="en-kontak.html" data-cms="footer.contactLabel" data-cms-href="footer.contactHref">CONTACT</a>
 </footer>
 <script src="assets/site.js"></script>
-<script src="assets/content.js"></script>
+<script src="assets/content.js?v=9"></script>
 </body>
 </html>
