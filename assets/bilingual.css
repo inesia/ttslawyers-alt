@@ -1240,17 +1240,22 @@ body:has(main.page-contact) main b,
 body:has(main.page-contact) .about-lead strong {
   color: #C5A059;
 }
-body:has(main.page-contact) .eyebrow,
-body:has(main.page-expertise) .about-kicker,
-body:has(main.page-contact) .about-kicker,
 body:has(main.page-expertise) .page-intro h1::after,
 body:has(main.page-contact) .page-intro h1::after {
   background: linear-gradient(90deg, #C5A059 0%, #64d3ef 65%, transparent 100%);
 }
 body:has(main.page-expertise) .eyebrow,
+body:has(main.page-expertise) .about-kicker,
 body:has(main.page-expertise) .sub-title-block,
+body:has(main.page-contact) .eyebrow,
+body:has(main.page-contact) .about-kicker,
 body:has(main.page-contact) .sub-title-block {
   background: none;
+}
+body:has(main.page-expertise) .eyebrow,
+body:has(main.page-expertise) .sub-title-block,
+body:has(main.page-contact) .eyebrow,
+body:has(main.page-contact) .sub-title-block {
   color: #C5A059;
 }
 body:has(main.page-expertise) .exp-band {
