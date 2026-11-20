@@ -121,6 +121,8 @@
     var isKnownTitle = (
       isWholeBold ||
       s === "VISI" ||
+      s === "VISION" ||
+      s === "PARTNERS" ||
       s === "TRACK RECORDS" ||
       s === "REVOLUSI PEMBAHARUAN HUKUM DUNIA" ||
       s === "REVOLUSI PEMBAHARUAN HUKUM DI DUNIA" ||
@@ -128,7 +130,9 @@
       s === "“UNSECURED CREDITOR” - “KREDITOR TIDAK TERJAMIN” DIGANTI MENJADI “KREDITOR UMUM”" ||
       s === "“UNSECURED CREDITOR” BE REPLACED BY “GENERAL CREDITOR”" ||
       s.indexOf("PENYELESAIAN DI LUAR DAN DI DALAM") === 0 ||
-      s === "Methodology:"
+      s.indexOf("OUT AND IN COURT SETTLEMENT") === 0 ||
+      s === "Methodology:" ||
+      s.indexOf("Landmark Matters Won Under Founder's Counsel") === 0
     );
 
     if (isKnownTitle) {
@@ -420,7 +424,7 @@
             }
             return escapeHtml(v.text || "");
           })
-          .join("");
+          .join("<br>");
         return "<div><dt>" + escapeHtml(field.label || "") + "</dt><dd>" + values + "</dd></div>";
       })
       .join("");

@@ -158,41 +158,109 @@ nav a.active {
   box-shadow: none;
 }
 
-/* Home — gold page + gold footer; CTA black + gold text */
+/* Home — gold page */
 body:has(main.home-main) {
   color: #000000;
   background: #C5A059;
   background-image: linear-gradient(160deg, #ffd875 0%, #C5A059 45%, #e0b34a 100%);
 }
-body:has(main.home-main) footer {
+
+/* Footer — match header metallic gold, bold black type */
+footer {
   position: relative;
   overflow: hidden;
-  background: #e8c56a;
+  background-color: #C5A059;
+  background-image:
+    linear-gradient(
+      112deg,
+      #5C3D1E 0%,
+      #6B4F27 12%,
+      #8B6A3A 24%,
+      #A67C3D 38%,
+      #C5A059 48%,
+      #E8C98B 52%,
+      #F1D38E 54%,
+      #E8C98B 58%,
+      #C5A059 68%,
+      #A67C3D 80%,
+      #6B4F27 92%,
+      #5C3D1E 100%
+    );
   color: #000000;
-  border-top: 1px solid #000000;
+  border-top: none;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  box-shadow:
+    0 0 18px rgba(197, 160, 89, 0.35),
+    0 -4px 18px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(241, 211, 142, 0.5),
+    inset 0 -1px 0 rgba(92, 61, 30, 0.4);
 }
-body:has(main.home-main) footer::before {
+footer::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("gold-nav.png");
-  background-size: 220px 220px;
-  background-position: 0 0;
-  background-repeat: repeat;
-  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(
+      -16deg,
+      rgba(92, 61, 30, 0.07) 0 1px,
+      transparent 1px 3px
+    ),
+    linear-gradient(
+      100deg,
+      transparent 0%,
+      transparent 22%,
+      rgba(232, 201, 139, 0.4) 38%,
+      rgba(241, 211, 142, 0.55) 48%,
+      rgba(232, 201, 139, 0.3) 58%,
+      transparent 72%,
+      transparent 100%
+    );
+  background-repeat: repeat, no-repeat;
   pointer-events: none;
   z-index: 0;
 }
-body:has(main.home-main) footer > * {
+footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #3D2B1F 0%,
+    #6B4E23 12%,
+    #7a5d2a 22%,
+    #b38728 38%,
+    #C5A059 46%,
+    #FEF1B5 50%,
+    #C5A059 54%,
+    #b38728 62%,
+    #7a5d2a 78%,
+    #6B4E23 88%,
+    #3D2B1F 100%
+  );
+  box-shadow: 0 0 8px rgba(254, 241, 181, 0.45);
+  pointer-events: none;
+  z-index: 2;
+}
+footer > * {
   position: relative;
   z-index: 1;
-}
-body:has(main.home-main) footer a {
+  font-weight: 800;
   color: #000000;
 }
-body:has(main.home-main) footer a:hover {
+footer a {
+  color: #000000;
+  font-weight: 800;
+  text-decoration: none;
+}
+footer a:hover {
   color: #000000;
   text-decoration: underline;
+  text-underline-offset: 5px;
 }
 .home-main {
   max-width: none;
@@ -252,10 +320,11 @@ body:has(main.home-main) footer a:hover {
   display: inline-block;
   border: 1px solid #C5A059;
   color: #000000;
-  padding: 13px 21px;
+  padding: 14px 22px;
   text-decoration: none;
   letter-spacing: .06em;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 800;
   background: #C5A059;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   transition: all .2s ease;
@@ -1086,6 +1155,11 @@ body:has(main.page-about) .cms-color-gold,
 body:has(main.page-about) .text-gold {
   color: #C5A059 !important;
 }
+body:has(main.page-about) .quote-rockefeller {
+  margin-top: 0.35em;
+  margin-bottom: 0.85em;
+  letter-spacing: 0.02em;
+}
 body:has(main.page-about) .about-vision-band {
   background: #202020;
   border-top-color: #C5A059;
@@ -1096,12 +1170,7 @@ body:has(main.page-partners) .partner-card {
   background: rgba(255, 255, 255, 0.06);
   border-color: #C5A059;
 }
-body:has(main.page-about) footer,
-body:has(main.page-partners) footer {
-  background: #151515;
-  color: #ffffff;
-  border-top-color: #C5A059;
-}
+/* Footer stays metallic gold (same as header) on all pages */
 
 /* Dark pages: page content keeps gold; nav follows global gold+black */
 body:has(main.page-about) .eyebrow,
@@ -1115,9 +1184,7 @@ body:has(main.page-about) .about-vision-band .about-kicker,
 body:has(main.page-about) .about-vision-band .sub-title-block,
 body:has(main.page-about) .about-vision-band .about-body strong em,
 body:has(main.page-about) .about-vision-band .about-body em strong,
-body:has(main.page-partners) .partner-quote,
-body:has(main.page-about) footer a,
-body:has(main.page-partners) footer a {
+body:has(main.page-partners) .partner-quote {
   color: #C5A059;
 }
 body:has(main.page-about) .about-intro h1::after,
@@ -1136,10 +1203,6 @@ body:has(main.page-about) .about-vision-band {
 body:has(main.page-about) .about-photo img,
 body:has(main.page-partners) .partner-photo img {
   outline-color: #C5A059;
-}
-body:has(main.page-about) footer a:hover,
-body:has(main.page-partners) footer a:hover {
-  color: #E8C98B;
 }
 
 /* Keahlian / Kontak — same dark theme as Tentang; cards keep own styles */
@@ -1183,10 +1246,6 @@ body:has(main.page-expertise) .about-kicker,
 body:has(main.page-contact) .about-kicker,
 body:has(main.page-expertise) .sub-title-block,
 body:has(main.page-contact) .sub-title-block,
-body:has(main.page-expertise) footer a,
-body:has(main.page-contact) footer a {
-  color: #C5A059;
-}
 body:has(main.page-expertise) .page-intro h1::after,
 body:has(main.page-contact) .page-intro h1::after {
   background: linear-gradient(90deg, #C5A059 0%, #64d3ef 65%, transparent 100%);
@@ -1196,25 +1255,15 @@ body:has(main.page-expertise) .exp-band {
   border-top-color: #C5A059;
   border-bottom-color: #C5A059;
 }
-body:has(main.page-expertise) footer,
-body:has(main.page-contact) footer {
-  background: #151515;
-  color: #ffffff;
-  border-top-color: #C5A059;
-}
-body:has(main.page-expertise) footer a:hover,
-body:has(main.page-contact) footer a:hover {
-  color: #E8C98B;
-}
 
-/* Keahlian cards — green like perkara card #354A21 */
+/* Keahlian cards — bidang jasa & non litigasi */
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
-  background: #354A21;
+  background: #d1b48c;
   border-color: #C5A059;
   border-left-color: #C5A059;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: #072838;
 }
 body:has(main.page-expertise) .practice-item {
   border-top-color: #C5A059;
@@ -1222,10 +1271,10 @@ body:has(main.page-expertise) .practice-item {
 body:has(main.page-expertise) .case-card strong,
 body:has(main.page-expertise) .case-card span,
 body:has(main.page-expertise) .case-sub-list li {
-  color: #ffffff;
+  color: #072838;
 }
 body:has(main.page-expertise) .case-card strong {
-  color: #C5A059;
+  color: #072838;
 }
 body:has(main.page-expertise) .exp-bullet-list li::before,
 body:has(main.page-expertise) .case-sub-list li::before {
