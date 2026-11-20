@@ -8,27 +8,17 @@ header.topbar {
   background-image:
     linear-gradient(
       112deg,
-      #5C3D1E 0%,
-      #6B4F27 12%,
-      #8B6A3A 24%,
-      #A67C3D 38%,
-      #C5A059 48%,
-      #E8C98B 52%,
-      #F1D38E 54%,
-      #E8C98B 58%,
-      #C5A059 68%,
-      #A67C3D 80%,
-      #6B4F27 92%,
-      #5C3D1E 100%
+      #6B4F27 0%,
+      #8B6A3A 20%,
+      #A67C3D 35%,
+      #C5A059 50%,
+      #A67C3D 65%,
+      #8B6A3A 80%,
+      #6B4F27 100%
     );
   border-bottom: none;
   color: #000000;
-  box-shadow:
-    0 0 18px rgba(197, 160, 89, 0.35),
-    0 0 36px rgba(166, 124, 61, 0.22),
-    0 4px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(241, 211, 142, 0.5),
-    inset 0 -1px 0 rgba(92, 61, 30, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
   overflow: hidden;
 }
 header.topbar::before {
@@ -38,51 +28,23 @@ header.topbar::before {
   background-image:
     repeating-linear-gradient(
       -16deg,
-      rgba(92, 61, 30, 0.07) 0 1px,
+      rgba(92, 61, 30, 0.05) 0 1px,
       transparent 1px 3px
-    ),
-    linear-gradient(
-      100deg,
-      transparent 0%,
-      transparent 22%,
-      rgba(232, 201, 139, 0.4) 38%,
-      rgba(241, 211, 142, 0.55) 48%,
-      rgba(232, 201, 139, 0.3) 58%,
-      transparent 72%,
-      transparent 100%
-    ),
-    radial-gradient(
-      120% 80% at 42% 40%,
-      rgba(241, 211, 142, 0.28) 0%,
-      transparent 55%
     );
-  background-repeat: repeat, no-repeat, no-repeat;
+  background-repeat: repeat;
   pointer-events: none;
   z-index: 0;
 }
-/* Nav bottom edge — ornate metallic gold gradient */
+/* Nav bottom edge — clean even gold line */
 header.topbar::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    #3D2B1F 0%,
-    #6B4E23 12%,
-    #7a5d2a 22%,
-    #b38728 38%,
-    #C5A059 46%,
-    #FEF1B5 50%,
-    #C5A059 54%,
-    #b38728 62%,
-    #7a5d2a 78%,
-    #6B4E23 88%,
-    #3D2B1F 100%
-  );
-  box-shadow: 0 0 8px rgba(254, 241, 181, 0.45);
+  height: 2px;
+  background: #C5A059;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   pointer-events: none;
   z-index: 2;
 }
@@ -795,7 +757,7 @@ p,
   gap: 14px;
 }
 .practice-item {
-  background: rgba(255, 255, 255, 0.72);
+  background: #cd8032;
   border: 1px solid #C5A059;
   border-top: 3px solid #C5A059;
   padding: 18px 20px;
@@ -803,7 +765,7 @@ p,
   font-size: 16.5px;
   font-weight: 700;
   line-height: 1.5;
-  color: #072838;
+  color: #000000;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
   transition: transform .2s ease, border-color .2s ease;
 }
@@ -832,7 +794,7 @@ p,
   margin-top: 8px;
 }
 .case-card {
-  background: rgba(255, 255, 255, 0.72);
+  background: #cd8032;
   border: 1px solid #C5A059;
   border-left: 3px solid #C5A059;
   padding: 22px 24px 20px;
@@ -851,13 +813,13 @@ p,
   font-size: 17.5px;
   font-weight: 700;
   line-height: 1.45;
-  color: #072838;
+  color: #000000;
 }
 .case-card span {
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: 16px;
   line-height: 1.75;
-  color: #072838;
+  color: #000000;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -1265,28 +1227,35 @@ body:has(main.page-expertise) .exp-band {
 }
 
 /* Keahlian cards — bidang jasa & non litigasi */
+.page-expertise .practice-item,
+.page-expertise .case-card,
 body:has(main.page-expertise) .practice-item,
 body:has(main.page-expertise) .case-card {
-  background: #d1b48c;
+  background: #cd8032;
   border-color: #C5A059;
   border-left-color: #C5A059;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  color: #072838;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  color: #000000;
 }
+.page-expertise .practice-item,
 body:has(main.page-expertise) .practice-item {
   border-top-color: #C5A059;
 }
+.page-expertise .case-card strong,
+.page-expertise .case-card span,
+.page-expertise .case-sub-list li,
 body:has(main.page-expertise) .case-card strong,
 body:has(main.page-expertise) .case-card span,
 body:has(main.page-expertise) .case-sub-list li {
-  color: #072838;
+  color: #000000;
 }
+.page-expertise .case-card strong,
 body:has(main.page-expertise) .case-card strong {
-  color: #072838;
+  color: #000000;
 }
-body:has(main.page-expertise) .exp-bullet-list li::before,
+.page-expertise .case-sub-list li::before,
 body:has(main.page-expertise) .case-sub-list li::before {
-  background-color: #C5A059;
+  background-color: #000000;
 }
 /* Keahlian: perkara-besar card — olive #354A21, white text, gold border */
 body:has(main.page-expertise) .exp-founder-bio {

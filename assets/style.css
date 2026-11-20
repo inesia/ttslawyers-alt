@@ -34,17 +34,13 @@ header {
   background-image:
     linear-gradient(
       112deg,
-      #5C3D1E 0%,
-      #6B4F27 14%,
-      #A67C3D 30%,
-      #C5A059 44%,
-      #E8C98B 50%,
-      #F1D38E 53%,
-      #E8C98B 58%,
-      #C5A059 70%,
-      #A67C3D 84%,
-      #6B4F27 94%,
-      #5C3D1E 100%
+      #6B4F27 0%,
+      #8B6A3A 20%,
+      #A67C3D 35%,
+      #C5A059 50%,
+      #A67C3D 65%,
+      #8B6A3A 80%,
+      #6B4F27 100%
     );
   color: #000000;
   padding: 18px max(24px, calc((100vw - 1280px) / 2));
@@ -55,12 +51,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow:
-    0 0 18px rgba(197, 160, 89, 0.35),
-    0 0 36px rgba(166, 124, 61, 0.22),
-    0 4px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    inset 0 -1px 0 rgba(92, 61, 30, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
   border-bottom: none;
   overflow: hidden;
 }
@@ -71,25 +62,10 @@ header::before {
   background-image:
     repeating-linear-gradient(
       -16deg,
-      rgba(92, 61, 30, 0.06) 0 1px,
+      rgba(92, 61, 30, 0.05) 0 1px,
       transparent 1px 3px
-    ),
-    linear-gradient(
-      100deg,
-      transparent 0%,
-      transparent 22%,
-      rgba(232, 201, 139, 0.42) 38%,
-      rgba(255, 255, 255, 0.5) 48%,
-      rgba(232, 201, 139, 0.32) 58%,
-      transparent 72%,
-      transparent 100%
-    ),
-    radial-gradient(
-      120% 80% at 42% 40%,
-      rgba(232, 201, 139, 0.28) 0%,
-      transparent 55%
     );
-  background-repeat: repeat, no-repeat, no-repeat;
+  background-repeat: repeat;
   pointer-events: none;
   z-index: 0;
 }
@@ -99,22 +75,9 @@ header::after {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    #3D2B1F 0%,
-    #6B4E23 12%,
-    #7a5d2a 22%,
-    #b38728 38%,
-    #C5A059 46%,
-    #FEF1B5 50%,
-    #C5A059 54%,
-    #b38728 62%,
-    #7a5d2a 78%,
-    #6B4E23 88%,
-    #3D2B1F 100%
-  );
-  box-shadow: 0 0 8px rgba(254, 241, 181, 0.45);
+  height: 2px;
+  background: #C5A059;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   pointer-events: none;
   z-index: 2;
 }
