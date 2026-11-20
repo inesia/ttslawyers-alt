@@ -34,6 +34,7 @@ module.exports = async function handler(req, res) {
   const content = prettyJson(data);
   const target = draftPath(lang, page);
 
+  // Local-only path for `node server.js` without GitHub credentials.
   if (!process.env.GITHUB_TOKEN) {
     try {
       writeLocal(target, content);
@@ -57,7 +58,6 @@ module.exports = async function handler(req, res) {
       `cms(draft): save ${lang}/${page}.json`,
       existing?.sha
     );
-    writeLocal(target, content);
     return sendJson(res, 200, {
       ok: true,
       message: "Draft tersimpan ke GitHub",

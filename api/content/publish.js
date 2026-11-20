@@ -42,6 +42,7 @@ module.exports = async function handler(req, res) {
   const draftTarget = draftPath(lang, page);
   const content = prettyJson(data);
 
+  // Local-only path for `node server.js` without GitHub credentials.
   if (!process.env.GITHUB_TOKEN) {
     try {
       writeLocal(publishedPath, content);
@@ -75,9 +76,6 @@ module.exports = async function handler(req, res) {
       `cms(draft): sync after publish ${lang}/${page}.json`,
       draft?.sha
     );
-
-    writeLocal(publishedPath, content);
-    writeLocal(draftTarget, content);
 
     return sendJson(res, 200, {
       ok: true,
