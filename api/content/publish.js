@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const { sendJson, readBody, methodNotAllowed } = require("../_lib/http");
 const { requireAuth } = require("../_lib/auth");
 const {
@@ -8,6 +10,12 @@ const {
   putFile,
   prettyJson,
 } = require("../_lib/github");
+
+function writeLocal(relPath, content) {
+  const full = path.join(process.cwd(), relPath);
+  fs.mkdirSync(path.dirname(full), { recursive: true });
+  fs.writeFileSync(full, content, "utf8");
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
@@ -30,19 +38,27 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 400, { ok: false, error: "Field data wajib diisi" });
   }
 
+  const publishedPath = contentPath(lang, page);
+  const draftTarget = draftPath(lang, page);
+  const content = prettyJson(data);
+
   if (!process.env.GITHUB_TOKEN) {
-    return sendJson(res, 500, {
-      ok: false,
-      error:
-        "GITHUB_TOKEN belum di-set di environment Vercel. Publish tidak bisa menulis ke GitHub.",
-    });
+    try {
+      writeLocal(publishedPath, content);
+      writeLocal(draftTarget, content);
+      return sendJson(res, 200, {
+        ok: true,
+        message: "Published lokal (content + draft) tanpa GitHub token",
+        path: publishedPath,
+        commit: null,
+        source: "local",
+      });
+    } catch (err) {
+      return sendJson(res, 500, { ok: false, error: err.message });
+    }
   }
 
   try {
-    const publishedPath = contentPath(lang, page);
-    const draftTarget = draftPath(lang, page);
-    const content = prettyJson(data);
-
     const published = await getFile(publishedPath);
     const publishResult = await putFile(
       publishedPath,
@@ -59,6 +75,9 @@ module.exports = async function handler(req, res) {
       `cms(draft): sync after publish ${lang}/${page}.json`,
       draft?.sha
     );
+
+    writeLocal(publishedPath, content);
+    writeLocal(draftTarget, content);
 
     return sendJson(res, 200, {
       ok: true,

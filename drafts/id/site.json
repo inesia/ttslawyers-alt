@@ -1,0 +1,27 @@
+{
+  "brandMark": "TTS",
+  "brandName": "TIMOTIUS & PARTNERS",
+  "brandSub": "LAW FIRM",
+  "nav": [
+    {
+      "label": "Beranda",
+      "href": "index.html"
+    },
+    {
+      "label": "Tentang",
+      "href": "firma-hukum.html"
+    },
+    {
+      "label": "Keahlian",
+      "href": "pendiri.html"
+    },
+    {
+      "label": "Mitra",
+      "href": "partners.html"
+    },
+    {
+      "label": "Kontak",
+      "href": "kontak.html"
+    }
+  ]
+}

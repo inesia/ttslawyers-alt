@@ -47,6 +47,21 @@ module.exports = async function handler(req, res) {
           });
         }
       }
+
+      // Local-first: prefer drafts, then published content.
+      const localDraft = readLocal(draftPath(lang, page));
+      if (localDraft) {
+        return sendJson(res, 200, {
+          ok: true,
+          source: process.env.GITHUB_TOKEN ? "local-draft" : "local-draft-no-github-token",
+          data: localDraft,
+          sha: null,
+          warning: process.env.GITHUB_TOKEN
+            ? null
+            : "GITHUB_TOKEN belum di-set. Menampilkan draft lokal. Simpan Draft/Publish menulis ke folder lokal.",
+        });
+      }
+
       const local = readLocal(contentPath(lang, page));
       if (local) {
         return sendJson(res, 200, {
@@ -56,11 +71,21 @@ module.exports = async function handler(req, res) {
           sha: null,
           warning: process.env.GITHUB_TOKEN
             ? null
-            : "GITHUB_TOKEN belum di-set. Menampilkan konten lokal/published. Simpan Draft/Publish belum bisa ke GitHub.",
+            : "GITHUB_TOKEN belum di-set. Menampilkan konten lokal/published.",
         });
       }
       return sendJson(res, 404, { ok: false, error: "Konten tidak ditemukan" });
     } catch (err) {
+      const localDraft = readLocal(draftPath(lang, page));
+      if (localDraft) {
+        return sendJson(res, 200, {
+          ok: true,
+          source: "local-draft-after-error",
+          data: localDraft,
+          sha: null,
+          warning: err.message,
+        });
+      }
       const local = readLocal(contentPath(lang, page));
       if (local) {
         return sendJson(res, 200, {

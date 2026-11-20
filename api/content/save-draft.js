@@ -1,6 +1,14 @@
+const fs = require("fs");
+const path = require("path");
 const { sendJson, readBody, methodNotAllowed } = require("../_lib/http");
 const { requireAuth } = require("../_lib/auth");
 const { assertTarget, draftPath, getFile, putFile, prettyJson } = require("../_lib/github");
+
+function writeLocal(relPath, content) {
+  const full = path.join(process.cwd(), relPath);
+  fs.mkdirSync(path.dirname(full), { recursive: true });
+  fs.writeFileSync(full, content, "utf8");
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
@@ -23,24 +31,33 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 400, { ok: false, error: "Field data wajib diisi" });
   }
 
+  const content = prettyJson(data);
+  const target = draftPath(lang, page);
+
   if (!process.env.GITHUB_TOKEN) {
-    return sendJson(res, 500, {
-      ok: false,
-      error:
-        "GITHUB_TOKEN belum di-set di environment Vercel. Simpan Draft tidak bisa menulis ke GitHub.",
-    });
+    try {
+      writeLocal(target, content);
+      return sendJson(res, 200, {
+        ok: true,
+        message: "Draft tersimpan lokal (tanpa GitHub token)",
+        path: target,
+        commit: null,
+        source: "local",
+      });
+    } catch (err) {
+      return sendJson(res, 500, { ok: false, error: err.message });
+    }
   }
 
   try {
-    const target = draftPath(lang, page);
     const existing = await getFile(target);
-    const content = prettyJson(data);
     const result = await putFile(
       target,
       content,
       `cms(draft): save ${lang}/${page}.json`,
       existing?.sha
     );
+    writeLocal(target, content);
     return sendJson(res, 200, {
       ok: true,
       message: "Draft tersimpan ke GitHub",
