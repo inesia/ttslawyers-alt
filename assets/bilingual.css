@@ -438,9 +438,13 @@ p,
   text-align: justify;
   text-justify: inter-word;
 }
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: .22em;
+}
 .about-kicker {
   color: #C5A059;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: .18em;
   text-transform: uppercase;
   font-weight: 700;
@@ -1365,7 +1369,7 @@ body:has(main.page-contact) .contact-list a {
 }
 body:has(main.page-contact) .contact-card .about-kicker {
   letter-spacing: .14em;
-  font-size: 13px;
+  font-size: 15.5px;
 }
 body:has(main.page-contact) .contact-list dt {
   font-size: 12px;

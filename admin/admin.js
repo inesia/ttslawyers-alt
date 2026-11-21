@@ -95,8 +95,21 @@
       .replace(/"/g, "&quot;");
   }
 
+  function cleanWordText(rawText) {
+    if (!rawText) return "";
+    return String(rawText)
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n")
+      .replace(/<!--[\s\S]*?-->/g, "")
+      .replace(/<(?:style|script|xml|meta|link)\b[^>]*>[\s\S]*?<\/\1>/gi, "")
+      .replace(/<[^>]+>/g, "")
+      .replace(/[\u200B-\u200D\uFEFF]/g, "")
+      .trim();
+  }
+
   function markdownToEditorHtml(text) {
     var s = String(text == null ? "" : text);
+    s = s.replace(/&amp;amp;(?=[a-zA-Z0-9#]+;)/g, "&amp;").replace(/&amp;(?=[a-zA-Z0-9#]+;)/g, "&");
     if (/<\/?(?:strong|b|em|span|br|p)\b/i.test(s)) return s;
     return escapeHtml(s)
       .replace(/\n/g, "<br>")
@@ -117,6 +130,18 @@
     if (node.nodeType === 3) return document.createTextNode(node.nodeValue);
     if (node.nodeType !== 1) return null;
     var tag = node.tagName.toLowerCase();
+    if (
+      tag === "style" ||
+      tag === "script" ||
+      tag === "meta" ||
+      tag === "link" ||
+      tag === "xml" ||
+      tag === "o:p" ||
+      tag.indexOf("o:") === 0 ||
+      tag.indexOf("w:") === 0
+    ) {
+      return null;
+    }
     var out = null;
     if (tag === "br") return document.createElement("br");
     if (tag === "strong" || tag === "b") out = document.createElement("strong");
@@ -215,6 +240,23 @@
     input.addEventListener("input", function () {
       state.dirty = true;
     });
+    input.addEventListener("paste", function (e) {
+      var text = (e.clipboardData || window.clipboardData).getData("text/plain") || "";
+      if (/<[^>]+>/.test(text)) {
+        e.preventDefault();
+        var clean = cleanWordText(text);
+        if (document.queryCommandSupported && document.queryCommandSupported("insertText")) {
+          document.execCommand("insertText", false, clean);
+        } else {
+          var start = input.selectionStart || 0;
+          var end = input.selectionEnd || 0;
+          var val = input.value;
+          input.value = val.substring(0, start) + clean + val.substring(end);
+          input.selectionStart = input.selectionEnd = start + clean.length;
+        }
+        state.dirty = true;
+      }
+    });
     wrap.appendChild(lab);
     wrap.appendChild(input);
     return wrap;
@@ -274,6 +316,27 @@
       );
     });
 
+    const sep2 = document.createElement("span");
+    sep2.className = "wysiwyg-sep";
+    toolbar.appendChild(sep2);
+
+    toolButton(
+      "🧹 Bersihkan Tag",
+      "Hapus tag HTML bawaan Word dan format asing",
+      function () {
+        var text = cleanWordText(editor.innerText || editor.textContent || "");
+        if (asParagraphs) {
+          var paras = text.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+          editor.innerHTML = paras.length
+            ? paras.map(function (p) { return "<p>" + escapeHtml(p).replace(/\n/g, "<br>") + "</p>"; }).join("")
+            : "<p><br></p>";
+        } else {
+          editor.innerHTML = escapeHtml(text).replace(/\n/g, "<br>") || "<br>";
+        }
+        state.dirty = true;
+      }
+    );
+
     const editor = document.createElement("div");
     editor.className = "wysiwyg-editor";
     editor.contentEditable = "true";
@@ -301,6 +364,30 @@
     }
 
     editor.addEventListener("input", function () {
+      state.dirty = true;
+    });
+
+    editor.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var raw = (e.clipboardData || window.clipboardData).getData("text/plain") || "";
+      var clean = cleanWordText(raw);
+      if (!clean) return;
+
+      if (asParagraphs) {
+        var paras = clean.split(/\r?\n\s*\r?\n/).map(function (p) {
+          return p.trim();
+        }).filter(Boolean);
+
+        if (paras.length > 0) {
+          var html = paras.map(function (p) {
+            return "<p>" + escapeHtml(p).replace(/\n/g, "<br>") + "</p>";
+          }).join("");
+          document.execCommand("insertHTML", false, html);
+        }
+      } else {
+        var html = escapeHtml(clean).replace(/\n/g, "<br>");
+        document.execCommand("insertHTML", false, html);
+      }
       state.dirty = true;
     });
 
