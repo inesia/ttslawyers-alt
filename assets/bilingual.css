@@ -903,7 +903,7 @@ p,
   font: 700 clamp(24px, 2.6vw, 34px)/1.35 'Times New Roman', Times, Georgia, serif;
   color: #072838;
   margin: 16px 0 0;
-  max-width: 20ch;
+  max-width: none;
   text-align: left;
 }
 .contact-card {
