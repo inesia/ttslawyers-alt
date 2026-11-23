@@ -95,6 +95,44 @@
       .replace(/"/g, "&quot;");
   }
 
+  function cleanRichHtmlString(s) {
+    if (typeof s !== "string") return s;
+    return s
+      .replace(/[\u200B-\u200D\uFEFF]/g, "")
+      .replace(/<!--[\s\S]*?-->/g, "")
+      .replace(/<(?:style|script|xml|meta|link)\b[^>]*>[\s\S]*?<\/\1>/gi, "")
+      .replace(/<\/?(?:o:p|w:[^>]+)>/gi, "")
+      .replace(/&nbsp;|\u00A0|&#160;|&ensp;|&emsp;|&thinsp;/gi, " ")
+      .replace(/&amp;(?!lt;|gt;|quot;|#\d+;|#x[0-9a-fA-F]+;)/gi, "&")
+      .replace(/<(strong|b|em|i|span)\b[^>]*>\s*<\/\1>/gi, "")
+      .replace(/[ \t]+/g, " ")
+      .replace(/\s+(<br\s*\/?>)/gi, "$1")
+      .replace(/(<br\s*\/?>)\s+/gi, "$1")
+      .replace(/^(?:<br\s*\/?>|\s)+|(?:<br\s*\/?>|\s)+$/gi, "")
+      .trim();
+  }
+
+  function cleanData(val) {
+    if (typeof val === "string") {
+      return cleanRichHtmlString(val);
+    }
+    if (Array.isArray(val)) {
+      return val
+        .map(cleanData)
+        .filter(function (x) {
+          return x !== "" && x !== null && x !== undefined;
+        });
+    }
+    if (val && typeof val === "object") {
+      var out = {};
+      Object.keys(val).forEach(function (k) {
+        out[k] = cleanData(val[k]);
+      });
+      return out;
+    }
+    return val;
+  }
+
   function cleanWordText(rawText) {
     if (!rawText) return "";
     return String(rawText)
@@ -102,8 +140,12 @@
       .replace(/\r/g, "\n")
       .replace(/<!--[\s\S]*?-->/g, "")
       .replace(/<(?:style|script|xml|meta|link)\b[^>]*>[\s\S]*?<\/\1>/gi, "")
+      .replace(/<\/?(?:o:p|w:[^>]+)>/gi, "")
       .replace(/<[^>]+>/g, "")
+      .replace(/&nbsp;|\u00A0|&#160;|&ensp;|&emsp;|&thinsp;/gi, " ")
+      .replace(/&amp;(?!lt;|gt;|quot;|#\d+;|#x[0-9a-fA-F]+;)/gi, "&")
       .replace(/[\u200B-\u200D\uFEFF]/g, "")
+      .replace(/[ \t]+/g, " ")
       .trim();
   }
 
@@ -195,26 +237,27 @@
       if (w) clean.appendChild(w);
     });
     if (!asParagraphs) {
-      return clean.innerHTML
-        .replace(/<\/?p>/gi, function (m) {
-          return m.toLowerCase() === "<p>" ? "" : "<br><br>";
-        })
-        .replace(/(?:<br\s*\/?>\s*){3,}/gi, "<br><br>")
-        .replace(/^(?:<br\s*\/?>)+|(?:<br\s*\/?>)+$/gi, "")
-        .trim();
+      return cleanRichHtmlString(
+        clean.innerHTML
+          .replace(/<\/?p>/gi, function (m) {
+            return m.toLowerCase() === "<p>" ? "" : "<br><br>";
+          })
+          .replace(/(?:<br\s*\/?>\s*){3,}/gi, "<br><br>")
+          .replace(/^(?:<br\s*\/?>)+|(?:<br\s*\/?>)+$/gi, "")
+      );
     }
     var parts = [];
     var blocks = clean.querySelectorAll("p");
     if (blocks.length) {
       Array.prototype.forEach.call(blocks, function (p) {
-        var inner = p.innerHTML.trim();
+        var inner = cleanRichHtmlString(p.innerHTML);
         if (inner) parts.push(inner);
       });
     } else {
       var raw = clean.innerHTML.trim();
       if (raw) {
         raw.split(/(?:<br\s*\/?>\s*){2,}/i).forEach(function (chunk) {
-          var t = chunk.replace(/^(?:<br\s*\/?>)+|(?:<br\s*\/?>)+$/gi, "").trim();
+          var t = cleanRichHtmlString(chunk.replace(/^(?:<br\s*\/?>)+|(?:<br\s*\/?>)+$/gi, ""));
           if (t) parts.push(t);
         });
       }
@@ -418,14 +461,14 @@
     if (Array.isArray(text)) {
       return text
         .map(function (p) {
-          return String(p || "").trim();
+          return cleanRichHtmlString(p);
         })
         .filter(Boolean);
     }
     return String(text || "")
       .split(/\n\s*\n/)
       .map(function (p) {
-        return p.replace(/\r/g, "").trimEnd();
+        return cleanRichHtmlString(p.replace(/\r/g, ""));
       })
       .filter(function (p) {
         return p.length > 0;
@@ -436,7 +479,7 @@
     return String(text || "")
       .split(/\n/)
       .map(function (l) {
-        return l.replace(/\r/g, "");
+        return cleanRichHtmlString(l.replace(/\r/g, ""));
       })
       .filter(function (l) {
         return l.trim().length > 0;
@@ -702,7 +745,7 @@
       });
     }
 
-    return data;
+    return cleanData(data);
   }
 
   async function loadCurrent() {

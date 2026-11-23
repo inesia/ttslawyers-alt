@@ -94,8 +94,46 @@ async function putFile(path, content, message, sha) {
   });
 }
 
+function cleanRichHtmlString(s) {
+  if (typeof s !== "string") return s;
+  return s
+    .replace(/[\u200B-\u200D\uFEFF]/g, "")
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<(?:style|script|xml|meta|link)\b[^>]*>[\s\S]*?<\/\1>/gi, "")
+    .replace(/<\/?(?:o:p|w:[^>]+)>/gi, "")
+    .replace(/&nbsp;|\u00A0|&#160;|&ensp;|&emsp;|&thinsp;/gi, " ")
+    .replace(/&amp;(?!lt;|gt;|quot;|#\d+;|#x[0-9a-fA-F]+;)/gi, "&")
+    .replace(/<(strong|b|em|i|span)\b[^>]*>\s*<\/\1>/gi, "")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\s+(<br\s*\/?>)/gi, "$1")
+    .replace(/(<br\s*\/?>)\s+/gi, "$1")
+    .replace(/^(?:<br\s*\/?>|\s)+|(?:<br\s*\/?>|\s)+$/gi, "")
+    .trim();
+}
+
+function cleanData(val) {
+  if (typeof val === "string") {
+    return cleanRichHtmlString(val);
+  }
+  if (Array.isArray(val)) {
+    return val
+      .map(cleanData)
+      .filter(function (x) {
+        return x !== "" && x !== null && x !== undefined;
+      });
+  }
+  if (val && typeof val === "object") {
+    var out = {};
+    Object.keys(val).forEach(function (k) {
+      out[k] = cleanData(val[k]);
+    });
+    return out;
+  }
+  return val;
+}
+
 function prettyJson(data) {
-  return JSON.stringify(data, null, 2) + "\n";
+  return JSON.stringify(cleanData(data), null, 2) + "\n";
 }
 
 module.exports = {
@@ -106,5 +144,7 @@ module.exports = {
   getFile,
   putFile,
   prettyJson,
+  cleanData,
+  cleanRichHtmlString,
   assertTarget,
 };

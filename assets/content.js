@@ -83,7 +83,7 @@
       var w = walk(child);
       if (w) clean.appendChild(w);
     });
-    return clean.innerHTML;
+    return clean.innerHTML.replace(/&nbsp;|\u00A0|&#160;|&ensp;|&emsp;|&thinsp;/gi, " ");
   }
 
   function formatParagraph(p) {
@@ -212,6 +212,10 @@
       }
       if (el.tagName === "A" && el.hasAttribute("data-cms-href")) {
         setText(el, value);
+        return;
+      }
+      if (looksLikeRichHtml(value)) {
+        el.innerHTML = sanitizeRichHtml(value);
         return;
       }
       setText(el, value);
