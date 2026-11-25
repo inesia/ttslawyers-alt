@@ -23,7 +23,8 @@
       "label": "Email Sekretaris",
       "values": [
         {
-          "text": "timotiuslawyer@gmail.com"
+          "text": "timotiuslawyer@gmail.com",
+          "href": "mailto:timotiuslawyer@gmail.com"
         }
       ]
     },
